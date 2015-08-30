@@ -1,0 +1,4022 @@
+/* icon prefix for xqlcxqlcxqlc icons */
+[class^="zui-icon"],
+[class*=" zui-icon"] {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    *margin-right: .3em;
+    line-height: 14px;
+    vertical-align: text-top;
+    background-image: url("../img/zui-icons.png");
+    background-position: 14px 14px;
+    background-repeat: no-repeat;
+}
+
+[class^="zui-icon"]:last-child,
+[class*=" zui-icon"]:last-child {
+    *margin-left: 0;
+}
+
+.btn-large [class^="zui-icon"] {
+    margin-top: 1px;
+}
+
+.zui-icon-accept {
+    background-position: 0 0
+}
+
+.zui-icon-add {
+    background-position: -21px 0
+}
+
+.zui-icon-anchor {
+    background-position: -42px 0
+}
+
+.zui-icon-application-add {
+    background-position: -63px 0
+}
+
+.zui-icon-application-cascade {
+    background-position: -84px 0
+}
+
+.zui-icon-application-delete {
+    background-position: -105px 0
+}
+
+.zui-icon-application-double {
+    background-position: -126px 0
+}
+
+.zui-icon-application-edit {
+    background-position: -147px 0
+}
+
+.zui-icon-application-error {
+    background-position: -168px 0
+}
+
+.zui-icon-application-form-add {
+    background-position: -189px 0
+}
+
+.zui-icon-application-form-delete {
+    background-position: -210px 0
+}
+
+.zui-icon-application-form-edit {
+    background-position: -231px 0
+}
+
+.zui-icon-application-form-magnify {
+    background-position: -252px 0
+}
+
+.zui-icon-application-form {
+    background-position: -273px 0
+}
+
+.zui-icon-application-get {
+    background-position: -294px 0
+}
+
+.zui-icon-application-go {
+    background-position: -315px 0
+}
+
+.zui-icon-application-home {
+    background-position: -336px 0
+}
+
+.zui-icon-application-key {
+    background-position: -357px 0
+}
+
+.zui-icon-application-lightning {
+    background-position: -378px 0
+}
+
+.zui-icon-application-link {
+    background-position: -399px 0
+}
+
+.zui-icon-application-osx-terminal {
+    background-position: -420px 0
+}
+
+.zui-icon-application-osx {
+    background-position: -441px 0
+}
+
+.zui-icon-application-put {
+    background-position: -462px 0
+}
+
+.zui-icon-application-side-boxes {
+    background-position: -483px 0
+}
+
+.zui-icon-application-side-contract {
+    background-position: -504px 0
+}
+
+.zui-icon-application-side-expand {
+    background-position: -525px 0
+}
+
+.zui-icon-application-side-list {
+    background-position: -546px 0
+}
+
+.zui-icon-application-side-tree {
+    background-position: -567px 0
+}
+
+.zui-icon-application-split {
+    background-position: -588px 0
+}
+
+.zui-icon-application-tile-horizontal {
+    background-position: -609px 0
+}
+
+.zui-icon-application-tile-vertical {
+    background-position: -630px 0
+}
+
+.zui-icon-application-view-columns {
+    background-position: -651px 0
+}
+
+.zui-icon-application-view-detail {
+    background-position: -672px 0
+}
+
+.zui-icon-application-view-gallery {
+    background-position: -693px 0
+}
+
+.zui-icon-application-view-icons {
+    background-position: -714px 0
+}
+
+.zui-icon-application-view-list {
+    background-position: -735px 0
+}
+
+.zui-icon-application-view-tile {
+    background-position: -756px 0
+}
+
+.zui-icon-application-xp-terminal {
+    background-position: -777px 0
+}
+
+.zui-icon-application-xp {
+    background-position: -798px 0
+}
+
+.zui-icon-application {
+    background-position: -819px 0
+}
+
+.zui-icon-arrow-branch {
+    background-position: -840px 0
+}
+
+.zui-icon-arrow-divide {
+    background-position: -861px 0
+}
+
+.zui-icon-arrow-down {
+    background-position: -882px 0
+}
+
+.zui-icon-arrow-in {
+    background-position: -903px 0
+}
+
+.zui-icon-arrow-inout {
+    background-position: -924px 0
+}
+
+.zui-icon-arrow-join {
+    background-position: -945px 0
+}
+
+.zui-icon-arrow-left {
+    background-position: -966px 0
+}
+
+.zui-icon-arrow-merge {
+    background-position: -987px 0
+}
+
+.zui-icon-arrow-out {
+    background-position: -1008px 0
+}
+
+.zui-icon-arrow-redo {
+    background-position: -1029px 0
+}
+
+.zui-icon-arrow-refresh-small {
+    background-position: -1050px 0
+}
+
+.zui-icon-arrow-refresh {
+    background-position: -1071px 0
+}
+
+.zui-icon-arrow-right {
+    background-position: -1092px 0
+}
+
+.zui-icon-arrow-rotate-anticlockwise {
+    background-position: -1113px 0
+}
+
+.zui-icon-arrow-rotate-clockwise {
+    background-position: -1134px 0
+}
+
+.zui-icon-arrow-switch {
+    background-position: -1155px 0
+}
+
+.zui-icon-arrow-turn-left {
+    background-position: -1176px 0
+}
+
+.zui-icon-arrow-turn-right {
+    background-position: -1197px 0
+}
+
+.zui-icon-arrow-undo {
+    background-position: -1218px 0
+}
+
+.zui-icon-arrow-up {
+    background-position: -1239px 0
+}
+
+.zui-icon-asterisk-orange {
+    background-position: -1260px 0
+}
+
+.zui-icon-asterisk-yellow {
+    background-position: -1281px 0
+}
+
+.zui-icon-attach {
+    background-position: -1302px 0
+}
+
+.zui-icon-award-star-add {
+    background-position: -1323px 0
+}
+
+.zui-icon-award-star-bronze-1 {
+    background-position: -1344px 0
+}
+
+.zui-icon-award-star-bronze-2 {
+    background-position: -1365px 0
+}
+
+.zui-icon-award-star-bronze-3 {
+    background-position: -1386px 0
+}
+
+.zui-icon-award-star-delete {
+    background-position: -1407px 0
+}
+
+.zui-icon-award-star-gold-1 {
+    background-position: -1428px 0
+}
+
+.zui-icon-award-star-gold-2 {
+    background-position: -1449px 0
+}
+
+.zui-icon-award-star-gold-3 {
+    background-position: -1470px 0
+}
+
+.zui-icon-award-star-silver-1 {
+    background-position: -1491px 0
+}
+
+.zui-icon-award-star-silver-2 {
+    background-position: -1512px 0
+}
+
+.zui-icon-award-star-silver-3 {
+    background-position: -1533px 0
+}
+
+.zui-icon-basket-add {
+    background-position: -1554px 0
+}
+
+.zui-icon-basket-delete {
+    background-position: -1575px 0
+}
+
+.zui-icon-basket-edit {
+    background-position: -1596px 0
+}
+
+.zui-icon-basket-error {
+    background-position: -1617px 0
+}
+
+.zui-icon-basket-go {
+    background-position: -1638px 0
+}
+
+.zui-icon-basket-put {
+    background-position: -1659px 0
+}
+
+.zui-icon-basket-remove {
+    background-position: -1680px 0
+}
+
+.zui-icon-basket {
+    background-position: -1701px 0
+}
+
+.zui-icon-bell-add {
+    background-position: -1722px 0
+}
+
+.zui-icon-bell-delete {
+    background-position: -1743px 0
+}
+
+.zui-icon-bell-error {
+    background-position: -1764px 0
+}
+
+.zui-icon-bell-go {
+    background-position: -1785px 0
+}
+
+.zui-icon-bell-link {
+    background-position: -1806px 0
+}
+
+.zui-icon-bell {
+    background-position: -1827px 0
+}
+
+.zui-icon-bin-closed {
+    background-position: -1848px 0
+}
+
+.zui-icon-bin-empty {
+    background-position: -1869px 0
+}
+
+.zui-icon-bin {
+    background-position: -1890px 0
+}
+
+.zui-icon-bomb {
+    background-position: -1911px 0
+}
+
+.zui-icon-book-add {
+    background-position: -1932px 0
+}
+
+.zui-icon-book-addresses {
+    background-position: -1953px 0
+}
+
+.zui-icon-book-delete {
+    background-position: -1974px 0
+}
+
+.zui-icon-book-edit {
+    background-position: 0 -21px
+}
+
+.zui-icon-book-error {
+    background-position: -21px -21px
+}
+
+.zui-icon-book-go {
+    background-position: -42px -21px
+}
+
+.zui-icon-book-key {
+    background-position: -63px -21px
+}
+
+.zui-icon-book-link {
+    background-position: -84px -21px
+}
+
+.zui-icon-book-next {
+    background-position: -105px -21px
+}
+
+.zui-icon-book-open {
+    background-position: -126px -21px
+}
+
+.zui-icon-book-previous {
+    background-position: -147px -21px
+}
+
+.zui-icon-book {
+    background-position: -168px -21px
+}
+
+.zui-icon-box {
+    background-position: -189px -21px
+}
+
+.zui-icon-brick-add {
+    background-position: -210px -21px
+}
+
+.zui-icon-brick-delete {
+    background-position: -231px -21px
+}
+
+.zui-icon-brick-edit {
+    background-position: -252px -21px
+}
+
+.zui-icon-brick-error {
+    background-position: -273px -21px
+}
+
+.zui-icon-brick-go {
+    background-position: -294px -21px
+}
+
+.zui-icon-brick-link {
+    background-position: -315px -21px
+}
+
+.zui-icon-brick {
+    background-position: -336px -21px
+}
+
+.zui-icon-bricks {
+    background-position: -357px -21px
+}
+
+.zui-icon-briefcase {
+    background-position: -378px -21px
+}
+
+.zui-icon-bug-add {
+    background-position: -399px -21px
+}
+
+.zui-icon-bug-delete {
+    background-position: -420px -21px
+}
+
+.zui-icon-bug-edit {
+    background-position: -441px -21px
+}
+
+.zui-icon-bug-error {
+    background-position: -462px -21px
+}
+
+.zui-icon-bug-go {
+    background-position: -483px -21px
+}
+
+.zui-icon-bug-link {
+    background-position: -504px -21px
+}
+
+.zui-icon-bug {
+    background-position: -525px -21px
+}
+
+.zui-icon-building-add {
+    background-position: -546px -21px
+}
+
+.zui-icon-building-delete {
+    background-position: -567px -21px
+}
+
+.zui-icon-building-edit {
+    background-position: -588px -21px
+}
+
+.zui-icon-building-error {
+    background-position: -609px -21px
+}
+
+.zui-icon-building-go {
+    background-position: -630px -21px
+}
+
+.zui-icon-building-key {
+    background-position: -651px -21px
+}
+
+.zui-icon-building-link {
+    background-position: -672px -21px
+}
+
+.zui-icon-building {
+    background-position: -693px -21px
+}
+
+.zui-icon-bullet-add {
+    background-position: -714px -21px
+}
+
+.zui-icon-bullet-arrow-bottom {
+    background-position: -735px -21px
+}
+
+.zui-icon-bullet-arrow-down {
+    background-position: -756px -21px
+}
+
+.zui-icon-bullet-arrow-top {
+    background-position: -777px -21px
+}
+
+.zui-icon-bullet-arrow-up {
+    background-position: -798px -21px
+}
+
+.zui-icon-bullet-black {
+    background-position: -819px -21px
+}
+
+.zui-icon-bullet-blue {
+    background-position: -840px -21px
+}
+
+.zui-icon-bullet-delete {
+    background-position: -861px -21px
+}
+
+.zui-icon-bullet-disk {
+    background-position: -882px -21px
+}
+
+.zui-icon-bullet-error {
+    background-position: -903px -21px
+}
+
+.zui-icon-bullet-feed {
+    background-position: -924px -21px
+}
+
+.zui-icon-bullet-go {
+    background-position: -945px -21px
+}
+
+.zui-icon-bullet-green {
+    background-position: -966px -21px
+}
+
+.zui-icon-bullet-key {
+    background-position: -987px -21px
+}
+
+.zui-icon-bullet-orange {
+    background-position: -1008px -21px
+}
+
+.zui-icon-bullet-picture {
+    background-position: -1029px -21px
+}
+
+.zui-icon-bullet-pink {
+    background-position: -1050px -21px
+}
+
+.zui-icon-bullet-purple {
+    background-position: -1071px -21px
+}
+
+.zui-icon-bullet-red {
+    background-position: -1092px -21px
+}
+
+.zui-icon-bullet-star {
+    background-position: -1113px -21px
+}
+
+.zui-icon-bullet-toggle-minus {
+    background-position: -1134px -21px
+}
+
+.zui-icon-bullet-toggle-plus {
+    background-position: -1155px -21px
+}
+
+.zui-icon-bullet-white {
+    background-position: -1176px -21px
+}
+
+.zui-icon-bullet-wrench {
+    background-position: -1197px -21px
+}
+
+.zui-icon-bullet-yellow {
+    background-position: -1218px -21px
+}
+
+.zui-icon-cake {
+    background-position: -1239px -21px
+}
+
+.zui-icon-calculator-add {
+    background-position: -1260px -21px
+}
+
+.zui-icon-calculator-delete {
+    background-position: -1281px -21px
+}
+
+.zui-icon-calculator-edit {
+    background-position: -1302px -21px
+}
+
+.zui-icon-calculator-error {
+    background-position: -1323px -21px
+}
+
+.zui-icon-calculator-link {
+    background-position: -1344px -21px
+}
+
+.zui-icon-calculator {
+    background-position: -1365px -21px
+}
+
+.zui-icon-calendar-add {
+    background-position: -1386px -21px
+}
+
+.zui-icon-calendar-delete {
+    background-position: -1407px -21px
+}
+
+.zui-icon-calendar-edit {
+    background-position: -1428px -21px
+}
+
+.zui-icon-calendar-link {
+    background-position: -1449px -21px
+}
+
+.zui-icon-calendar-view-day {
+    background-position: -1470px -21px
+}
+
+.zui-icon-calendar-view-month {
+    background-position: -1491px -21px
+}
+
+.zui-icon-calendar-view-week {
+    background-position: -1512px -21px
+}
+
+.zui-icon-calendar {
+    background-position: -1533px -21px
+}
+
+.zui-icon-camera-add {
+    background-position: -1554px -21px
+}
+
+.zui-icon-camera-delete {
+    background-position: -1575px -21px
+}
+
+.zui-icon-camera-edit {
+    background-position: -1596px -21px
+}
+
+.zui-icon-camera-error {
+    background-position: -1617px -21px
+}
+
+.zui-icon-camera-go {
+    background-position: -1638px -21px
+}
+
+.zui-icon-camera-link {
+    background-position: -1659px -21px
+}
+
+.zui-icon-camera-small {
+    background-position: -1680px -21px
+}
+
+.zui-icon-camera {
+    background-position: -1701px -21px
+}
+
+.zui-icon-cancel {
+    background-position: -1722px -21px
+}
+
+.zui-icon-car-add {
+    background-position: -1743px -21px
+}
+
+.zui-icon-car-delete {
+    background-position: -1764px -21px
+}
+
+.zui-icon-car {
+    background-position: -1785px -21px
+}
+
+.zui-icon-cart-add {
+    background-position: -1806px -21px
+}
+
+.zui-icon-cart-delete {
+    background-position: -1827px -21px
+}
+
+.zui-icon-cart-edit {
+    background-position: -1848px -21px
+}
+
+.zui-icon-cart-error {
+    background-position: -1869px -21px
+}
+
+.zui-icon-cart-go {
+    background-position: -1890px -21px
+}
+
+.zui-icon-cart-put {
+    background-position: -1911px -21px
+}
+
+.zui-icon-cart-remove {
+    background-position: -1932px -21px
+}
+
+.zui-icon-cart {
+    background-position: -1953px -21px
+}
+
+.zui-icon-cd-add {
+    background-position: -1974px -21px
+}
+
+.zui-icon-cd-burn {
+    background-position: 0 -42px
+}
+
+.zui-icon-cd-delete {
+    background-position: -21px -42px
+}
+
+.zui-icon-cd-edit {
+    background-position: -42px -42px
+}
+
+.zui-icon-cd-eject {
+    background-position: -63px -42px
+}
+
+.zui-icon-cd-go {
+    background-position: -84px -42px
+}
+
+.zui-icon-cd {
+    background-position: -105px -42px
+}
+
+.zui-icon-chart-bar-add {
+    background-position: -126px -42px
+}
+
+.zui-icon-chart-bar-delete {
+    background-position: -147px -42px
+}
+
+.zui-icon-chart-bar-edit {
+    background-position: -168px -42px
+}
+
+.zui-icon-chart-bar-error {
+    background-position: -189px -42px
+}
+
+.zui-icon-chart-bar-link {
+    background-position: -210px -42px
+}
+
+.zui-icon-chart-bar {
+    background-position: -231px -42px
+}
+
+.zui-icon-chart-curve-add {
+    background-position: -252px -42px
+}
+
+.zui-icon-chart-curve-delete {
+    background-position: -273px -42px
+}
+
+.zui-icon-chart-curve-edit {
+    background-position: -294px -42px
+}
+
+.zui-icon-chart-curve-error {
+    background-position: -315px -42px
+}
+
+.zui-icon-chart-curve-go {
+    background-position: -336px -42px
+}
+
+.zui-icon-chart-curve-link {
+    background-position: -357px -42px
+}
+
+.zui-icon-chart-curve {
+    background-position: -378px -42px
+}
+
+.zui-icon-chart-line-add {
+    background-position: -399px -42px
+}
+
+.zui-icon-chart-line-delete {
+    background-position: -420px -42px
+}
+
+.zui-icon-chart-line-edit {
+    background-position: -441px -42px
+}
+
+.zui-icon-chart-line-error {
+    background-position: -462px -42px
+}
+
+.zui-icon-chart-line-link {
+    background-position: -483px -42px
+}
+
+.zui-icon-chart-line {
+    background-position: -504px -42px
+}
+
+.zui-icon-chart-organisation-add {
+    background-position: -525px -42px
+}
+
+.zui-icon-chart-organisation-delete {
+    background-position: -546px -42px
+}
+
+.zui-icon-chart-organisation {
+    background-position: -567px -42px
+}
+
+.zui-icon-chart-pie-add {
+    background-position: -588px -42px
+}
+
+.zui-icon-chart-pie-delete {
+    background-position: -609px -42px
+}
+
+.zui-icon-chart-pie-edit {
+    background-position: -630px -42px
+}
+
+.zui-icon-chart-pie-error {
+    background-position: -651px -42px
+}
+
+.zui-icon-chart-pie-link {
+    background-position: -672px -42px
+}
+
+.zui-icon-chart-pie {
+    background-position: -693px -42px
+}
+
+.zui-icon-clock-add {
+    background-position: -714px -42px
+}
+
+.zui-icon-clock-delete {
+    background-position: -735px -42px
+}
+
+.zui-icon-clock-edit {
+    background-position: -756px -42px
+}
+
+.zui-icon-clock-error {
+    background-position: -777px -42px
+}
+
+.zui-icon-clock-go {
+    background-position: -798px -42px
+}
+
+.zui-icon-clock-link {
+    background-position: -819px -42px
+}
+
+.zui-icon-clock-pause {
+    background-position: -840px -42px
+}
+
+.zui-icon-clock-play {
+    background-position: -861px -42px
+}
+
+.zui-icon-clock-red {
+    background-position: -882px -42px
+}
+
+.zui-icon-clock-stop {
+    background-position: -903px -42px
+}
+
+.zui-icon-clock {
+    background-position: -924px -42px
+}
+
+.zui-icon-cog-add {
+    background-position: -945px -42px
+}
+
+.zui-icon-cog-delete {
+    background-position: -966px -42px
+}
+
+.zui-icon-cog-edit {
+    background-position: -987px -42px
+}
+
+.zui-icon-cog-error {
+    background-position: -1008px -42px
+}
+
+.zui-icon-cog-go {
+    background-position: -1029px -42px
+}
+
+.zui-icon-cog {
+    background-position: -1050px -42px
+}
+
+.zui-icon-coins-add {
+    background-position: -1071px -42px
+}
+
+.zui-icon-coins-delete {
+    background-position: -1092px -42px
+}
+
+.zui-icon-coins {
+    background-position: -1113px -42px
+}
+
+.zui-icon-color-swatch {
+    background-position: -1134px -42px
+}
+
+.zui-icon-color-wheel {
+    background-position: -1155px -42px
+}
+
+.zui-icon-comment-add {
+    background-position: -1176px -42px
+}
+
+.zui-icon-comment-delete {
+    background-position: -1197px -42px
+}
+
+.zui-icon-comment-edit {
+    background-position: -1218px -42px
+}
+
+.zui-icon-comment {
+    background-position: -1239px -42px
+}
+
+.zui-icon-comments-add {
+    background-position: -1260px -42px
+}
+
+.zui-icon-comments-delete {
+    background-position: -1281px -42px
+}
+
+.zui-icon-comments {
+    background-position: -1302px -42px
+}
+
+.zui-icon-compress {
+    background-position: -1323px -42px
+}
+
+.zui-icon-computer-add {
+    background-position: -1344px -42px
+}
+
+.zui-icon-computer-delete {
+    background-position: -1365px -42px
+}
+
+.zui-icon-computer-edit {
+    background-position: -1386px -42px
+}
+
+.zui-icon-computer-error {
+    background-position: -1407px -42px
+}
+
+.zui-icon-computer-go {
+    background-position: -1428px -42px
+}
+
+.zui-icon-computer-key {
+    background-position: -1449px -42px
+}
+
+.zui-icon-computer-link {
+    background-position: -1470px -42px
+}
+
+.zui-icon-computer {
+    background-position: -1491px -42px
+}
+
+.zui-icon-connect {
+    background-position: -1512px -42px
+}
+
+.zui-icon-contrast-decrease {
+    background-position: -1533px -42px
+}
+
+.zui-icon-contrast-high {
+    background-position: -1554px -42px
+}
+
+.zui-icon-contrast-increase {
+    background-position: -1575px -42px
+}
+
+.zui-icon-contrast-low {
+    background-position: -1596px -42px
+}
+
+.zui-icon-contrast {
+    background-position: -1617px -42px
+}
+
+.zui-icon-control-eject-blue {
+    background-position: -1638px -42px
+}
+
+.zui-icon-control-eject {
+    background-position: -1659px -42px
+}
+
+.zui-icon-control-end-blue {
+    background-position: -1680px -42px
+}
+
+.zui-icon-control-end {
+    background-position: -1701px -42px
+}
+
+.zui-icon-control-equalizer-blue {
+    background-position: -1722px -42px
+}
+
+.zui-icon-control-equalizer {
+    background-position: -1743px -42px
+}
+
+.zui-icon-control-fastforward-blue {
+    background-position: -1764px -42px
+}
+
+.zui-icon-control-fastforward {
+    background-position: -1785px -42px
+}
+
+.zui-icon-control-pause-blue {
+    background-position: -1806px -42px
+}
+
+.zui-icon-control-pause {
+    background-position: -1827px -42px
+}
+
+.zui-icon-control-play-blue {
+    background-position: -1848px -42px
+}
+
+.zui-icon-control-play {
+    background-position: -1869px -42px
+}
+
+.zui-icon-control-repeat-blue {
+    background-position: -1890px -42px
+}
+
+.zui-icon-control-repeat {
+    background-position: -1911px -42px
+}
+
+.zui-icon-control-rewind-blue {
+    background-position: -1932px -42px
+}
+
+.zui-icon-control-rewind {
+    background-position: -1953px -42px
+}
+
+.zui-icon-control-start-blue {
+    background-position: -1974px -42px
+}
+
+.zui-icon-control-start {
+    background-position: 0 -63px
+}
+
+.zui-icon-control-stop-blue {
+    background-position: -21px -63px
+}
+
+.zui-icon-control-stop {
+    background-position: -42px -63px
+}
+
+.zui-icon-controller-add {
+    background-position: -63px -63px
+}
+
+.zui-icon-controller-delete {
+    background-position: -84px -63px
+}
+
+.zui-icon-controller-error {
+    background-position: -105px -63px
+}
+
+.zui-icon-controller {
+    background-position: -126px -63px
+}
+
+.zui-icon-creditcards {
+    background-position: -147px -63px
+}
+
+.zui-icon-cross {
+    background-position: -168px -63px
+}
+
+.zui-icon-css-add {
+    background-position: -189px -63px
+}
+
+.zui-icon-css-delete {
+    background-position: -210px -63px
+}
+
+.zui-icon-css-go {
+    background-position: -231px -63px
+}
+
+.zui-icon-css-valid {
+    background-position: -252px -63px
+}
+
+.zui-icon-css {
+    background-position: -273px -63px
+}
+
+.zui-icon-cup-add {
+    background-position: -294px -63px
+}
+
+.zui-icon-cup-delete {
+    background-position: -315px -63px
+}
+
+.zui-icon-cup-edit {
+    background-position: -336px -63px
+}
+
+.zui-icon-cup-error {
+    background-position: -357px -63px
+}
+
+.zui-icon-cup-go {
+    background-position: -378px -63px
+}
+
+.zui-icon-cup-key {
+    background-position: -399px -63px
+}
+
+.zui-icon-cup-link {
+    background-position: -420px -63px
+}
+
+.zui-icon-cup {
+    background-position: -441px -63px
+}
+
+.zui-icon-cursor {
+    background-position: -462px -63px
+}
+
+.zui-icon-cut-red {
+    background-position: -483px -63px
+}
+
+.zui-icon-cut {
+    background-position: -504px -63px
+}
+
+.zui-icon-database-add {
+    background-position: -525px -63px
+}
+
+.zui-icon-database-connect {
+    background-position: -546px -63px
+}
+
+.zui-icon-database-delete {
+    background-position: -567px -63px
+}
+
+.zui-icon-database-edit {
+    background-position: -588px -63px
+}
+
+.zui-icon-database-error {
+    background-position: -609px -63px
+}
+
+.zui-icon-database-gear {
+    background-position: -630px -63px
+}
+
+.zui-icon-database-go {
+    background-position: -651px -63px
+}
+
+.zui-icon-database-key {
+    background-position: -672px -63px
+}
+
+.zui-icon-database-lightning {
+    background-position: -693px -63px
+}
+
+.zui-icon-database-link {
+    background-position: -714px -63px
+}
+
+.zui-icon-database-refresh {
+    background-position: -735px -63px
+}
+
+.zui-icon-database-save {
+    background-position: -756px -63px
+}
+
+.zui-icon-database-table {
+    background-position: -777px -63px
+}
+
+.zui-icon-database {
+    background-position: -798px -63px
+}
+
+.zui-icon-date-add {
+    background-position: -819px -63px
+}
+
+.zui-icon-date-delete {
+    background-position: -840px -63px
+}
+
+.zui-icon-date-edit {
+    background-position: -861px -63px
+}
+
+.zui-icon-date-error {
+    background-position: -882px -63px
+}
+
+.zui-icon-date-go {
+    background-position: -903px -63px
+}
+
+.zui-icon-date-link {
+    background-position: -924px -63px
+}
+
+.zui-icon-date-magnify {
+    background-position: -945px -63px
+}
+
+.zui-icon-date-next {
+    background-position: -966px -63px
+}
+
+.zui-icon-date-previous {
+    background-position: -987px -63px
+}
+
+.zui-icon-date {
+    background-position: -1008px -63px
+}
+
+.zui-icon-delete {
+    background-position: -1029px -63px
+}
+
+.zui-icon-disconnect {
+    background-position: -1050px -63px
+}
+
+.zui-icon-disk-multiple {
+    background-position: -1071px -63px
+}
+
+.zui-icon-disk {
+    background-position: -1092px -63px
+}
+
+.zui-icon-door-in {
+    background-position: -1113px -63px
+}
+
+.zui-icon-door-open {
+    background-position: -1134px -63px
+}
+
+.zui-icon-door-out {
+    background-position: -1155px -63px
+}
+
+.zui-icon-door {
+    background-position: -1176px -63px
+}
+
+.zui-icon-drink-empty {
+    background-position: -1197px -63px
+}
+
+.zui-icon-drink {
+    background-position: -1218px -63px
+}
+
+.zui-icon-drive-add {
+    background-position: -1239px -63px
+}
+
+.zui-icon-drive-burn {
+    background-position: -1260px -63px
+}
+
+.zui-icon-drive-cd-empty {
+    background-position: -1281px -63px
+}
+
+.zui-icon-drive-cd {
+    background-position: -1302px -63px
+}
+
+.zui-icon-drive-delete {
+    background-position: -1323px -63px
+}
+
+.zui-icon-drive-disk {
+    background-position: -1344px -63px
+}
+
+.zui-icon-drive-edit {
+    background-position: -1365px -63px
+}
+
+.zui-icon-drive-error {
+    background-position: -1386px -63px
+}
+
+.zui-icon-drive-go {
+    background-position: -1407px -63px
+}
+
+.zui-icon-drive-key {
+    background-position: -1428px -63px
+}
+
+.zui-icon-drive-link {
+    background-position: -1449px -63px
+}
+
+.zui-icon-drive-magnify {
+    background-position: -1470px -63px
+}
+
+.zui-icon-drive-network {
+    background-position: -1491px -63px
+}
+
+.zui-icon-drive-rename {
+    background-position: -1512px -63px
+}
+
+.zui-icon-drive-user {
+    background-position: -1533px -63px
+}
+
+.zui-icon-drive-web {
+    background-position: -1554px -63px
+}
+
+.zui-icon-drive {
+    background-position: -1575px -63px
+}
+
+.zui-icon-dvd-add {
+    background-position: -1596px -63px
+}
+
+.zui-icon-dvd-delete {
+    background-position: -1617px -63px
+}
+
+.zui-icon-dvd-edit {
+    background-position: -1638px -63px
+}
+
+.zui-icon-dvd-error {
+    background-position: -1659px -63px
+}
+
+.zui-icon-dvd-go {
+    background-position: -1680px -63px
+}
+
+.zui-icon-dvd-key {
+    background-position: -1701px -63px
+}
+
+.zui-icon-dvd-link {
+    background-position: -1722px -63px
+}
+
+.zui-icon-dvd {
+    background-position: -1743px -63px
+}
+
+.zui-icon-email-add {
+    background-position: -1764px -63px
+}
+
+.zui-icon-email-attach {
+    background-position: -1785px -63px
+}
+
+.zui-icon-email-delete {
+    background-position: -1806px -63px
+}
+
+.zui-icon-email-edit {
+    background-position: -1827px -63px
+}
+
+.zui-icon-email-error {
+    background-position: -1848px -63px
+}
+
+.zui-icon-email-go {
+    background-position: -1869px -63px
+}
+
+.zui-icon-email-link {
+    background-position: -1890px -63px
+}
+
+.zui-icon-email-open-image {
+    background-position: -1911px -63px
+}
+
+.zui-icon-email-open {
+    background-position: -1932px -63px
+}
+
+.zui-icon-email {
+    background-position: -1953px -63px
+}
+
+.zui-icon-emoticon-evilgrin {
+    background-position: -1974px -63px
+}
+
+.zui-icon-emoticon-grin {
+    background-position: 0 -84px
+}
+
+.zui-icon-emoticon-happy {
+    background-position: -21px -84px
+}
+
+.zui-icon-emoticon-smile {
+    background-position: -42px -84px
+}
+
+.zui-icon-emoticon-surprised {
+    background-position: -63px -84px
+}
+
+.zui-icon-emoticon-tongue {
+    background-position: -84px -84px
+}
+
+.zui-icon-emoticon-unhappy {
+    background-position: -105px -84px
+}
+
+.zui-icon-emoticon-waii {
+    background-position: -126px -84px
+}
+
+.zui-icon-emoticon-wink {
+    background-position: -147px -84px
+}
+
+.zui-icon-error-add {
+    background-position: -168px -84px
+}
+
+.zui-icon-error-delete {
+    background-position: -189px -84px
+}
+
+.zui-icon-error-go {
+    background-position: -210px -84px
+}
+
+.zui-icon-error {
+    background-position: -231px -84px
+}
+
+.zui-icon-exclamation {
+    background-position: -252px -84px
+}
+
+.zui-icon-eye {
+    background-position: -273px -84px
+}
+
+.zui-icon-feed-add {
+    background-position: -294px -84px
+}
+
+.zui-icon-feed-delete {
+    background-position: -315px -84px
+}
+
+.zui-icon-feed-disk {
+    background-position: -336px -84px
+}
+
+.zui-icon-feed-edit {
+    background-position: -357px -84px
+}
+
+.zui-icon-feed-error {
+    background-position: -378px -84px
+}
+
+.zui-icon-feed-go {
+    background-position: -399px -84px
+}
+
+.zui-icon-feed-key {
+    background-position: -420px -84px
+}
+
+.zui-icon-feed-link {
+    background-position: -441px -84px
+}
+
+.zui-icon-feed-magnify {
+    background-position: -462px -84px
+}
+
+.zui-icon-feed {
+    background-position: -483px -84px
+}
+
+.zui-icon-female {
+    background-position: -504px -84px
+}
+
+.zui-icon-film-add {
+    background-position: -525px -84px
+}
+
+.zui-icon-film-delete {
+    background-position: -546px -84px
+}
+
+.zui-icon-film-edit {
+    background-position: -567px -84px
+}
+
+.zui-icon-film-error {
+    background-position: -588px -84px
+}
+
+.zui-icon-film-go {
+    background-position: -609px -84px
+}
+
+.zui-icon-film-key {
+    background-position: -630px -84px
+}
+
+.zui-icon-film-link {
+    background-position: -651px -84px
+}
+
+.zui-icon-film-save {
+    background-position: -672px -84px
+}
+
+.zui-icon-film {
+    background-position: -693px -84px
+}
+
+.zui-icon-find {
+    background-position: -714px -84px
+}
+
+.zui-icon-flag-blue {
+    background-position: -735px -84px
+}
+
+.zui-icon-flag-green {
+    background-position: -756px -84px
+}
+
+.zui-icon-flag-orange {
+    background-position: -777px -84px
+}
+
+.zui-icon-flag-pink {
+    background-position: -798px -84px
+}
+
+.zui-icon-flag-purple {
+    background-position: -819px -84px
+}
+
+.zui-icon-flag-red {
+    background-position: -840px -84px
+}
+
+.zui-icon-flag-yellow {
+    background-position: -861px -84px
+}
+
+.zui-icon-folder-add {
+    background-position: -882px -84px
+}
+
+.zui-icon-folder-bell {
+    background-position: -903px -84px
+}
+
+.zui-icon-folder-brick {
+    background-position: -924px -84px
+}
+
+.zui-icon-folder-bug {
+    background-position: -945px -84px
+}
+
+.zui-icon-folder-camera {
+    background-position: -966px -84px
+}
+
+.zui-icon-folder-database {
+    background-position: -987px -84px
+}
+
+.zui-icon-folder-delete {
+    background-position: -1008px -84px
+}
+
+.zui-icon-folder-edit {
+    background-position: -1029px -84px
+}
+
+.zui-icon-folder-error {
+    background-position: -1050px -84px
+}
+
+.zui-icon-folder-explore {
+    background-position: -1071px -84px
+}
+
+.zui-icon-folder-feed {
+    background-position: -1092px -84px
+}
+
+.zui-icon-folder-find {
+    background-position: -1113px -84px
+}
+
+.zui-icon-folder-go {
+    background-position: -1134px -84px
+}
+
+.zui-icon-folder-heart {
+    background-position: -1155px -84px
+}
+
+.zui-icon-folder-image {
+    background-position: -1176px -84px
+}
+
+.zui-icon-folder-key {
+    background-position: -1197px -84px
+}
+
+.zui-icon-folder-lightbulb {
+    background-position: -1218px -84px
+}
+
+.zui-icon-folder-link {
+    background-position: -1239px -84px
+}
+
+.zui-icon-folder-magnify {
+    background-position: -1260px -84px
+}
+
+.zui-icon-folder-page-white {
+    background-position: -1281px -84px
+}
+
+.zui-icon-folder-page {
+    background-position: -1302px -84px
+}
+
+.zui-icon-folder-palette {
+    background-position: -1323px -84px
+}
+
+.zui-icon-folder-picture {
+    background-position: -1344px -84px
+}
+
+.zui-icon-folder-star {
+    background-position: -1365px -84px
+}
+
+.zui-icon-folder-table {
+    background-position: -1386px -84px
+}
+
+.zui-icon-folder-user {
+    background-position: -1407px -84px
+}
+
+.zui-icon-folder-wrench {
+    background-position: -1428px -84px
+}
+
+.zui-icon-folder {
+    background-position: -1449px -84px
+}
+
+.zui-icon-font-add {
+    background-position: -1470px -84px
+}
+
+.zui-icon-font-delete {
+    background-position: -1491px -84px
+}
+
+.zui-icon-font-go {
+    background-position: -1512px -84px
+}
+
+.zui-icon-font {
+    background-position: -1533px -84px
+}
+
+.zui-icon-group-add {
+    background-position: -1554px -84px
+}
+
+.zui-icon-group-delete {
+    background-position: -1575px -84px
+}
+
+.zui-icon-group-edit {
+    background-position: -1596px -84px
+}
+
+.zui-icon-group-error {
+    background-position: -1617px -84px
+}
+
+.zui-icon-group-gear {
+    background-position: -1638px -84px
+}
+
+.zui-icon-group-go {
+    background-position: -1659px -84px
+}
+
+.zui-icon-group-key {
+    background-position: -1680px -84px
+}
+
+.zui-icon-group-link {
+    background-position: -1701px -84px
+}
+
+.zui-icon-group {
+    background-position: -1722px -84px
+}
+
+.zui-icon-heart-add {
+    background-position: -1743px -84px
+}
+
+.zui-icon-heart-delete {
+    background-position: -1764px -84px
+}
+
+.zui-icon-heart {
+    background-position: -1785px -84px
+}
+
+.zui-icon-help {
+    background-position: -1806px -84px
+}
+
+.zui-icon-hourglass-add {
+    background-position: -1827px -84px
+}
+
+.zui-icon-hourglass-delete {
+    background-position: -1848px -84px
+}
+
+.zui-icon-hourglass-go {
+    background-position: -1869px -84px
+}
+
+.zui-icon-hourglass-link {
+    background-position: -1890px -84px
+}
+
+.zui-icon-hourglass {
+    background-position: -1911px -84px
+}
+
+.zui-icon-house-go {
+    background-position: -1932px -84px
+}
+
+.zui-icon-house-link {
+    background-position: -1953px -84px
+}
+
+.zui-icon-house {
+    background-position: -1974px -84px
+}
+
+.zui-icon-html-add {
+    background-position: 0 -105px
+}
+
+.zui-icon-html-delete {
+    background-position: -21px -105px
+}
+
+.zui-icon-html-go {
+    background-position: -42px -105px
+}
+
+.zui-icon-html-valid {
+    background-position: -63px -105px
+}
+
+.zui-icon-html {
+    background-position: -84px -105px
+}
+
+.zui-icon-image-add {
+    background-position: -105px -105px
+}
+
+.zui-icon-image-delete {
+    background-position: -126px -105px
+}
+
+.zui-icon-image-edit {
+    background-position: -147px -105px
+}
+
+.zui-icon-image-link {
+    background-position: -168px -105px
+}
+
+.zui-icon-image {
+    background-position: -189px -105px
+}
+
+.zui-icon-images {
+    background-position: -210px -105px
+}
+
+.zui-icon-information {
+    background-position: -231px -105px
+}
+
+.zui-icon-ipod-cast-add {
+    background-position: -252px -105px
+}
+
+.zui-icon-ipod-cast-delete {
+    background-position: -273px -105px
+}
+
+.zui-icon-ipod-cast {
+    background-position: -294px -105px
+}
+
+.zui-icon-ipod-sound {
+    background-position: -315px -105px
+}
+
+.zui-icon-ipod {
+    background-position: -336px -105px
+}
+
+.zui-icon-joystick-add {
+    background-position: -357px -105px
+}
+
+.zui-icon-joystick-delete {
+    background-position: -378px -105px
+}
+
+.zui-icon-joystick-error {
+    background-position: -399px -105px
+}
+
+.zui-icon-joystick {
+    background-position: -420px -105px
+}
+
+.zui-icon-key-add {
+    background-position: -441px -105px
+}
+
+.zui-icon-key-delete {
+    background-position: -462px -105px
+}
+
+.zui-icon-key-go {
+    background-position: -483px -105px
+}
+
+.zui-icon-key {
+    background-position: -504px -105px
+}
+
+.zui-icon-keyboard-add {
+    background-position: -525px -105px
+}
+
+.zui-icon-keyboard-delete {
+    background-position: -546px -105px
+}
+
+.zui-icon-keyboard-magnify {
+    background-position: -567px -105px
+}
+
+.zui-icon-keyboard {
+    background-position: -588px -105px
+}
+
+.zui-icon-layers {
+    background-position: -609px -105px
+}
+
+.zui-icon-layout-add {
+    background-position: -630px -105px
+}
+
+.zui-icon-layout-content {
+    background-position: -651px -105px
+}
+
+.zui-icon-layout-delete {
+    background-position: -672px -105px
+}
+
+.zui-icon-layout-edit {
+    background-position: -693px -105px
+}
+
+.zui-icon-layout-error {
+    background-position: -714px -105px
+}
+
+.zui-icon-layout-header {
+    background-position: -735px -105px
+}
+
+.zui-icon-layout-link {
+    background-position: -756px -105px
+}
+
+.zui-icon-layout-sidebar {
+    background-position: -777px -105px
+}
+
+.zui-icon-layout {
+    background-position: -798px -105px
+}
+
+.zui-icon-lightbulb-add {
+    background-position: -819px -105px
+}
+
+.zui-icon-lightbulb-delete {
+    background-position: -840px -105px
+}
+
+.zui-icon-lightbulb-off {
+    background-position: -861px -105px
+}
+
+.zui-icon-lightbulb {
+    background-position: -882px -105px
+}
+
+.zui-icon-lightning-add {
+    background-position: -903px -105px
+}
+
+.zui-icon-lightning-delete {
+    background-position: -924px -105px
+}
+
+.zui-icon-lightning-go {
+    background-position: -945px -105px
+}
+
+.zui-icon-lightning {
+    background-position: -966px -105px
+}
+
+.zui-icon-link-add {
+    background-position: -987px -105px
+}
+
+.zui-icon-link-break {
+    background-position: -1008px -105px
+}
+
+.zui-icon-link-delete {
+    background-position: -1029px -105px
+}
+
+.zui-icon-link-edit {
+    background-position: -1050px -105px
+}
+
+.zui-icon-link-error {
+    background-position: -1071px -105px
+}
+
+.zui-icon-link-go {
+    background-position: -1092px -105px
+}
+
+.zui-icon-link {
+    background-position: -1113px -105px
+}
+
+.zui-icon-lock-add {
+    background-position: -1134px -105px
+}
+
+.zui-icon-lock-break {
+    background-position: -1155px -105px
+}
+
+.zui-icon-lock-delete {
+    background-position: -1176px -105px
+}
+
+.zui-icon-lock-edit {
+    background-position: -1197px -105px
+}
+
+.zui-icon-lock-go {
+    background-position: -1218px -105px
+}
+
+.zui-icon-lock-open {
+    background-position: -1239px -105px
+}
+
+.zui-icon-lock {
+    background-position: -1260px -105px
+}
+
+.zui-icon-lorry-add {
+    background-position: -1281px -105px
+}
+
+.zui-icon-lorry-delete {
+    background-position: -1302px -105px
+}
+
+.zui-icon-lorry-error {
+    background-position: -1323px -105px
+}
+
+.zui-icon-lorry-flatbed {
+    background-position: -1344px -105px
+}
+
+.zui-icon-lorry-go {
+    background-position: -1365px -105px
+}
+
+.zui-icon-lorry-link {
+    background-position: -1386px -105px
+}
+
+.zui-icon-lorry {
+    background-position: -1407px -105px
+}
+
+.zui-icon-magifier-zoom-out {
+    background-position: -1428px -105px
+}
+
+.zui-icon-magnifier-zoom-in {
+    background-position: -1449px -105px
+}
+
+.zui-icon-magnifier {
+    background-position: -1470px -105px
+}
+
+.zui-icon-male {
+    background-position: -1491px -105px
+}
+
+.zui-icon-map-add {
+    background-position: -1512px -105px
+}
+
+.zui-icon-map-delete {
+    background-position: -1533px -105px
+}
+
+.zui-icon-map-edit {
+    background-position: -1554px -105px
+}
+
+.zui-icon-map-go {
+    background-position: -1575px -105px
+}
+
+.zui-icon-map-magnify {
+    background-position: -1596px -105px
+}
+
+.zui-icon-map {
+    background-position: -1617px -105px
+}
+
+.zui-icon-medal-bronze-1 {
+    background-position: -1638px -105px
+}
+
+.zui-icon-medal-bronze-2 {
+    background-position: -1659px -105px
+}
+
+.zui-icon-medal-bronze-3 {
+    background-position: -1680px -105px
+}
+
+.zui-icon-medal-bronze-add {
+    background-position: -1701px -105px
+}
+
+.zui-icon-medal-bronze-delete {
+    background-position: -1722px -105px
+}
+
+.zui-icon-medal-gold-1 {
+    background-position: -1743px -105px
+}
+
+.zui-icon-medal-gold-2 {
+    background-position: -1764px -105px
+}
+
+.zui-icon-medal-gold-3 {
+    background-position: -1785px -105px
+}
+
+.zui-icon-medal-gold-add {
+    background-position: -1806px -105px
+}
+
+.zui-icon-medal-gold-delete {
+    background-position: -1827px -105px
+}
+
+.zui-icon-medal-silver-1 {
+    background-position: -1848px -105px
+}
+
+.zui-icon-medal-silver-2 {
+    background-position: -1869px -105px
+}
+
+.zui-icon-medal-silver-3 {
+    background-position: -1890px -105px
+}
+
+.zui-icon-medal-silver-add {
+    background-position: -1911px -105px
+}
+
+.zui-icon-medal-silver-delete {
+    background-position: -1932px -105px
+}
+
+.zui-icon-money-add {
+    background-position: -1953px -105px
+}
+
+.zui-icon-money-delete {
+    background-position: -1974px -105px
+}
+
+.zui-icon-money-dollar {
+    background-position: 0 -126px
+}
+
+.zui-icon-money-euro {
+    background-position: -21px -126px
+}
+
+.zui-icon-money-pound {
+    background-position: -42px -126px
+}
+
+.zui-icon-money-yen {
+    background-position: -63px -126px
+}
+
+.zui-icon-money {
+    background-position: -84px -126px
+}
+
+.zui-icon-monitor-add {
+    background-position: -105px -126px
+}
+
+.zui-icon-monitor-delete {
+    background-position: -126px -126px
+}
+
+.zui-icon-monitor-edit {
+    background-position: -147px -126px
+}
+
+.zui-icon-monitor-error {
+    background-position: -168px -126px
+}
+
+.zui-icon-monitor-go {
+    background-position: -189px -126px
+}
+
+.zui-icon-monitor-lightning {
+    background-position: -210px -126px
+}
+
+.zui-icon-monitor-link {
+    background-position: -231px -126px
+}
+
+.zui-icon-monitor {
+    background-position: -252px -126px
+}
+
+.zui-icon-mouse-add {
+    background-position: -273px -126px
+}
+
+.zui-icon-mouse-delete {
+    background-position: -294px -126px
+}
+
+.zui-icon-mouse-error {
+    background-position: -315px -126px
+}
+
+.zui-icon-mouse {
+    background-position: -336px -126px
+}
+
+.zui-icon-music {
+    background-position: -357px -126px
+}
+
+.zui-icon-new {
+    background-position: -378px -126px
+}
+
+.zui-icon-newspaper-add {
+    background-position: -399px -126px
+}
+
+.zui-icon-newspaper-delete {
+    background-position: -420px -126px
+}
+
+.zui-icon-newspaper-go {
+    background-position: -441px -126px
+}
+
+.zui-icon-newspaper-link {
+    background-position: -462px -126px
+}
+
+.zui-icon-newspaper {
+    background-position: -483px -126px
+}
+
+.zui-icon-note-add {
+    background-position: -504px -126px
+}
+
+.zui-icon-note-delete {
+    background-position: -525px -126px
+}
+
+.zui-icon-note-edit {
+    background-position: -546px -126px
+}
+
+.zui-icon-note-error {
+    background-position: -567px -126px
+}
+
+.zui-icon-note-go {
+    background-position: -588px -126px
+}
+
+.zui-icon-note {
+    background-position: -609px -126px
+}
+
+.zui-icon-overlays {
+    background-position: -630px -126px
+}
+
+.zui-icon-package-add {
+    background-position: -651px -126px
+}
+
+.zui-icon-package-delete {
+    background-position: -672px -126px
+}
+
+.zui-icon-package-go {
+    background-position: -693px -126px
+}
+
+.zui-icon-package-green {
+    background-position: -714px -126px
+}
+
+.zui-icon-package-link {
+    background-position: -735px -126px
+}
+
+.zui-icon-package {
+    background-position: -756px -126px
+}
+
+.zui-icon-page-add {
+    background-position: -777px -126px
+}
+
+.zui-icon-page-attach {
+    background-position: -798px -126px
+}
+
+.zui-icon-page-code {
+    background-position: -819px -126px
+}
+
+.zui-icon-page-copy {
+    background-position: -840px -126px
+}
+
+.zui-icon-page-delete {
+    background-position: -861px -126px
+}
+
+.zui-icon-page-edit {
+    background-position: -882px -126px
+}
+
+.zui-icon-page-error {
+    background-position: -903px -126px
+}
+
+.zui-icon-page-excel {
+    background-position: -924px -126px
+}
+
+.zui-icon-page-find {
+    background-position: -945px -126px
+}
+
+.zui-icon-page-gear {
+    background-position: -966px -126px
+}
+
+.zui-icon-page-go {
+    background-position: -987px -126px
+}
+
+.zui-icon-page-green {
+    background-position: -1008px -126px
+}
+
+.zui-icon-page-key {
+    background-position: -1029px -126px
+}
+
+.zui-icon-page-lightning {
+    background-position: -1050px -126px
+}
+
+.zui-icon-page-link {
+    background-position: -1071px -126px
+}
+
+.zui-icon-page-paintbrush {
+    background-position: -1092px -126px
+}
+
+.zui-icon-page-paste {
+    background-position: -1113px -126px
+}
+
+.zui-icon-page-red {
+    background-position: -1134px -126px
+}
+
+.zui-icon-page-refresh {
+    background-position: -1155px -126px
+}
+
+.zui-icon-page-save {
+    background-position: -1176px -126px
+}
+
+.zui-icon-page-white-acrobat {
+    background-position: -1197px -126px
+}
+
+.zui-icon-page-white-actionscript {
+    background-position: -1218px -126px
+}
+
+.zui-icon-page-white-add {
+    background-position: -1239px -126px
+}
+
+.zui-icon-page-white-c {
+    background-position: -1260px -126px
+}
+
+.zui-icon-page-white-camera {
+    background-position: -1281px -126px
+}
+
+.zui-icon-page-white-cd {
+    background-position: -1302px -126px
+}
+
+.zui-icon-page-white-code-red {
+    background-position: -1323px -126px
+}
+
+.zui-icon-page-white-code {
+    background-position: -1344px -126px
+}
+
+.zui-icon-page-white-coldfusion {
+    background-position: -1365px -126px
+}
+
+.zui-icon-page-white-compressed {
+    background-position: -1386px -126px
+}
+
+.zui-icon-page-white-copy {
+    background-position: -1407px -126px
+}
+
+.zui-icon-page-white-cplusplus {
+    background-position: -1428px -126px
+}
+
+.zui-icon-page-white-csharp {
+    background-position: -1449px -126px
+}
+
+.zui-icon-page-white-cup {
+    background-position: -1470px -126px
+}
+
+.zui-icon-page-white-database {
+    background-position: -1491px -126px
+}
+
+.zui-icon-page-white-delete {
+    background-position: -1512px -126px
+}
+
+.zui-icon-page-white-dvd {
+    background-position: -1533px -126px
+}
+
+.zui-icon-page-white-edit {
+    background-position: -1554px -126px
+}
+
+.zui-icon-page-white-error {
+    background-position: -1575px -126px
+}
+
+.zui-icon-page-white-excel {
+    background-position: -1596px -126px
+}
+
+.zui-icon-page-white-find {
+    background-position: -1617px -126px
+}
+
+.zui-icon-page-white-flash {
+    background-position: -1638px -126px
+}
+
+.zui-icon-page-white-freehand {
+    background-position: -1659px -126px
+}
+
+.zui-icon-page-white-gear {
+    background-position: -1680px -126px
+}
+
+.zui-icon-page-white-get {
+    background-position: -1701px -126px
+}
+
+.zui-icon-page-white-go {
+    background-position: -1722px -126px
+}
+
+.zui-icon-page-white-h {
+    background-position: -1743px -126px
+}
+
+.zui-icon-page-white-horizontal {
+    background-position: -1764px -126px
+}
+
+.zui-icon-page-white-key {
+    background-position: -1785px -126px
+}
+
+.zui-icon-page-white-lightning {
+    background-position: -1806px -126px
+}
+
+.zui-icon-page-white-link {
+    background-position: -1827px -126px
+}
+
+.zui-icon-page-white-magnify {
+    background-position: -1848px -126px
+}
+
+.zui-icon-page-white-medal {
+    background-position: -1869px -126px
+}
+
+.zui-icon-page-white-office {
+    background-position: -1890px -126px
+}
+
+.zui-icon-page-white-paint {
+    background-position: -1911px -126px
+}
+
+.zui-icon-page-white-paintbrush {
+    background-position: -1932px -126px
+}
+
+.zui-icon-page-white-paste {
+    background-position: -1953px -126px
+}
+
+.zui-icon-page-white-php {
+    background-position: -1974px -126px
+}
+
+.zui-icon-page-white-picture {
+    background-position: 0 -147px
+}
+
+.zui-icon-page-white-powerpoint {
+    background-position: -21px -147px
+}
+
+.zui-icon-page-white-put {
+    background-position: -42px -147px
+}
+
+.zui-icon-page-white-ruby {
+    background-position: -63px -147px
+}
+
+.zui-icon-page-white-stack {
+    background-position: -84px -147px
+}
+
+.zui-icon-page-white-star {
+    background-position: -105px -147px
+}
+
+.zui-icon-page-white-swoosh {
+    background-position: -126px -147px
+}
+
+.zui-icon-page-white-text-width {
+    background-position: -147px -147px
+}
+
+.zui-icon-page-white-text {
+    background-position: -168px -147px
+}
+
+.zui-icon-page-white-tux {
+    background-position: -189px -147px
+}
+
+.zui-icon-page-white-vector {
+    background-position: -210px -147px
+}
+
+.zui-icon-page-white-visualstudio {
+    background-position: -231px -147px
+}
+
+.zui-icon-page-white-width {
+    background-position: -252px -147px
+}
+
+.zui-icon-page-white-word {
+    background-position: -273px -147px
+}
+
+.zui-icon-page-white-world {
+    background-position: -294px -147px
+}
+
+.zui-icon-page-white-wrench {
+    background-position: -315px -147px
+}
+
+.zui-icon-page-white-zip {
+    background-position: -336px -147px
+}
+
+.zui-icon-page-white {
+    background-position: -357px -147px
+}
+
+.zui-icon-page-word {
+    background-position: -378px -147px
+}
+
+.zui-icon-page-world {
+    background-position: -399px -147px
+}
+
+.zui-icon-page {
+    background-position: -420px -147px
+}
+
+.zui-icon-paintbrush {
+    background-position: -441px -147px
+}
+
+.zui-icon-paintcan {
+    background-position: -462px -147px
+}
+
+.zui-icon-palette {
+    background-position: -483px -147px
+}
+
+.zui-icon-paste-plain {
+    background-position: -504px -147px
+}
+
+.zui-icon-paste-word {
+    background-position: -525px -147px
+}
+
+.zui-icon-pencil-add {
+    background-position: -546px -147px
+}
+
+.zui-icon-pencil-delete {
+    background-position: -567px -147px
+}
+
+.zui-icon-pencil-go {
+    background-position: -588px -147px
+}
+
+.zui-icon-pencil {
+    background-position: -609px -147px
+}
+
+.zui-icon-phone-add {
+    background-position: -630px -147px
+}
+
+.zui-icon-phone-delete {
+    background-position: -651px -147px
+}
+
+.zui-icon-phone-sound {
+    background-position: -672px -147px
+}
+
+.zui-icon-phone {
+    background-position: -693px -147px
+}
+
+.zui-icon-photo-add {
+    background-position: -714px -147px
+}
+
+.zui-icon-photo-delete {
+    background-position: -735px -147px
+}
+
+.zui-icon-photo-link {
+    background-position: -756px -147px
+}
+
+.zui-icon-photo {
+    background-position: -777px -147px
+}
+
+.zui-icon-photos {
+    background-position: -798px -147px
+}
+
+.zui-icon-picture-add {
+    background-position: -819px -147px
+}
+
+.zui-icon-picture-delete {
+    background-position: -840px -147px
+}
+
+.zui-icon-picture-edit {
+    background-position: -861px -147px
+}
+
+.zui-icon-picture-empty {
+    background-position: -882px -147px
+}
+
+.zui-icon-picture-error {
+    background-position: -903px -147px
+}
+
+.zui-icon-picture-go {
+    background-position: -924px -147px
+}
+
+.zui-icon-picture-key {
+    background-position: -945px -147px
+}
+
+.zui-icon-picture-link {
+    background-position: -966px -147px
+}
+
+.zui-icon-picture-save {
+    background-position: -987px -147px
+}
+
+.zui-icon-picture {
+    background-position: -1008px -147px
+}
+
+.zui-icon-pictures {
+    background-position: -1029px -147px
+}
+
+.zui-icon-pilcrow {
+    background-position: -1050px -147px
+}
+
+.zui-icon-pill-add {
+    background-position: -1071px -147px
+}
+
+.zui-icon-pill-delete {
+    background-position: -1092px -147px
+}
+
+.zui-icon-pill-go {
+    background-position: -1113px -147px
+}
+
+.zui-icon-pill {
+    background-position: -1134px -147px
+}
+
+.zui-icon-plugin-add {
+    background-position: -1155px -147px
+}
+
+.zui-icon-plugin-delete {
+    background-position: -1176px -147px
+}
+
+.zui-icon-plugin-disabled {
+    background-position: -1197px -147px
+}
+
+.zui-icon-plugin-edit {
+    background-position: -1218px -147px
+}
+
+.zui-icon-plugin-error {
+    background-position: -1239px -147px
+}
+
+.zui-icon-plugin-go {
+    background-position: -1260px -147px
+}
+
+.zui-icon-plugin-link {
+    background-position: -1281px -147px
+}
+
+.zui-icon-plugin {
+    background-position: -1302px -147px
+}
+
+.zui-icon-printer-add {
+    background-position: -1323px -147px
+}
+
+.zui-icon-printer-delete {
+    background-position: -1344px -147px
+}
+
+.zui-icon-printer-empty {
+    background-position: -1365px -147px
+}
+
+.zui-icon-printer-error {
+    background-position: -1386px -147px
+}
+
+.zui-icon-printer {
+    background-position: -1407px -147px
+}
+
+.zui-icon-rainbow {
+    background-position: -1428px -147px
+}
+
+.zui-icon-report-add {
+    background-position: -1449px -147px
+}
+
+.zui-icon-report-delete {
+    background-position: -1470px -147px
+}
+
+.zui-icon-report-disk {
+    background-position: -1491px -147px
+}
+
+.zui-icon-report-edit {
+    background-position: -1512px -147px
+}
+
+.zui-icon-report-go {
+    background-position: -1533px -147px
+}
+
+.zui-icon-report-key {
+    background-position: -1554px -147px
+}
+
+.zui-icon-report-link {
+    background-position: -1575px -147px
+}
+
+.zui-icon-report-magnify {
+    background-position: -1596px -147px
+}
+
+.zui-icon-report-picture {
+    background-position: -1617px -147px
+}
+
+.zui-icon-report-user {
+    background-position: -1638px -147px
+}
+
+.zui-icon-report-word {
+    background-position: -1659px -147px
+}
+
+.zui-icon-report {
+    background-position: -1680px -147px
+}
+
+.zui-icon-resultset-first {
+    background-position: -1701px -147px
+}
+
+.zui-icon-resultset-last {
+    background-position: -1722px -147px
+}
+
+.zui-icon-resultset-next {
+    background-position: -1743px -147px
+}
+
+.zui-icon-resultset-previous {
+    background-position: -1764px -147px
+}
+
+.zui-icon-rosette {
+    background-position: -1785px -147px
+}
+
+.zui-icon-rss-add {
+    background-position: -1806px -147px
+}
+
+.zui-icon-rss-delete {
+    background-position: -1827px -147px
+}
+
+.zui-icon-rss-go {
+    background-position: -1848px -147px
+}
+
+.zui-icon-rss-valid {
+    background-position: -1869px -147px
+}
+
+.zui-icon-rss {
+    background-position: -1890px -147px
+}
+
+.zui-icon-ruby-add {
+    background-position: -1911px -147px
+}
+
+.zui-icon-ruby-delete {
+    background-position: -1932px -147px
+}
+
+.zui-icon-ruby-gear {
+    background-position: -1953px -147px
+}
+
+.zui-icon-ruby-get {
+    background-position: -1974px -147px
+}
+
+.zui-icon-ruby-go {
+    background-position: 0 -168px
+}
+
+.zui-icon-ruby-key {
+    background-position: -21px -168px
+}
+
+.zui-icon-ruby-link {
+    background-position: -42px -168px
+}
+
+.zui-icon-ruby-put {
+    background-position: -63px -168px
+}
+
+.zui-icon-ruby {
+    background-position: -84px -168px
+}
+
+.zui-icon-script-add {
+    background-position: -105px -168px
+}
+
+.zui-icon-script-code-red {
+    background-position: -126px -168px
+}
+
+.zui-icon-script-code {
+    background-position: -147px -168px
+}
+
+.zui-icon-script-delete {
+    background-position: -168px -168px
+}
+
+.zui-icon-script-edit {
+    background-position: -189px -168px
+}
+
+.zui-icon-script-error {
+    background-position: -210px -168px
+}
+
+.zui-icon-script-gear {
+    background-position: -231px -168px
+}
+
+.zui-icon-script-go {
+    background-position: -252px -168px
+}
+
+.zui-icon-script-key {
+    background-position: -273px -168px
+}
+
+.zui-icon-script-lightning {
+    background-position: -294px -168px
+}
+
+.zui-icon-script-link {
+    background-position: -315px -168px
+}
+
+.zui-icon-script-palette {
+    background-position: -336px -168px
+}
+
+.zui-icon-script-save {
+    background-position: -357px -168px
+}
+
+.zui-icon-script {
+    background-position: -378px -168px
+}
+
+.zui-icon-server-add {
+    background-position: -399px -168px
+}
+
+.zui-icon-server-chart {
+    background-position: -420px -168px
+}
+
+.zui-icon-server-compressed {
+    background-position: -441px -168px
+}
+
+.zui-icon-server-connect {
+    background-position: -462px -168px
+}
+
+.zui-icon-server-database {
+    background-position: -483px -168px
+}
+
+.zui-icon-server-delete {
+    background-position: -504px -168px
+}
+
+.zui-icon-server-edit {
+    background-position: -525px -168px
+}
+
+.zui-icon-server-error {
+    background-position: -546px -168px
+}
+
+.zui-icon-server-go {
+    background-position: -567px -168px
+}
+
+.zui-icon-server-key {
+    background-position: -588px -168px
+}
+
+.zui-icon-server-lightning {
+    background-position: -609px -168px
+}
+
+.zui-icon-server-link {
+    background-position: -630px -168px
+}
+
+.zui-icon-server-uncompressed {
+    background-position: -651px -168px
+}
+
+.zui-icon-server {
+    background-position: -672px -168px
+}
+
+.zui-icon-shading {
+    background-position: -693px -168px
+}
+
+.zui-icon-shape-align-bottom {
+    background-position: -714px -168px
+}
+
+.zui-icon-shape-align-center {
+    background-position: -735px -168px
+}
+
+.zui-icon-shape-align-left {
+    background-position: -756px -168px
+}
+
+.zui-icon-shape-align-middle {
+    background-position: -777px -168px
+}
+
+.zui-icon-shape-align-right {
+    background-position: -798px -168px
+}
+
+.zui-icon-shape-align-top {
+    background-position: -819px -168px
+}
+
+.zui-icon-shape-flip-horizontal {
+    background-position: -840px -168px
+}
+
+.zui-icon-shape-flip-vertical {
+    background-position: -861px -168px
+}
+
+.zui-icon-shape-group {
+    background-position: -882px -168px
+}
+
+.zui-icon-shape-handles {
+    background-position: -903px -168px
+}
+
+.zui-icon-shape-move-back {
+    background-position: -924px -168px
+}
+
+.zui-icon-shape-move-backwards {
+    background-position: -945px -168px
+}
+
+.zui-icon-shape-move-forwards {
+    background-position: -966px -168px
+}
+
+.zui-icon-shape-move-front {
+    background-position: -987px -168px
+}
+
+.zui-icon-shape-rotate-anticlockwise {
+    background-position: -1008px -168px
+}
+
+.zui-icon-shape-rotate-clockwise {
+    background-position: -1029px -168px
+}
+
+.zui-icon-shape-square-add {
+    background-position: -1050px -168px
+}
+
+.zui-icon-shape-square-delete {
+    background-position: -1071px -168px
+}
+
+.zui-icon-shape-square-edit {
+    background-position: -1092px -168px
+}
+
+.zui-icon-shape-square-error {
+    background-position: -1113px -168px
+}
+
+.zui-icon-shape-square-go {
+    background-position: -1134px -168px
+}
+
+.zui-icon-shape-square-key {
+    background-position: -1155px -168px
+}
+
+.zui-icon-shape-square-link {
+    background-position: -1176px -168px
+}
+
+.zui-icon-shape-square {
+    background-position: -1197px -168px
+}
+
+.zui-icon-shape-ungroup {
+    background-position: -1218px -168px
+}
+
+.zui-icon-shield-add {
+    background-position: -1239px -168px
+}
+
+.zui-icon-shield-delete {
+    background-position: -1260px -168px
+}
+
+.zui-icon-shield-go {
+    background-position: -1281px -168px
+}
+
+.zui-icon-shield {
+    background-position: -1302px -168px
+}
+
+.zui-icon-sitemap-color {
+    background-position: -1323px -168px
+}
+
+.zui-icon-sitemap {
+    background-position: -1344px -168px
+}
+
+.zui-icon-sound-add {
+    background-position: -1365px -168px
+}
+
+.zui-icon-sound-delete {
+    background-position: -1386px -168px
+}
+
+.zui-icon-sound-low {
+    background-position: -1407px -168px
+}
+
+.zui-icon-sound-mute {
+    background-position: -1428px -168px
+}
+
+.zui-icon-sound-none {
+    background-position: -1449px -168px
+}
+
+.zui-icon-sound {
+    background-position: -1470px -168px
+}
+
+.zui-icon-spellcheck {
+    background-position: -1491px -168px
+}
+
+.zui-icon-sport-8ball {
+    background-position: -1512px -168px
+}
+
+.zui-icon-sport-basketball {
+    background-position: -1533px -168px
+}
+
+.zui-icon-sport-football {
+    background-position: -1554px -168px
+}
+
+.zui-icon-sport-golf {
+    background-position: -1575px -168px
+}
+
+.zui-icon-sport-raquet {
+    background-position: -1596px -168px
+}
+
+.zui-icon-sport-shuttlecock {
+    background-position: -1617px -168px
+}
+
+.zui-icon-sport-soccer {
+    background-position: -1638px -168px
+}
+
+.zui-icon-sport-tennis {
+    background-position: -1659px -168px
+}
+
+.zui-icon-star {
+    background-position: -1680px -168px
+}
+
+.zui-icon-status-away {
+    background-position: -1701px -168px
+}
+
+.zui-icon-status-busy {
+    background-position: -1722px -168px
+}
+
+.zui-icon-status-offline {
+    background-position: -1743px -168px
+}
+
+.zui-icon-status-online {
+    background-position: -1764px -168px
+}
+
+.zui-icon-stop {
+    background-position: -1785px -168px
+}
+
+.zui-icon-style-add {
+    background-position: -1806px -168px
+}
+
+.zui-icon-style-delete {
+    background-position: -1827px -168px
+}
+
+.zui-icon-style-edit {
+    background-position: -1848px -168px
+}
+
+.zui-icon-style-go {
+    background-position: -1869px -168px
+}
+
+.zui-icon-style {
+    background-position: -1890px -168px
+}
+
+.zui-icon-sum {
+    background-position: -1911px -168px
+}
+
+.zui-icon-tab-add {
+    background-position: -1932px -168px
+}
+
+.zui-icon-tab-delete {
+    background-position: -1953px -168px
+}
+
+.zui-icon-tab-edit {
+    background-position: -1974px -168px
+}
+
+.zui-icon-tab-go {
+    background-position: 0 -189px
+}
+
+.zui-icon-tab {
+    background-position: -21px -189px
+}
+
+.zui-icon-table-add {
+    background-position: -42px -189px
+}
+
+.zui-icon-table-delete {
+    background-position: -63px -189px
+}
+
+.zui-icon-table-edit {
+    background-position: -84px -189px
+}
+
+.zui-icon-table-error {
+    background-position: -105px -189px
+}
+
+.zui-icon-table-gear {
+    background-position: -126px -189px
+}
+
+.zui-icon-table-go {
+    background-position: -147px -189px
+}
+
+.zui-icon-table-key {
+    background-position: -168px -189px
+}
+
+.zui-icon-table-lightning {
+    background-position: -189px -189px
+}
+
+.zui-icon-table-link {
+    background-position: -210px -189px
+}
+
+.zui-icon-table-multiple {
+    background-position: -231px -189px
+}
+
+.zui-icon-table-refresh {
+    background-position: -252px -189px
+}
+
+.zui-icon-table-relationship {
+    background-position: -273px -189px
+}
+
+.zui-icon-table-row-delete {
+    background-position: -294px -189px
+}
+
+.zui-icon-table-row-insert {
+    background-position: -315px -189px
+}
+
+.zui-icon-table-save {
+    background-position: -336px -189px
+}
+
+.zui-icon-table-sort {
+    background-position: -357px -189px
+}
+
+.zui-icon-table {
+    background-position: -378px -189px
+}
+
+.zui-icon-tag-blue-add {
+    background-position: -399px -189px
+}
+
+.zui-icon-tag-blue-delete {
+    background-position: -420px -189px
+}
+
+.zui-icon-tag-blue-edit {
+    background-position: -441px -189px
+}
+
+.zui-icon-tag-blue {
+    background-position: -462px -189px
+}
+
+.zui-icon-tag-green {
+    background-position: -483px -189px
+}
+
+.zui-icon-tag-orange {
+    background-position: -504px -189px
+}
+
+.zui-icon-tag-pink {
+    background-position: -525px -189px
+}
+
+.zui-icon-tag-purple {
+    background-position: -546px -189px
+}
+
+.zui-icon-tag-red {
+    background-position: -567px -189px
+}
+
+.zui-icon-tag-yellow {
+    background-position: -588px -189px
+}
+
+.zui-icon-tag {
+    background-position: -609px -189px
+}
+
+.zui-icon-telephone-add {
+    background-position: -630px -189px
+}
+
+.zui-icon-telephone-delete {
+    background-position: -651px -189px
+}
+
+.zui-icon-telephone-edit {
+    background-position: -672px -189px
+}
+
+.zui-icon-telephone-error {
+    background-position: -693px -189px
+}
+
+.zui-icon-telephone-go {
+    background-position: -714px -189px
+}
+
+.zui-icon-telephone-key {
+    background-position: -735px -189px
+}
+
+.zui-icon-telephone-link {
+    background-position: -756px -189px
+}
+
+.zui-icon-telephone {
+    background-position: -777px -189px
+}
+
+.zui-icon-television-add {
+    background-position: -798px -189px
+}
+
+.zui-icon-television-delete {
+    background-position: -819px -189px
+}
+
+.zui-icon-television {
+    background-position: -840px -189px
+}
+
+.zui-icon-text-align-center {
+    background-position: -861px -189px
+}
+
+.zui-icon-text-align-justify {
+    background-position: -882px -189px
+}
+
+.zui-icon-text-align-left {
+    background-position: -903px -189px
+}
+
+.zui-icon-text-align-right {
+    background-position: -924px -189px
+}
+
+.zui-icon-text-allcaps {
+    background-position: -945px -189px
+}
+
+.zui-icon-text-bold {
+    background-position: -966px -189px
+}
+
+.zui-icon-text-columns {
+    background-position: -987px -189px
+}
+
+.zui-icon-text-dropcaps {
+    background-position: -1008px -189px
+}
+
+.zui-icon-text-heading-1 {
+    background-position: -1029px -189px
+}
+
+.zui-icon-text-heading-2 {
+    background-position: -1050px -189px
+}
+
+.zui-icon-text-heading-3 {
+    background-position: -1071px -189px
+}
+
+.zui-icon-text-heading-4 {
+    background-position: -1092px -189px
+}
+
+.zui-icon-text-heading-5 {
+    background-position: -1113px -189px
+}
+
+.zui-icon-text-heading-6 {
+    background-position: -1134px -189px
+}
+
+.zui-icon-text-horizontalrule {
+    background-position: -1155px -189px
+}
+
+.zui-icon-text-indent-remove {
+    background-position: -1176px -189px
+}
+
+.zui-icon-text-indent {
+    background-position: -1197px -189px
+}
+
+.zui-icon-text-italic {
+    background-position: -1218px -189px
+}
+
+.zui-icon-text-kerning {
+    background-position: -1239px -189px
+}
+
+.zui-icon-text-letter-omega {
+    background-position: -1260px -189px
+}
+
+.zui-icon-text-letterspacing {
+    background-position: -1281px -189px
+}
+
+.zui-icon-text-linespacing {
+    background-position: -1302px -189px
+}
+
+.zui-icon-text-list-bullets {
+    background-position: -1323px -189px
+}
+
+.zui-icon-text-list-numbers {
+    background-position: -1344px -189px
+}
+
+.zui-icon-text-lowercase {
+    background-position: -1365px -189px
+}
+
+.zui-icon-text-padding-bottom {
+    background-position: -1386px -189px
+}
+
+.zui-icon-text-padding-left {
+    background-position: -1407px -189px
+}
+
+.zui-icon-text-padding-right {
+    background-position: -1428px -189px
+}
+
+.zui-icon-text-padding-top {
+    background-position: -1449px -189px
+}
+
+.zui-icon-text-replace {
+    background-position: -1470px -189px
+}
+
+.zui-icon-text-signature {
+    background-position: -1491px -189px
+}
+
+.zui-icon-text-smallcaps {
+    background-position: -1512px -189px
+}
+
+.zui-icon-text-strikethrough {
+    background-position: -1533px -189px
+}
+
+.zui-icon-text-subscript {
+    background-position: -1554px -189px
+}
+
+.zui-icon-text-superscript {
+    background-position: -1575px -189px
+}
+
+.zui-icon-text-underline {
+    background-position: -1596px -189px
+}
+
+.zui-icon-text-uppercase {
+    background-position: -1617px -189px
+}
+
+.zui-icon-textfield-add {
+    background-position: -1638px -189px
+}
+
+.zui-icon-textfield-delete {
+    background-position: -1659px -189px
+}
+
+.zui-icon-textfield-key {
+    background-position: -1680px -189px
+}
+
+.zui-icon-textfield-rename {
+    background-position: -1701px -189px
+}
+
+.zui-icon-textfield {
+    background-position: -1722px -189px
+}
+
+.zui-icon-thumb-down {
+    background-position: -1743px -189px
+}
+
+.zui-icon-thumb-up {
+    background-position: -1764px -189px
+}
+
+.zui-icon-tick {
+    background-position: -1785px -189px
+}
+
+.zui-icon-time-add {
+    background-position: -1806px -189px
+}
+
+.zui-icon-time-delete {
+    background-position: -1827px -189px
+}
+
+.zui-icon-time-go {
+    background-position: -1848px -189px
+}
+
+.zui-icon-time {
+    background-position: -1869px -189px
+}
+
+.zui-icon-timeline-marker {
+    background-position: -1890px -189px
+}
+
+.zui-icon-transmit-add {
+    background-position: -1911px -189px
+}
+
+.zui-icon-transmit-blue {
+    background-position: -1932px -189px
+}
+
+.zui-icon-transmit-delete {
+    background-position: -1953px -189px
+}
+
+.zui-icon-transmit-edit {
+    background-position: -1974px -189px
+}
+
+.zui-icon-transmit-error {
+    background-position: 0 -210px
+}
+
+.zui-icon-transmit-go {
+    background-position: -21px -210px
+}
+
+.zui-icon-transmit {
+    background-position: -42px -210px
+}
+
+.zui-icon-tux {
+    background-position: -63px -210px
+}
+
+.zui-icon-user-add {
+    background-position: -84px -210px
+}
+
+.zui-icon-user-comment {
+    background-position: -105px -210px
+}
+
+.zui-icon-user-delete {
+    background-position: -126px -210px
+}
+
+.zui-icon-user-edit {
+    background-position: -147px -210px
+}
+
+.zui-icon-user-female {
+    background-position: -168px -210px
+}
+
+.zui-icon-user-go {
+    background-position: -189px -210px
+}
+
+.zui-icon-user-gray {
+    background-position: -210px -210px
+}
+
+.zui-icon-user-green {
+    background-position: -231px -210px
+}
+
+.zui-icon-user-orange {
+    background-position: -252px -210px
+}
+
+.zui-icon-user-red {
+    background-position: -273px -210px
+}
+
+.zui-icon-user-suit {
+    background-position: -294px -210px
+}
+
+.zui-icon-user {
+    background-position: -315px -210px
+}
+
+.zui-icon-vcard-add {
+    background-position: -336px -210px
+}
+
+.zui-icon-vcard-delete {
+    background-position: -357px -210px
+}
+
+.zui-icon-vcard-edit {
+    background-position: -378px -210px
+}
+
+.zui-icon-vcard {
+    background-position: -399px -210px
+}
+
+.zui-icon-vector-add {
+    background-position: -420px -210px
+}
+
+.zui-icon-vector-delete {
+    background-position: -441px -210px
+}
+
+.zui-icon-vector {
+    background-position: -462px -210px
+}
+
+.zui-icon-wand {
+    background-position: -483px -210px
+}
+
+.zui-icon-weather-clouds {
+    background-position: -504px -210px
+}
+
+.zui-icon-weather-cloudy {
+    background-position: -525px -210px
+}
+
+.zui-icon-weather-lightning {
+    background-position: -546px -210px
+}
+
+.zui-icon-weather-rain {
+    background-position: -567px -210px
+}
+
+.zui-icon-weather-snow {
+    background-position: -588px -210px
+}
+
+.zui-icon-weather-sun {
+    background-position: -609px -210px
+}
+
+.zui-icon-webcam-add {
+    background-position: -630px -210px
+}
+
+.zui-icon-webcam-delete {
+    background-position: -651px -210px
+}
+
+.zui-icon-webcam-error {
+    background-position: -672px -210px
+}
+
+.zui-icon-webcam {
+    background-position: -693px -210px
+}
+
+.zui-icon-world-add {
+    background-position: -714px -210px
+}
+
+.zui-icon-world-delete {
+    background-position: -735px -210px
+}
+
+.zui-icon-world-edit {
+    background-position: -756px -210px
+}
+
+.zui-icon-world-go {
+    background-position: -777px -210px
+}
+
+.zui-icon-world-link {
+    background-position: -798px -210px
+}
+
+.zui-icon-world {
+    background-position: -819px -210px
+}
+
+.zui-icon-wrench-orange {
+    background-position: -840px -210px
+}
+
+.zui-icon-wrench {
+    background-position: -861px -210px
+}
+
+.zui-icon-xhtml-add {
+    background-position: -882px -210px
+}
+
+.zui-icon-xhtml-delete {
+    background-position: -903px -210px
+}
+
+.zui-icon-xhtml-go {
+    background-position: -924px -210px
+}
+
+.zui-icon-xhtml-valid {
+    background-position: -945px -210px
+}
+
+.zui-icon-xhtml {
+    background-position: -966px -210px
+}
+
+.zui-icon-zoom-in {
+    background-position: -987px -210px
+}
+
+.zui-icon-zoom-out {
+    background-position: -1008px -210px
+}
+
+.zui-icon-zoom {
+    background-position: -1029px -210px
+} 
