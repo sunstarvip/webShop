@@ -13,19 +13,18 @@ import javax.servlet.http.HttpServletRequest;
  * Created by Administrator on 2015/8/29.
  */
 @Controller
-@RequestMapping(value = "webShop/system")
 public class ShopSystemController {
     /**
      * 日志操作对象
      */
     private final Logger logger = LoggerFactory.getLogger(ShopSystemController.class);
 
-    @RequestMapping(value={"indexPage"}, method={RequestMethod.GET})
+    @RequestMapping(value={"indexPage", "webShop/system/indexPage"}, method={RequestMethod.GET})
     public String indexPage() {
         return "webShop/system/indexPage";
     }
 
-    @RequestMapping(value={"loginPage"}, method={RequestMethod.GET})
+    @RequestMapping(value={"loginPage", "webShop/system/loginPage"}, method={RequestMethod.GET})
     public String loginPage(HttpServletRequest request, Model model, String targetUri) {
         // 将目标页面地址传递至登录页面，登录成功后继续访问目标页面
         model.addAttribute("targetUri", targetUri);
