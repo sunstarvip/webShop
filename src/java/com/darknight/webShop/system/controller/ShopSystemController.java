@@ -13,12 +13,13 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created by Administrator on 2015/8/31.
  */
 @RestController
-@RequestMapping(value = "webShop/system")
 public class ShopSystemController {
     private ShopSystemService shopSystemService;
 
@@ -44,7 +45,9 @@ public class ShopSystemController {
                 resultData.setStatus(ResultEntity.Status.SUCCESS);
 
                 // 将登陆信息保存至Session
-                session.setAttribute("merchantAccount", merchantAccount);
+                Map loginUser = new HashMap();
+                loginUser.put("merchantAccount", merchantAccount);
+                session.setAttribute("loginUser", loginUser);
             }
         }
 

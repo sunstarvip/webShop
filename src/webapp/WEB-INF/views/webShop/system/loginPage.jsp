@@ -20,7 +20,7 @@
 </body>
 <script>
     function loginForm() {
-        $.post("${ctx }/webShop/system/login",
+        $.post("${ctx }/login",
                 {
                     'accountName': $('#accountName').val(),
                     'accountPwd': $('#accountPwd').val()
@@ -29,7 +29,7 @@
                     if(!!resultData) {
                         resultData = eval('(' + resultData + ')');
                         if(!!resultData['status'] && resultData['status'] == 'success') {
-                            window.location.href = "${ctx }/indexPage";
+                            window.location.href = "${ctx }${targetUri }";
                         }
                     }
                 });

@@ -13,7 +13,7 @@
 <div class="" id="header">
     <%--<button class="" id="registerBtn" type="button">注册</button>--%>
     <button class="" id="loginBtn" type="button">登录</button>
-    ${merchantAccount}
+    ${loginUser.merchantAccount}
 </div>
 
 </body>

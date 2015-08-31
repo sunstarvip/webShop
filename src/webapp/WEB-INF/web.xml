@@ -60,7 +60,24 @@
         <url-pattern>/*</url-pattern>
     </filter-mapping>
 
-    <!--自定义Filter-->
+    <!-- 自定义Filter -->
+    <!-- 登录判断Filter -->
+    <filter>
+        <filter-name>loginFilter</filter-name>
+        <filter-class>com.darknight.webShop.system.filter.LonginFilter</filter-class>
+        <!--<init-param>-->
+            <!--<param-name>excludedUrl</param-name>-->
+            <!--<param-value>/static/*</param-value>-->
+        <!--</init-param>-->
+    </filter>
+    <filter-mapping>
+        <filter-name>loginFilter</filter-name>
+        <url-pattern>/indexPage</url-pattern>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>loginFilter</filter-name>
+        <url-pattern>/webShop/*</url-pattern>
+    </filter-mapping>
 
     <!-- Spring MVC Servlet -->
     <servlet>
@@ -89,19 +106,19 @@
 
     <!-- 出错页面定义 -->
     <!--<error-page>-->
-    <!--<exception-type>java.lang.Throwable</exception-type>-->
-    <!--<location>/WEB-INF/views/error/500.jsp</location>-->
+        <!--<exception-type>java.lang.Throwable</exception-type>-->
+        <!--<location>/WEB-INF/views/base/404.jsp</location>-->
     <!--</error-page>-->
     <!--<error-page>-->
-    <!--<error-code>500</error-code>-->
-    <!--<location>/WEB-INF/views/error/500.jsp</location>-->
+        <!--<error-code>500</error-code>-->
+        <!--<location>/WEB-INF/views/base/404.jsp</location>-->
     <!--</error-page>-->
     <!--<error-page>-->
-    <!--<error-code>400</error-code>-->
-    <!--<location>/WEB-INF/views/error/400.jsp</location>-->
+        <!--<error-code>404</error-code>-->
+        <!--<location>/WEB-INF/views/base/404.jsp</location>-->
     <!--</error-page>-->
     <!--<error-page>-->
-    <!--<error-code>403</error-code>-->
-    <!--<location>/WEB-INF/views/error/403.jsp</location>-->
+        <!--<error-code>403</error-code>-->
+        <!--<location>/WEB-INF/views/base/404.jsp</location>-->
     <!--</error-page>-->
 </web-app>

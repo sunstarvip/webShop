@@ -24,7 +24,7 @@ public class ShopSystemPageController {
         return "webShop/system/indexPage";
     }
 
-    @RequestMapping(value={"loginPage", "webShop/system/loginPage"}, method={RequestMethod.GET})
+    @RequestMapping(value={"loginPage"}, method={RequestMethod.GET})
     public String loginPage(HttpServletRequest request, Model model, String targetUri) {
         // 将目标页面地址传递至登录页面，登录成功后继续访问目标页面
         model.addAttribute("targetUri", targetUri);
