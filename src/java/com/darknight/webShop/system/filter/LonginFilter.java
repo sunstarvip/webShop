@@ -33,6 +33,7 @@ public class LonginFilter implements Filter {
                 String loginId = loginUser.get("merchantAccount").toString();
                 if(StringUtils.isNotBlank(loginId)) {
                     filterChain.doFilter(servletRequest, servletResponse);
+                    return;
                 }
             }
         }
