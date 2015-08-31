@@ -62,7 +62,15 @@ function formSubmit(action, method, target, formObj) {
  * @param url 请求URL
  * @param data 请求参数，JSON格式
  */
-function getSync(url, data) {
+function getSync() {
+    var url = null;
+    var data = null;
+    if(arguments.length == 1) {
+        url = arguments[0];
+    }else if(arguments.length == 2) {
+        url = arguments[0];
+        data = arguments[1];
+    }
     $.ajax({
         type : "GET",
         async: false,
@@ -75,20 +83,19 @@ function getSync(url, data) {
 }
 
 /**
- * 提交同步无参GET请求，并返回请求结果
- * @param url 请求URL
- * @returns {*}
- */
-function getSync(url) {
-    return getSync(url, null);
-}
-
-/**
  * 提交同步POST请求，并返回请求结果
  * @param url 请求URL
  * @param data 请求参数，JSON格式
  */
-function postSync(url, data) {
+function postSync() {
+    var url = null;
+    var data = null;
+    if(arguments.length == 1) {
+        url = arguments[0];
+    }else if(arguments.length == 2) {
+        url = arguments[0];
+        data = arguments[1];
+    }
     $.ajax({
         type : "POST",
         async: false,
@@ -98,15 +105,6 @@ function postSync(url, data) {
             return resultData;
         }
     });
-}
-
-/**
- * 提交同步无参POST请求，并返回请求结果
- * @param url 请求URL
- * @returns {*}
- */
-function postSync(url) {
-    return postSync(url, null);
 }
 
 /**
