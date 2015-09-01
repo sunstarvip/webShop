@@ -31,7 +31,17 @@ public class ShopSystemPageController {
     }
 
     @RequestMapping(value={"loginPage"}, method={RequestMethod.GET})
-    public String loginPage(HttpServletRequest request, Model model, String targetUri) {
+    public String loginPage(String targetUri, HttpServletRequest request, Model model, HttpSession session) {
+        // 当已登录用户进入登录页面时
+        if(session.getAttribute("loginUser") != null) {
+            // 若存在目标跳转页面则进行跳转
+            if(StringUtils.isNotBlank(targetUri)) {
+                return "redirect:" + targetUri;
+            }else {  // 若不存在目标跳转页面则跳转至首页
+                return "redirect:indexPage";
+            }
+        }
+        // 未登录用户进入登录页面时
         // 将目标页面地址传递至登录页面，登录成功后继续访问目标页面
         model.addAttribute("targetUri", targetUri);
         return "webShop/system/loginPage";
