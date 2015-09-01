@@ -33,7 +33,7 @@ public class ShopSystemPageController {
     @RequestMapping(value={"loginPage"}, method={RequestMethod.GET})
     public String loginPage(String targetUri, HttpServletRequest request, Model model, HttpSession session) {
         // 当已登录用户进入登录页面时
-        if(session.getAttribute("loginUser") != null) {
+        if(session.getAttribute("loginUserInfo") != null) {
             // 若存在目标跳转页面则进行跳转
             if(StringUtils.isNotBlank(targetUri)) {
                 return "redirect:" + targetUri;

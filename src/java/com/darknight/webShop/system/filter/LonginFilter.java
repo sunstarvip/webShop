@@ -1,5 +1,7 @@
 package com.darknight.webShop.system.filter;
 
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
 import org.apache.commons.lang3.StringUtils;
 
 import javax.servlet.*;
@@ -27,10 +29,10 @@ public class LonginFilter implements Filter {
         HttpServletRequest request = (HttpServletRequest)servletRequest;
         HttpSession session = request.getSession();
 
-        if(session != null && session.getAttribute("loginUser") != null) {
-            Map loginUser = (Map)session.getAttribute("loginUser");
-            if(loginUser.get("merchantAccount") != null) {
-                String loginId = loginUser.get("merchantAccount").toString();
+        if(session != null && session.getAttribute("loginUserInfo") != null) {
+            JSONObject loginUserJson = JSON.parseObject(session.getAttribute("loginUserInfo").toString());
+            if(loginUserJson.get("merchantAccount") != null) {
+                String loginId = loginUserJson.get("merchantAccount").toString();
                 if(StringUtils.isNotBlank(loginId)) {
                     filterChain.doFilter(servletRequest, servletResponse);
                     return;

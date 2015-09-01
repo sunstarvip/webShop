@@ -47,7 +47,8 @@ public class ShopSystemController {
                 // 将登陆信息保存至Session
                 Map loginUser = new HashMap();
                 loginUser.put("merchantAccount", merchantAccount);
-                session.setAttribute("loginUser", loginUser);
+                String loginUserInfo = JSON.toJSONString(loginUser);
+                session.setAttribute("loginUserInfo", loginUserInfo);
             }
         }
 
