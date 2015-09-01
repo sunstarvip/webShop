@@ -8,13 +8,26 @@
     <meta charset="UTF-8">
     <title>登录页</title>
     <script type="text/javascript" src="${ctx }/static/plugins/jQuery/jQuery2.x/jquery-2.1.3.min.js"></script>
+    <style>
+        .form-item {
+            margin: 5px;
+        }
+    </style>
 </head>
 <body>
     <div class="" id="loginForm">
-        <input class="" id="accountName" placeholder="">
-        <input class="" id="accountPwd" placeholder="">
-        <button class="" id="submitBtn" type="button">提交</button>
-        <button class="" id="resetBtn" type="button">清除</button>
+        <div class="form-item">
+            <label for="accountName">账号：</label>
+            <input class="" id="accountName" placeholder="">
+        </div>
+        <div class="form-item">
+            <label for="accountPwd">密码：</label>
+            <input class="" id="accountPwd" placeholder="">
+        </div>
+        <div class="form-item">
+            <button class="" id="submitBtn" type="button">提交</button>
+            <button class="" id="resetBtn" type="button">清除</button>
+        </div>
     </div>
     <script>
         function loginForm() {
