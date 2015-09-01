@@ -2,6 +2,7 @@ package com.darknight.webShop.system.controller;
 
 import com.alibaba.fastjson.JSON;
 import com.darknight.core.base.entity.ResultEntity;
+import com.darknight.webShop.merchant.entity.Merchant;
 import com.darknight.webShop.system.service.ShopSystemService;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
@@ -39,14 +40,13 @@ public class ShopSystemController {
 
         if(StringUtils.isNotBlank(accountName) && StringUtils.isNotBlank(accountPwd)) {
             // 使用店家账号密码进行登录
-            String merchantAccount = shopSystemService.loginMerchant(accountName, accountPwd);
+            Merchant merchant = shopSystemService.loginMerchant(accountName, accountPwd);
             // 当店家账号不为空时代表登录成功
-            if(StringUtils.isNotBlank(merchantAccount)) {
+            if(merchant != null) {
                 resultData.setStatus(ResultEntity.Status.SUCCESS);
 
                 // 将登陆信息保存至Session
-                Map loginUser = new HashMap();
-                loginUser.put("merchantAccount", merchantAccount);
+                Map loginUser = shopSystemService.getLoginUserMap(merchant);
                 String loginUserInfo = JSON.toJSONString(loginUser);
                 session.setAttribute("loginUserInfo", loginUserInfo);
             }

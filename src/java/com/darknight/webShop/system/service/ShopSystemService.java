@@ -1,9 +1,26 @@
 package com.darknight.webShop.system.service;
 
 
+import com.darknight.webShop.merchant.entity.Merchant;
+
+import java.util.Map;
+
 /**
  * Created by Administrator on 2015/8/31.
  */
 public interface ShopSystemService {
-    String loginMerchant(String accountName, String accountPwd);
+    /**
+     * 店主用户登录并返回其对象
+     * @param accountName 用户账号
+     * @param accountPwd 用户密码
+     * @return
+     */
+    Merchant loginMerchant(String accountName, String accountPwd);
+
+    /**
+     * 将店主对象实体生成登录用户信息Map
+     * @param merchant 店主对象实体
+     * @return
+     */
+    Map getLoginUserMap(Merchant merchant);
 }

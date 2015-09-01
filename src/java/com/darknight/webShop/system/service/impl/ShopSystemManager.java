@@ -8,6 +8,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created by Administrator on 2015/8/31.
@@ -22,16 +24,38 @@ public class ShopSystemManager implements ShopSystemService {
         this.merchantService = merchantService;
     }
 
+    /**
+     * 店主用户登录并返回其对象
+     * @param accountName 用户账号
+     * @param accountPwd 用户密码
+     * @return
+     */
     @Override
-    public String loginMerchant(String accountName, String accountPwd) {
-        String merchantAccount = null;
+    public Merchant loginMerchant(String accountName, String accountPwd) {
         Merchant merchant = merchantService.findVisibleMerchantByAccountName(accountName);
         if(merchant != null) {
             if(StringUtils.equals(accountPwd, merchant.getAccountPwd())) {
-                merchantAccount = merchant.getAccountName();
+                return merchant;
             }
         }
 
-        return merchantAccount;
+        return null;
+    }
+
+    /**
+     * 将店主对象实体生成登录用户信息Map
+     * @param merchant 店主对象实体
+     * @return
+     */
+    @Override
+    public Map getLoginUserMap(Merchant merchant) {
+        Map loginUser = new HashMap();
+        loginUser.put("merchantAccount", merchant.getAccountName());
+        loginUser.put("merchantName", merchant.getName());
+        loginUser.put("merchantEmail", merchant.getEmailAddress());
+        loginUser.put("merchantContactNum", merchant.getContactNum());
+        loginUser.put("merchantDescription", merchant.getDescription());
+
+        return loginUser;
     }
 }
