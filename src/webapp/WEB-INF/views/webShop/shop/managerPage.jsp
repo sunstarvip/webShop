@@ -13,6 +13,13 @@
         .shop-pic {
             width: 10em;
             height: 10em;
+            margin: 5px;
+        }
+        .shop-info-content {
+            margin: 5px;
+        }
+        .shop-func-content {
+            margin: 5px;
         }
     </style>
 </head>
@@ -37,6 +44,7 @@
             </div>
             <div class="shop-func">
                 <div class="shop-func-content">
+                    <div id="goodsDisplay">未知</div>
                     <button class="" id="displayBtn">修改</button>
                 </div>
             </div>
@@ -51,8 +59,8 @@
         shopInfo = {};
 
         function initShopInfo() {
-            $('#shopPic').src('${ctx }' + shopInfo['picUrl']);
-            $('#shopName').text(shopInfo['nameshopPic']);
+            $('#shopPic').attr('src', '${ctx }' + shopInfo['picUrl']);
+            $('#shopName').text(shopInfo['name']);
             $('#shopDesc').text(shopInfo['description']);
         }
 
@@ -62,7 +70,7 @@
                         if(!!resultData) {
                             resultData = eval('(' + resultData + ')');
                             if(!!resultData['status'] && resultData['status'] == 'success') {
-                                shopInfo = resultData['dataInfo'];
+                                shopInfo = eval('(' + resultData['dataInfo'] + ')');
 
                                 // 初始化店铺信息
                                 initShopInfo();

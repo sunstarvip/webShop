@@ -33,6 +33,6 @@ public class ShopManager extends BaseManager<Shop, String> implements ShopServic
         criteria.createAlias("merchant", "merchant").add(Restrictions.eq("merchant.accountName", accountName));
 
         Shop shop = (Shop)criteria.uniqueResult();
-        return null;
+        return shop;
     }
 }
