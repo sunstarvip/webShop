@@ -1,11 +1,15 @@
 package com.darknight.webShop.merchant.entity;
 
+import com.alibaba.fastjson.annotation.JSONField;
 import com.darknight.core.base.entity.DefaultEntity;
+import com.darknight.webShop.shop.entity.Shop;
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
 
 import javax.persistence.Entity;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import java.util.List;
 
 /**
  * 店主
@@ -23,6 +27,8 @@ public class Merchant extends DefaultEntity {
     private String name;  // 姓名
     private String description;  // 个人描述
     private String picUrl;  // 个人头像
+
+    private List<Shop> shopList;  // 个人店铺列表
 
     public String getAccountName() {
         return accountName;
@@ -78,5 +84,15 @@ public class Merchant extends DefaultEntity {
 
     public void setPicUrl(String picUrl) {
         this.picUrl = picUrl;
+    }
+
+    @JSONField(serialize = false)
+    @OneToMany(mappedBy = "merchant")
+    public List<Shop> getShopList() {
+        return shopList;
+    }
+
+    public void setShopList(List<Shop> shopList) {
+        this.shopList = shopList;
     }
 }
