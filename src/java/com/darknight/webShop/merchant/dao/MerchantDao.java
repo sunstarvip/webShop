@@ -4,7 +4,7 @@ import com.darknight.core.base.dao.BaseJpaDao;
 import com.darknight.webShop.merchant.entity.Merchant;
 
 /**
- * Created by songqingxin on 2015/8/31.
+ * Created by Administrator on 2015/8/31.
  */
 public interface MerchantDao extends BaseJpaDao<Merchant, String> {
 }
