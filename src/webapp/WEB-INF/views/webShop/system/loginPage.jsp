@@ -8,7 +8,6 @@
     <meta charset="UTF-8">
     <title>Web Shop</title>
     <script type="text/javascript" src="${ctx }/static/plugins/jQuery/jQuery2.x/jquery-2.1.3.min.js"></script>
-    <script type="text/javascript" src="${ctx }/static/core/js/utilTools.js"></script>
 </head>
 <body>
     <div class="" id="loginForm">

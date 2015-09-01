@@ -1,5 +1,8 @@
 package com.darknight.webShop.system.controller;
 
+import com.alibaba.fastjson.JSON;
+import com.darknight.core.base.entity.ResultEntity;
+import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
@@ -8,6 +11,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created by Administrator on 2015/8/29.
@@ -29,5 +35,12 @@ public class ShopSystemPageController {
         // 将目标页面地址传递至登录页面，登录成功后继续访问目标页面
         model.addAttribute("targetUri", targetUri);
         return "webShop/system/loginPage";
+    }
+
+    @RequestMapping(value = {"logout"}, method = {RequestMethod.GET, RequestMethod.POST})
+    public String logout(HttpSession session) {
+        session.invalidate();
+
+        return "webShop/system/logoutPage";
     }
 }
