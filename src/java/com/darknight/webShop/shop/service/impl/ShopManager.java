@@ -5,6 +5,8 @@ import com.darknight.core.base.service.impl.BaseManager;
 import com.darknight.webShop.shop.dao.ShopDao;
 import com.darknight.webShop.shop.entity.Shop;
 import com.darknight.webShop.shop.service.ShopService;
+import org.hibernate.Criteria;
+import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -22,5 +24,15 @@ public class ShopManager extends BaseManager<Shop, String> implements ShopServic
     public void setBaseDao(BaseJpaDao<Shop, String> baseDao) {
         super.setBaseDao(baseDao);
         this.shopDao = (ShopDao)baseDao;
+    }
+
+    @Override
+    public Shop findShopByMerchantAccountName(String accountName) {
+        // 获取自定义查询对象，查询未逻辑删除并默认排序的权限对象
+        Criteria criteria = getVisibleCriteria();
+        criteria.createAlias("merchant", "merchant").add(Restrictions.eq("merchant.accountName", accountName));
+
+        Shop shop = (Shop)criteria.uniqueResult();
+        return null;
     }
 }

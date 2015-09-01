@@ -7,6 +7,7 @@
 <head>
     <meta charset="UTF-8">
     <title>店铺信息</title>
+    <script type="text/javascript" src="${ctx }/static/plugins/jQuery/jQuery2.x/jquery-2.1.3.min.js"></script>
     <style>
 
         .shop-pic {
@@ -23,14 +24,14 @@
         <div class="content">
             <div class="shop-info">
                 <div >
-                    <img class="shop-pic" src="${ctx }/static/project/webShop/img/shangbiao.jpg">
+                    <img class="shop-pic" id="shopPic">
                 </div>
                 <div class="shop-info-content">
-                    <div id="shopName"></div>
+                    <div id="shopName">未知</div>
                     <button class="" id="shopNameBtn">修改</button>
                 </div>
                 <div class="shop-info-content">
-                    <div id="shopDesc"></div>
+                    <div id="shopDesc">未知</div>
                     <button class="" id="shopDescBtn">修改</button>
                 </div>
             </div>
@@ -47,13 +48,33 @@
         </div>
     </div>
     <script>
-        function getShopInfo() {
+        shopInfo = {};
 
+        function initShopInfo() {
+            $('#shopPic').src('${ctx }' + shopInfo['picUrl']);
+            $('#shopName').text(shopInfo['nameshopPic']);
+            $('#shopDesc').text(shopInfo['description']);
+        }
+
+        function getShopInfo() {
+            $.get('${ctx }/webShop/shop/managerShop',
+                    function(resultData) {
+                        if(!!resultData) {
+                            resultData = eval('(' + resultData + ')');
+                            if(!!resultData['status'] && resultData['status'] == 'success') {
+                                shopInfo = resultData['dataInfo'];
+
+                                // 初始化店铺信息
+                                initShopInfo();
+                            }
+                        }
+                    });
         }
 
         // 页面初始化
         $(function() {
-
+            // 获取店铺信息
+            getShopInfo();
         });
     </script>
 </body>
