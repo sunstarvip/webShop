@@ -83,6 +83,10 @@
         $(function() {
             // 获取店铺信息
             getShopInfo();
+
+            $('#shopNameBtn').on('click', function() {
+                window.location.href = '${ctx }/webShop/shop/editNamePage?shopId=' + shopInfo['id'];
+            });
         });
     </script>
 </body>

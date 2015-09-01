@@ -57,16 +57,16 @@
             userInfoInit();
 
             $('#logoutBtn').on('click', function() {
-                window.location.href = "${ctx }/logout"
+                window.location.href = '${ctx }/logout';
             });
             $('#shopBtn').on('click', function() {
-                window.location.href = "${ctx }/webShop/shop/managerPage"
+                window.location.href = '${ctx }/webShop/shop/managerPage';
             });
             $('#goodsBtn').on('click', function() {
-                window.location.href = "${ctx }/"
+                window.location.href = '${ctx }/';
             });
             $('#orderBtn').on('click', function() {
-                window.location.href = "${ctx }/"
+                window.location.href = '${ctx }/';
             });
         });
     </script>

@@ -40,7 +40,7 @@
                         if(!!resultData) {
                             resultData = eval('(' + resultData + ')');
                             if(!!resultData['status'] && resultData['status'] == 'success') {
-                                window.location.href = "${ctx }${targetUri }";
+                                window.location.href = '${ctx }${targetUri }';
                             }
                         }
                     });
