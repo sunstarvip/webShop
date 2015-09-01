@@ -22,6 +22,7 @@ public class Merchant extends DefaultEntity {
     private String contactNum;  // 联系电话
     private String name;  // 姓名
     private String description;  // 个人描述
+    private String picUrl;  // 个人头像
 
     public String getAccountName() {
         return accountName;
@@ -69,5 +70,13 @@ public class Merchant extends DefaultEntity {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getPicUrl() {
+        return picUrl;
+    }
+
+    public void setPicUrl(String picUrl) {
+        this.picUrl = picUrl;
     }
 }

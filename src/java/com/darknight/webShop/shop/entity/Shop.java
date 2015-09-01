@@ -17,7 +17,8 @@ import javax.persistence.Table;
 @Table(name = "t_webshop_shop")
 public class Shop extends DefaultEntity {
     private String name;
-    private String description; // 店铺描述
+    private String description;  // 店铺描述
+    private String picUrl;  // 店铺商标
 
     public String getName() {
         return name;
@@ -33,5 +34,13 @@ public class Shop extends DefaultEntity {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getPicUrl() {
+        return picUrl;
+    }
+
+    public void setPicUrl(String picUrl) {
+        this.picUrl = picUrl;
     }
 }

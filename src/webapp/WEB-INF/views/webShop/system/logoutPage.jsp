@@ -6,25 +6,24 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <title>Web Shop</title>
-    <script type="text/javascript" src="${ctx }/static/plugins/jQuery/jQuery2.x/jquery-2.1.3.min.js"></script>
+    <title>登出页</title>
 </head>
 <body>
     <div class="" id="redirectContent">
         已退出登录，正在等待跳转……
     </div>
-</body>
-<script>
-    /**
-    * 重定向跳转至登录页
-     */
-    function reIndex() {
-        window.location.href = '${ctx }/loginPage';
-    }
+    <script>
+        /**
+        * 重定向跳转至登录页
+         */
+        function reIndex() {
+            window.location.href = '${ctx }/loginPage';
+        }
 
-    // 页面初始化
-    $(function() {
-        setTimeout('reIndex()', 1500);
-    });
-</script>
+        // 页面初始化
+        $(function() {
+            setTimeout('reIndex()', 1500);
+        });
+    </script>
+</body>
 </html>

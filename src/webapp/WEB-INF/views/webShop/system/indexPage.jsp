@@ -6,7 +6,7 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <title>Web Shop</title>
+    <title>首页</title>
     <script type="text/javascript" src="${ctx }/static/plugins/jQuery/jQuery2.x/jquery-2.1.3.min.js"></script>
     <style>
         .user-opt {
@@ -19,58 +19,56 @@
     </style>
 </head>
 <body>
-<div class="main-body">
-    <div class="header" id="header">
-        <div class="user-opt">
-            欢迎您，<div class="user-nick" id="userName"></div>
-            <button class="" id="logoutBtn" type="button">登出</button>
+    <div class="main-body">
+        <div class="header" id="header">
+            <div class="user-opt">
+                欢迎您，<div class="user-nick" id="userName"></div>
+                <button class="" id="logoutBtn" type="button">登出</button>
+            </div>
+        </div>
+        <div class="content">
+            <button class="" id="shopBtn" type="button">店铺</button>
+            <button class="" id="goodsBtn" type="button">商品</button>
+            <button class="" id="orderBtn" type="button">订单</button>
+        </div>
+        <div class="footer">
+
         </div>
     </div>
-    <div class="content">
-        <button class="" id="shopBtn" type="button">店铺</button>
-        <button class="" id="goodsBtn" type="button">商品</button>
-        <button class="" id="orderBtn" type="button">订单</button>
-    </div>
-    <div class="footer">
+    <script>
+        userInfo = '${loginUserInfo }';
 
-    </div>
-</div>
+        function userInfoInit() {
+            if(!!userInfo) {
+                userInfo = eval('(' + userInfo + ')');
+                var userName = '未知用户';
+                if(!!userInfo['merchantName']) {
+                    userName = userInfo['merchantName'];
+                }else if(!!userInfo['merchantAccount']) {
+                    userName = userInfo['merchantAccount'];
+                }
 
-
-</body>
-<script>
-    userInfo = '${loginUserInfo }';
-
-    function userInfoInit() {
-        if(!!userInfo) {
-            userInfo = eval('(' + userInfo + ')');
-            var userName = '未知用户';
-            if(!!userInfo['merchantName']) {
-                userName = userInfo['merchantName'];
-            }else if(!!userInfo['merchantAccount']) {
-                userName = userInfo['merchantAccount'];
+                $('#userName').text(userName);
             }
-
-            $('#userName').text(userName);
         }
-    }
 
-    // 页面初始化
-    $(function() {
-        userInfoInit();
+        // 页面初始化
+        $(function() {
+            userInfoInit();
 
-        $('#logoutBtn').on('click', function() {
-            window.location.href = "${ctx }/logout"
+            $('#logoutBtn').on('click', function() {
+                window.location.href = "${ctx }/logout"
+            });
+            $('#shopBtn').on('click', function() {
+                window.location.href = "${ctx }/webShop/shop/managerPage"
+            });
+            $('#goodsBtn').on('click', function() {
+                window.location.href = "${ctx }/"
+            });
+            $('#orderBtn').on('click', function() {
+                window.location.href = "${ctx }/"
+            });
         });
-        $('#shopBtn').on('click', function() {
-            window.location.href = "${ctx }/"
-        });
-        $('#goodsBtn').on('click', function() {
-            window.location.href = "${ctx }/"
-        });
-        $('#orderBtn').on('click', function() {
-            window.location.href = "${ctx }/"
-        });
-    });
-</script>
+    </script>
+</body>
 </html>
