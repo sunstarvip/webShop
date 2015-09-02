@@ -10,6 +10,7 @@ import java.io.IOException;
 import java.util.List;
 
 /**
+ * 处理上传文件IO操作
  * Created by DarKnight on 2015/9/2.
  */
 @Service

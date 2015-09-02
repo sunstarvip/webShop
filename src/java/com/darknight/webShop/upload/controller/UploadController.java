@@ -94,9 +94,7 @@ public class UploadController {
         String uploadPath = realPath + ctx.getInitParameter("uploadPath");
 
         List<MultipartFile> fileList = multipartRequest.getFiles("file");
-        for (MultipartFile multipartFile : fileList) {
-            uploadService.saveMultipartFile(multipartFile, uploadPath);
-        }
+        uploadService.saveMultipartFile(fileList, uploadPath);
         return "upload success!!";
     }
 }
