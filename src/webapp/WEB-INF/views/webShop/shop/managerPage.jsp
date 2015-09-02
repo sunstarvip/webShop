@@ -21,6 +21,9 @@
         .shop-func-content {
             margin: 5px;
         }
+        .shop-info-item {
+            display: inline;
+        }
     </style>
 </head>
 <body>
@@ -34,20 +37,28 @@
                     <img class="shop-pic" id="shopPic">
                 </div>
                 <div class="shop-info-content">
-                    <div id="shopName">未知</div>
-                    <button class="" id="shopNameBtn">修改</button>
+                    <label for="shopName">商品名称：</label>
+                    <div class="shop-info-item" id="shopName">未知</div>
+                    <button class="shop-info-item" id="shopNameBtn">修改</button>
                 </div>
                 <div class="shop-info-content">
-                    <div id="shopDesc">未知</div>
-                    <button class="" id="shopDescBtn">修改</button>
+                    <label for="shopDesc">商品描述：</label>
+                    <div class="shop-info-item" id="shopDesc">未知</div>
+                    <button class="shop-info-item" id="shopDescBtn">修改</button>
                 </div>
-            </div>
+            </div><hr>
             <div class="shop-func">
                 <div class="shop-func-content">
-                    <div id="goodsDisplay">未知</div>
-                    <button class="" id="displayBtn">修改</button>
+                    <label for="displayMode">商品展示方式：</label>
+                    <div class="shop-info-item" id="displayMode">未知</div>
+                    <button class="shop-info-item" id="displayBtn">修改</button>
                 </div>
-            </div>
+                <div class="shop-func-content">
+                    <label for="displayMode">商品付款方式：</label>
+                    <div class="shop-info-item" id="payMode">未知</div>
+                    <button class="shop-info-item" id="payModeBtn">修改</button>
+                </div>
+            </div><hr>
             <div class="shop-pay">
             </div>
         </div>
@@ -58,10 +69,44 @@
     <script>
         shopInfo = {};
 
+        function initDisplayMode(displayMode) {
+            if(!!displayMode) {
+                var displayModeText = '未知';
+                switch (displayMode) {
+                    case 'by_date':
+                        displayModeText = '按日期排列';
+                        break;
+                    case 'by_type':
+                        displayModeText = '按类型排列';
+                        break;
+                }
+
+                $('#displayMode').text(displayModeText);
+            }
+        }
+
+        function initPayMode(payMode) {
+            if(!!payMode) {
+                var payModeText = '未知';
+                switch (payMode) {
+                    case 'in_site':
+                        payModeText = '站内购买';
+                        break;
+                    case 'out_site':
+                        payModeText = '其他站点购买';
+                        break;
+                }
+
+                $('#payMode').text(payModeText);
+            }
+        }
+
         function initShopInfo() {
             $('#shopPic').attr('src', '${ctx }' + shopInfo['picUrl']);
             $('#shopName').text(shopInfo['name']);
             $('#shopDesc').text(shopInfo['description']);
+            initDisplayMode(shopInfo['displayMode']);
+            initPayMode(shopInfo['payMode']);
         }
 
         function getShopInfo() {

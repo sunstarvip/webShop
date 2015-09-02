@@ -23,6 +23,7 @@ public class Shop extends DefaultEntity {
     private String name;
     private String description;  // 店铺描述
     private String picUrl;  // 店铺商标
+    private String displayMode;  // 商品展示方式
     private String payMode;  // 商品支付方式
 
     private Merchant merchant;  // 店主用户
@@ -51,6 +52,14 @@ public class Shop extends DefaultEntity {
         this.picUrl = picUrl;
     }
 
+    public String getDisplayMode() {
+        return displayMode;
+    }
+
+    public void setDisplayMode(String displayMode) {
+        this.displayMode = displayMode;
+    }
+
     public String getPayMode() {
         return payMode;
     }
@@ -68,5 +77,15 @@ public class Shop extends DefaultEntity {
 
     public void setMerchant(Merchant merchant) {
         this.merchant = merchant;
+    }
+
+    public interface DisplayMode {
+        static final String BY_DATE = "by_date";
+        static final String BY_TYPE = "by_type";
+    }
+
+    public interface PayMode {
+        static final String IN_SITE = "in_site";
+        static final String OUT_SITE = "out_site";
     }
 }
