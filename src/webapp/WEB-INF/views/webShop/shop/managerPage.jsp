@@ -9,7 +9,8 @@
     <title>店铺信息</title>
     <script type="text/javascript" src="${ctx }/static/plugins/jQuery/jQuery2.x/jquery-2.1.3.min.js"></script>
     <style>
-
+        .footer {
+        }
         .shop-pic {
             width: 10em;
             height: 10em;
@@ -51,7 +52,7 @@
                 <div class="shop-func-content">
                     <label for="displayMode">商品展示方式：</label>
                     <div class="shop-info-item" id="displayMode">未知</div>
-                    <button class="shop-info-item" id="displayBtn">修改</button>
+                    dd
                 </div>
                 <div class="shop-func-content">
                     <label for="displayMode">商品付款方式：</label>
@@ -63,7 +64,7 @@
             </div>
         </div>
         <div class="footer">
-
+            <button class="shop-info-item" id="backBtn">返回</button>
         </div>
     </div>
     <script>
@@ -136,6 +137,11 @@
             // 修改店铺描述
             $('#shopDescBtn').on('click', function() {
                 window.location.href = '${ctx }/webShop/shop/editDescPage?shopId=' + shopInfo['id'];
+            });
+
+            // 返回首页
+            $('#backBtn').on('click', function() {
+                window.location.href = '${ctx }/indexPage';
             });
         });
     </script>
