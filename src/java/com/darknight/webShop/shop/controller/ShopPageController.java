@@ -66,4 +66,13 @@ public class ShopPageController {
         shopService.save(shop);
         return "redirect:/webShop/shop/managerPage";
     }
+
+    @RequestMapping(value={"editPicPage"}, method={RequestMethod.GET})
+    public String editPicPage(String shopId, Model model) {
+        Shop shop = shopService.find(shopId);
+
+        model.addAttribute("shopId", shop.getId());
+        model.addAttribute("shopPicUrl", shop.getPicUrl());
+        return "webShop/shop/editPicPage";
+    }
 }

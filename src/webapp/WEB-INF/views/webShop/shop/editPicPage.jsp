@@ -12,8 +12,11 @@
 <body>
     <div>
         <div>
-            <input class="" id="picUrl" >
-            <button class="" id="editBtn" type="button">修改</button>
+            <form action="${ctx }/upload/springUploadFile" method="post" enctype="multipart/form-data">
+                <input id="id" name="id" value="${shopId}">
+                <input class="" id="picUrl" name="file" type="file" value="${shopPicUrl}">
+                <button class="" id="editBtn" type="submit">修改</button>
+            </form>
         </div>
     </div>
 

@@ -63,7 +63,7 @@
                 window.location.href = '${ctx }/webShop/shop/managerPage';
             });
             $('#goodsBtn').on('click', function() {
-                window.location.href = '${ctx }/';
+                window.location.href = '${ctx }/webShop/goods/createPage';
             });
             $('#orderBtn').on('click', function() {
                 window.location.href = '${ctx }/';

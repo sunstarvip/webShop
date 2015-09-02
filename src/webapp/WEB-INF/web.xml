@@ -22,8 +22,13 @@
     </context-param>
 
     <context-param>
+        <param-name>uploadTempPath</param-name>
+        <param-value>D:/temp</param-value>
+    </context-param>
+
+    <context-param>
         <param-name>uploadPath</param-name>
-        <param-value>/application/upload</param-value>
+        <param-value>upload</param-value>
     </context-param>
 
     <!--Spring的ApplicationContext 载入 -->
@@ -77,6 +82,10 @@
     <filter-mapping>
         <filter-name>loginFilter</filter-name>
         <url-pattern>/webShop/*</url-pattern>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>loginFilter</filter-name>
+        <url-pattern>/upload/*</url-pattern>
     </filter-mapping>
 
     <!-- Spring MVC Servlet -->

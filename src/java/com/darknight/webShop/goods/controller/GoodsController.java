@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.annotation.Resource;
 
 /**
+ * 商品数据处理
  * Created by DarKnight on 2015/9/2.
  */
 @RestController

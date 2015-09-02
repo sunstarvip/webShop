@@ -35,7 +35,9 @@
         <div class="content">
             <div class="shop-info">
                 <div >
-                    <img class="shop-pic" id="shopPic">
+                    <a class="" id="shopPicLink" >
+                        <img class="shop-pic" id="shopPic">
+                    </a>
                 </div>
                 <div class="shop-info-content">
                     <label for="shopName">商品名称：</label>
@@ -70,6 +72,13 @@
     <script>
         shopInfo = {};
 
+        function initShopPic(shopId, picUrl) {
+            if(!!shopId) {
+                $('#shopPicLink').attr('href', '${ctx }/webShop/shop/editPicPage?shopId=' + shopId);
+                $('#shopPic').attr('src', '${ctx }' + picUrl);
+            }
+        }
+
         function initDisplayMode(displayMode) {
             if(!!displayMode) {
                 var displayModeText = '未知';
@@ -103,7 +112,7 @@
         }
 
         function initShopInfo() {
-            $('#shopPic').attr('src', '${ctx }' + shopInfo['picUrl']);
+            initShopPic(shopInfo['id'], shopInfo['picUrl']);
             $('#shopName').text(shopInfo['name']);
             $('#shopDesc').text(shopInfo['description']);
             initDisplayMode(shopInfo['displayMode']);
@@ -130,6 +139,10 @@
             // 获取店铺信息
             getShopInfo();
 
+            // 修改店铺图片
+            $('#shopNameBtn').on('click', function() {
+                window.location.href = '${ctx }/webShop/shop/editNamePage?shopId=' + shopInfo['id'];
+            });
             // 修改店铺名称
             $('#shopNameBtn').on('click', function() {
                 window.location.href = '${ctx }/webShop/shop/editNamePage?shopId=' + shopInfo['id'];
