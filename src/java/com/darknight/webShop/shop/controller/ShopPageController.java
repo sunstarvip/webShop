@@ -47,4 +47,23 @@ public class ShopPageController {
         shopService.save(shop);
         return "redirect:/webShop/shop/managerPage";
     }
+
+    @RequestMapping(value={"editDescPage"}, method={RequestMethod.GET})
+    public String editDescPage(String shopId, Model model) {
+        Shop shop = shopService.find(shopId);
+
+        model.addAttribute("shopId", shop.getId());
+        model.addAttribute("shopDesc", shop.getDescription());
+        return "webShop/shop/editDescPage";
+    }
+
+    @RequestMapping(value={"editDesc"}, method={RequestMethod.POST})
+    public String editDesc(String shopId, String description) {
+        Shop shop = shopService.find(shopId);
+        shop.setUpdateTime(new Date());
+        shop.setDescription(description);
+
+        shopService.save(shop);
+        return "redirect:/webShop/shop/managerPage";
+    }
 }

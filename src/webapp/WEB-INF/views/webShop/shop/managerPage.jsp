@@ -84,8 +84,13 @@
             // 获取店铺信息
             getShopInfo();
 
+            // 修改店铺名称
             $('#shopNameBtn').on('click', function() {
                 window.location.href = '${ctx }/webShop/shop/editNamePage?shopId=' + shopInfo['id'];
+            });
+            // 修改店铺描述
+            $('#shopDescBtn').on('click', function() {
+                window.location.href = '${ctx }/webShop/shop/editDescPage?shopId=' + shopInfo['id'];
             });
         });
     </script>

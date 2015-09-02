@@ -29,6 +29,7 @@
 
         // 页面初始化
         $(function() {
+            // 提交编辑
             $('#editBtn').on('click', function() {
                 editShopName();
             });
