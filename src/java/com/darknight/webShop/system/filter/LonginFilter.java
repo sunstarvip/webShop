@@ -2,6 +2,7 @@ package com.darknight.webShop.system.filter;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
+import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.lang3.StringUtils;
 
 import javax.servlet.*;
@@ -43,7 +44,11 @@ public class LonginFilter implements Filter {
         HttpServletResponse response = (HttpServletResponse)servletResponse;
         String ctx = request.getContextPath();
         String targetUri = request.getRequestURI();
-        response.sendRedirect(ctx + "/loginPage?targetUri=" + targetUri);
+        String queryString = request.getQueryString();
+        if(StringUtils.isNotBlank(queryString)) {
+            queryString = Base64.encodeBase64URLSafeString(queryString.getBytes());
+        }
+        response.sendRedirect(ctx + "/loginPage?targetUri=" + targetUri + "&queryString=" + queryString);
     }
 
     @Override

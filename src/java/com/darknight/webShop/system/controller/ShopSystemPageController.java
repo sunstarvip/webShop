@@ -1,5 +1,6 @@
 package com.darknight.webShop.system.controller;
 
+import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -28,12 +29,17 @@ public class ShopSystemPageController {
     }
 
     @RequestMapping(value={"loginPage"}, method={RequestMethod.GET})
-    public String loginPage(String targetUri, HttpServletRequest request, Model model, HttpSession session) {
+    public String loginPage(String targetUri, String queryString, Model model, HttpSession session) {
+        // 当请求参数存在时进行Base64解码
+        if(StringUtils.isNotBlank(queryString)) {
+            byte[] queryByte = Base64.decodeBase64(queryString);
+            queryString = new String(queryByte);
+        }
         // 当已登录用户进入登录页面时
         if(session.getAttribute("loginUserInfo") != null) {
             // 若存在目标跳转页面则进行跳转
             if(StringUtils.isNotBlank(targetUri)) {
-                return "redirect:" + targetUri;
+                return "redirect:" + targetUri + "?" + queryString;
             }else {  // 若不存在目标跳转页面则跳转至首页
                 return "redirect:indexPage";
             }
@@ -41,6 +47,7 @@ public class ShopSystemPageController {
         // 未登录用户进入登录页面时
         // 将目标页面地址传递至登录页面，登录成功后继续访问目标页面
         model.addAttribute("targetUri", targetUri);
+        model.addAttribute("queryString", queryString);
         return "webShop/system/loginPage";
     }
 
