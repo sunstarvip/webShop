@@ -13,7 +13,7 @@ import org.springframework.transaction.annotation.Transactional;
 import javax.annotation.Resource;
 
 /**
- * Created by Administrator on 2015/8/30.
+ * Created by DarKnight on 2015/8/30.
  */
 @Service
 @Transactional(readOnly = true)

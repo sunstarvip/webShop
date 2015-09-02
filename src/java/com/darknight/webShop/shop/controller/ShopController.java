@@ -14,7 +14,7 @@ import javax.servlet.http.HttpSession;
 
 /**
  * 店铺数据处理
- * Created by Administrator on 2015/9/1.
+ * Created by DarKnight on 2015/9/1.
  */
 @RestController
 @RequestMapping(value = "webShop/shop")

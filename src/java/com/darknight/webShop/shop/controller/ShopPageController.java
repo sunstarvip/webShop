@@ -12,7 +12,7 @@ import java.util.Date;
 
 /**
  * 店铺页面管理
- * Created by Administrator on 2015/9/1.
+ * Created by DarKnight on 2015/9/1.
  */
 @Controller
 @RequestMapping(value = "webShop/shop")

@@ -13,7 +13,7 @@ import javax.servlet.http.HttpSession;
 
 /**
  * 系统页面管理
- * Created by Administrator on 2015/8/29.
+ * Created by DarKnight on 2015/8/29.
  */
 @Controller
 public class ShopSystemPageController {

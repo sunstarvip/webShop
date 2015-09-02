@@ -13,7 +13,7 @@ import javax.persistence.Table;
 
 /**
  * 商店
- * Created by Administrator on 2015/8/29.
+ * Created by DarKnight on 2015/8/29.
  */
 @Entity
 @DynamicInsert()
@@ -23,6 +23,7 @@ public class Shop extends DefaultEntity {
     private String name;
     private String description;  // 店铺描述
     private String picUrl;  // 店铺商标
+    private String payMode;  // 商品支付方式
 
     private Merchant merchant;  // 店主用户
 
@@ -48,6 +49,14 @@ public class Shop extends DefaultEntity {
 
     public void setPicUrl(String picUrl) {
         this.picUrl = picUrl;
+    }
+
+    public String getPayMode() {
+        return payMode;
+    }
+
+    public void setPayMode(String payMode) {
+        this.payMode = payMode;
     }
 
     @JSONField(serialize = false)

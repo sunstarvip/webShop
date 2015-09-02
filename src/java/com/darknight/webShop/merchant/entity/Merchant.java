@@ -13,7 +13,7 @@ import java.util.List;
 
 /**
  * 店主
- * Created by Administrator on 2015/8/30.
+ * Created by DarKnight on 2015/8/30.
  */
 @Entity
 @DynamicInsert()

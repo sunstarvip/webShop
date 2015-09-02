@@ -14,7 +14,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Created by Administrator on 2015/8/30.
+ * Created by DarKnight on 2015/8/30.
  */
 public class LonginFilter implements Filter {
     private String excludedUrl;
