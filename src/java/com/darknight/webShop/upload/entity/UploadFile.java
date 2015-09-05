@@ -1,8 +1,10 @@
 package com.darknight.webShop.upload.entity;
 
 import com.darknight.core.base.entity.DefaultEntity;
+import org.apache.commons.lang3.StringUtils;
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.persistence.Entity;
 import javax.persistence.Table;
@@ -21,8 +23,17 @@ public class UploadFile extends DefaultEntity {
     private String fullfileName;  // 文件名称+文件类型
     private String filePath;  // 文件相对路径
     private String absolutePath;  // 文件绝对路径
-    private int fileSize = 0;  // 文件大小
+    private int fileSize = FileSize.EMPTY;  // 文件大小
     private boolean isDir = IsDir.NO;  // 是否是目录
+
+    public UploadFile() {
+    }
+
+    public UploadFile(MultipartFile multipartFile) {
+        this.fullfileName = multipartFile.getOriginalFilename();
+        this.fileName = getFileNameByeFullFileName(this.fullfileName);
+        this.fileType = getFileTypeByeFullFileName(this.fullfileName);
+    }
 
     public String getFileName() {
         return fileName;
@@ -78,6 +89,24 @@ public class UploadFile extends DefaultEntity {
 
     public void setIsDir(boolean isDir) {
         this.isDir = isDir;
+    }
+
+    private String getFileNameByeFullFileName(String fullFileName) {
+        int dotIndex = StringUtils.lastIndexOf(fullFileName, ".");
+        String fileName = StringUtils.substring(fullFileName, 0, dotIndex);
+
+        return fileName;
+    }
+
+    private String getFileTypeByeFullFileName(String fullFileName) {
+        int dotIndex = StringUtils.lastIndexOf(fullFileName, ".");
+        String fileType = StringUtils.substring(fullFileName, dotIndex);
+
+        return fileType;
+    }
+
+    public interface FileSize {
+        static final int EMPTY = 0;
     }
 
     public interface IsDir {
