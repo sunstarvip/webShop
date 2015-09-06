@@ -24,7 +24,7 @@ public class UploadFile extends DefaultEntity {
     private String filePath;  // 文件相对路径
     private String absolutePath;  // 文件绝对路径
     private int fileSize = FileSize.EMPTY;  // 文件大小
-    private boolean isDir = IsDir.NO;  // 是否是目录
+    private boolean dirFlag = DirFlag.NO;  // 是否是目录
 
     public UploadFile() {
     }
@@ -83,12 +83,12 @@ public class UploadFile extends DefaultEntity {
         this.fileSize = fileSize;
     }
 
-    public boolean isDir() {
-        return isDir;
+    public boolean isDirFlag() {
+        return dirFlag;
     }
 
-    public void setIsDir(boolean isDir) {
-        this.isDir = isDir;
+    public void setDirFlag(boolean dirFlag) {
+        this.dirFlag = dirFlag;
     }
 
     private String getFileNameByeFullFileName(String fullFileName) {
@@ -109,7 +109,7 @@ public class UploadFile extends DefaultEntity {
         static final int EMPTY = 0;
     }
 
-    public interface IsDir {
+    public interface DirFlag {
         static final boolean YES = true;
         static final boolean NO = false;
     }
