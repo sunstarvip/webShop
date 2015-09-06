@@ -73,6 +73,7 @@ public class ShopPageController {
         Shop shop = shopService.find(shopId);
 
         model.addAttribute("shopId", shop.getId());
+        model.addAttribute("shopName", shop.getName());
         model.addAttribute("shopPicUrl", shop.getPicUrl());
         return "webShop/shop/editPicPage";
     }

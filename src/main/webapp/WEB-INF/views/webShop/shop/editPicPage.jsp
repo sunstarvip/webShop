@@ -2,7 +2,6 @@
          pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:set var="ctx" value="${pageContext.request.contextPath}"/>
-<c:set var="jsessionId" value="${pageContext.session.id}"/>
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -20,16 +19,31 @@
                 <input class="" id="picUrl" name="file" type="file" value="${shopPicUrl}">
                 <button class="" id="editBtn" type="submit">修改</button>
             </form>
-            <input type="file" name="file_upload" id="file_upload" />
         </div>
     </div>
 
     <script>
         // 页面初始化
         $(function() {
-            $('#file_upload').uploadify({
+            $('#picUrl').uploadify({
+                'auto': true,  // 是否自动上传
+                'buttonCursor': 'hand',
+                'buttonClass' : '',
+                'buttonText': '选择图标',
+                'fileObjName' : 'Filedata',  // 后台参数名
+                'fileSizeLimit' : '10MB',
+                'fileTypeDesc' : '支持文件类型为BMP，JPG，JPEG，GIF，PNG，SVG',  // 文件类型描述
+                'fileTypeExts' : '*.bmp; *.jpg; *.jpeg; *.gif; *.png; *.svg',  // 支持文件类型
+                'formData': {'shopName': '${shopName}'},
+                'height': 30,  // 选择按钮高度
+                'itemTemplate': false,  // 为文件上传添加展示模板html
+                'method': 'get',
+                'multi': false,  // 是否允许文件多选
+                'preventCaching': false,  // 是否关闭文件上传缓存功能
+                'uploadLimit': 1,  // 上传文件个数的限制
                 'swf': '${ctx }/static/plugins/uploadify/uploadify.swf',
-                'uploader': '${ctx }/upload/springUploadFile;jsessionid=${jsessionId }'
+                'checkExisting' : false,  // 检查文件重名时填写后台检测路径
+                'uploader': '${ctx }/upload/springUploadFile;jsessionid=${pageContext.session.id }'
             });
         });
     </script>
