@@ -27,60 +27,65 @@ public class UploadManager implements UploadService {
     }
 
     @Override
-    public boolean saveMultipartFile(MultipartFile multipartFile, String filePath) {
+    public UploadFile saveMultipartFile(MultipartFile multipartFile, String realPath, String filePath) {
+        // 获取上传目录，没有时创建该目录
+        File targetDir = FileUtils.getFile(realPath + filePath);
+        if(!targetDir.exists()) {
+            targetDir.mkdirs();
+        }
         if(!multipartFile.isEmpty()) {
-            // 获取上传目录，没有时创建该目录
-            File targetDir = FileUtils.getFile(filePath);
-            if(!targetDir.exists()) {
-                targetDir.mkdirs();
-            }
-
-            // 生成最终文件路径
-            filePath += "/" + multipartFile.getOriginalFilename();
             try {
                 // 获取文件对象，没有时创建该对象
-                File targetFile = FileUtils.getFile(filePath);
+                File targetFile = FileUtils.getFile(realPath + filePath + "/" + multipartFile.getOriginalFilename());
                 if(!targetFile.exists()) {
                     targetFile.createNewFile();
                 }
                 multipartFile.transferTo(targetFile);
-                return true;
+
+                UploadFile uploadFile = new UploadFile(multipartFile, targetFile, filePath);
+                uploadFile = uploadFileService.save(uploadFile);
+
+                return uploadFile;
             } catch(IOException e) {
                 e.printStackTrace();
             }
         }
-        return false;
+
+        return null;
     }
 
     @Override
-    public boolean saveMultipartFile(List<MultipartFile> fileList, String filePath) {
-        boolean saveFileFlag = false;
+    public List<UploadFile> saveMultipartFile(List<MultipartFile> fileList, String realPath, String filePath) {
+        List<UploadFile> uploadFileList = new ArrayList<UploadFile>();
         if(fileList != null && !fileList.isEmpty()) {
             // 获取上传目录，没有时创建该目录
-            File targetDir = FileUtils.getFile(filePath);
+            File targetDir = FileUtils.getFile(realPath + filePath);
             if(!targetDir.exists()) {
                 targetDir.mkdirs();
             }
 
-            List<UploadFile> uploadFileList = new ArrayList<UploadFile>();
             for(MultipartFile multipartFile : fileList) {
                 if(!multipartFile.isEmpty()) {
                     try {
                         // 获取文件对象，没有时创建该对象
-                        File targetFile = FileUtils.getFile(filePath + "/" + multipartFile.getOriginalFilename());
+                        File targetFile = FileUtils.getFile(realPath + filePath + "/" + multipartFile.getOriginalFilename());
                         if(!targetFile.exists()) {
                             targetFile.createNewFile();
                         }
                         multipartFile.transferTo(targetFile);
 
-                        UploadFile uploadFile = new UploadFile();
-
+                        UploadFile uploadFile = new UploadFile(multipartFile, targetFile, filePath);
+                        uploadFileList.add(uploadFile);
                     } catch(IOException e) {
                         e.printStackTrace();
                     }
                 }
             }
+
+            if(!uploadFileList.isEmpty()) {
+                uploadFileList = uploadFileService.save(uploadFileList);
+            }
         }
-        return saveFileFlag;
+        return uploadFileList;
     }
 }

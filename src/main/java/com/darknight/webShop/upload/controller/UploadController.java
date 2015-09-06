@@ -91,10 +91,10 @@ public class UploadController {
         ServletContext ctx = request.getSession().getServletContext();
         // 获取生成上传路径
         String realPath = ctx.getRealPath("/");
-        String uploadPath = realPath + ctx.getInitParameter("uploadPath");
+        String uploadPath = ctx.getInitParameter("uploadPath");
 
         List<MultipartFile> fileList = multipartRequest.getFiles("file");
-        uploadService.saveMultipartFile(fileList, uploadPath);
+        uploadService.saveMultipartFile(fileList, realPath, uploadPath);
         return "upload success!!";
     }
 }
