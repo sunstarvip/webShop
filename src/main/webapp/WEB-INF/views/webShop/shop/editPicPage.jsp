@@ -2,6 +2,7 @@
          pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:set var="ctx" value="${pageContext.request.contextPath}"/>
+<c:set var="jsessionId" value="${pageContext.session.id}"/>
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -19,15 +20,16 @@
                 <input class="" id="picUrl" name="file" type="file" value="${shopPicUrl}">
                 <button class="" id="editBtn" type="submit">修改</button>
             </form>
+            <input type="file" name="file_upload" id="file_upload" />
         </div>
     </div>
 
     <script>
         // 页面初始化
         $(function() {
-            $('#picUrl').uploadify({
+            $('#file_upload').uploadify({
                 'swf': '${ctx }/static/plugins/uploadify/uploadify.swf',
-                'uploader': '${ctx }/upload/springUploadFile'
+                'uploader': '${ctx }/upload/springUploadFile;jsessionid=${jsessionId }'
             });
         });
     </script>
