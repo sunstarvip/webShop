@@ -43,7 +43,7 @@ public class UploadManager implements UploadService {
                 multipartFile.transferTo(targetFile);
 
                 UploadFile uploadFile = new UploadFile(multipartFile, targetFile, filePath);
-                uploadFile = uploadFileService.save(uploadFile);
+//                uploadFile = uploadFileService.save(uploadFile);
 
                 return uploadFile;
             } catch(IOException e) {
@@ -82,9 +82,9 @@ public class UploadManager implements UploadService {
                 }
             }
 
-            if(!uploadFileList.isEmpty()) {
-                uploadFileList = uploadFileService.save(uploadFileList);
-            }
+//            if(!uploadFileList.isEmpty()) {
+//                uploadFileList = uploadFileService.save(uploadFileList);
+//            }
         }
         return uploadFileList;
     }

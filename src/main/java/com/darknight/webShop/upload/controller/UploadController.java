@@ -1,5 +1,6 @@
 package com.darknight.webShop.upload.controller;
 
+import com.darknight.webShop.upload.entity.UploadFile;
 import com.darknight.webShop.upload.service.UploadService;
 import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.FileUploadException;
@@ -93,8 +94,24 @@ public class UploadController {
         String realPath = ctx.getRealPath("/");
         String uploadPath = ctx.getInitParameter("uploadPath");
 
-        List<MultipartFile> fileList = multipartRequest.getFiles("file");
-        uploadService.saveMultipartFile(fileList, realPath, uploadPath);
+        List<MultipartFile> fileList = multipartRequest.getFiles("Filedata");
+        if(!fileList.isEmpty()) {
+            UploadFile uploadFile = uploadService.saveMultipartFile(fileList.get(0), realPath, uploadPath);
+        }
+        return "upload success!!";
+    }
+
+    @RequestMapping(value={"springUploadFileList"}, method={RequestMethod.POST})
+    public String springUploadFileList(HttpServletRequest request) {
+        MultipartHttpServletRequest multipartRequest = (MultipartHttpServletRequest) request;
+        // 获取服务器运行环境
+        ServletContext ctx = request.getSession().getServletContext();
+        // 获取生成上传路径
+        String realPath = ctx.getRealPath("/");
+        String uploadPath = ctx.getInitParameter("uploadPath");
+
+        List<MultipartFile> fileList = multipartRequest.getFiles("Filedata");
+        List<UploadFile> uploadFileList = uploadService.saveMultipartFile(fileList, realPath, uploadPath);
         return "upload success!!";
     }
 }

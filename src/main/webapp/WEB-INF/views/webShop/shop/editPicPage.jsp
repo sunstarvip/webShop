@@ -7,7 +7,9 @@
 <head>
     <meta charset="UTF-8">
     <title>店铺管理</title>
+    <link type="text/css" rel="stylesheet" href="${ctx }/static/plugins/uploadify/uploadify.css" />
     <script type="text/javascript" src="${ctx }/static/plugins/jQuery/jQuery2.x/jquery-2.1.3.min.js"></script>
+    <script type="text/javascript" src="${ctx }/static/plugins/uploadify/jquery.uploadify.min.js"></script>
 </head>
 <body>
     <div>
@@ -23,7 +25,10 @@
     <script>
         // 页面初始化
         $(function() {
-
+            $('#picUrl').uploadify({
+                'swf': '${ctx }/static/plugins/uploadify/uploadify.swf',
+                'uploader': '${ctx }/upload/springUploadFile'
+            });
         });
     </script>
 </body>
