@@ -42,12 +42,12 @@ public class ShopSystemController {
             Merchant merchant = shopSystemService.loginMerchant(accountName, accountPwd);
             // 当店家账号不为空时代表登录成功
             if(merchant != null) {
-                resultData.setStatus(ResultEntity.Status.SUCCESS);
-
                 // 将登陆信息保存至Session
                 Map loginUser = shopSystemService.getLoginUserMap(merchant);
                 String loginUserInfo = JSON.toJSONString(loginUser);
                 session.setAttribute("loginUserInfo", loginUserInfo);
+
+                resultData.setStatus(ResultEntity.Status.SUCCESS);
             }
         }
 

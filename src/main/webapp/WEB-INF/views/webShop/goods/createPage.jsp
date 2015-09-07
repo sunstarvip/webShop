@@ -40,6 +40,12 @@
             <textarea class="shop-form-textarea" id="description" name="description"></textarea>
         </div>
         <div class="shop-form-item">
+            <label for="goodsType">商品类型</label>
+            <select class="shop-form-select" id="goodsType" name="goodsType">
+                <option value="">---请选择---</option>
+            </select>
+        </div>
+        <div class="shop-form-item">
             <label for="buyLink">购买链接</label>
             <input class="shop-form-input" id="buyLink" name="buyLink">
         </div>
@@ -84,6 +90,27 @@
     <script>
         modeCount = 0;  // 商品型号总数
         modeNum = 0;  // 商品型号计数
+
+        function makeGoodsType(typeList) {
+            var htmlStr = '';
+
+            for(var goodsType in typeList) {
+                htmlStr += '<option value="">---请选择---</option>';
+            }
+
+            $('#goodsType').append(htmlStr);
+        }
+
+        function getGoodsType() {
+            $.get('${ctx }/webShop/goodsType/getGoodsTypeList',
+                    function(resultData) {
+                        var typeList = ResultData.getSuccessDataInfo(resultData);
+                        if(!!typeList) {
+                            typeList = eval('(' + typeList + ')');
+                            makeGoodsType(typeList);
+                        }
+                    });
+        }
 
         function addGoodsMode() {
             if(modeCount == 0) {
