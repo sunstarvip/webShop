@@ -37,7 +37,6 @@
             if(!!shopPicFile) {
                 shopPicFile = eval('(' + shopPicFile + ')');
                 if(!!shopPicFile['filePath']) {
-                    console.log('shopPicFile is:' + shopPicFile['filePath']);
                     $('#shopPicImg').attr('src', '${ctx }/' + shopPicFile['filePath']);
                     $('#picUrl').val(shopPicFile['filePath']);
                 }

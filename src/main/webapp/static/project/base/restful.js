@@ -13,5 +13,16 @@ ResultData = {
         }
 
         return;
+    },
+    getSuccessStatus: function(resultData) {
+        if(!!resultData) {
+            resultData = eval('(' + resultData + ')');
+            if(!!resultData['status'] && resultData['status'] == 'success') {
+
+                return true;
+            }
+        }
+
+        return false;
     }
 }

@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.annotation.Resource;
+import java.util.Date;
 
 /**
  * 商品页面管理
@@ -26,7 +27,16 @@ public class GoodsPageController {
 
     @RequestMapping(value={"createPage"}, method={RequestMethod.GET})
     public String createPage() {
-        return "webShop/goods/editPage";
+        return "webShop/goods/createPage";
+    }
+
+    @RequestMapping(value={"save"}, method={RequestMethod.POST})
+    public String save(Goods goods) {
+
+        goods.setCreateTime(new Date());
+        goodsService.save(goods);
+
+        return "redirect:/indexPage";
     }
 
     @RequestMapping(value={"editPage"}, method={RequestMethod.GET})

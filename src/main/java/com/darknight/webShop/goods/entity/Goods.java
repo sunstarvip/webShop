@@ -22,9 +22,10 @@ import java.util.List;
 public class Goods extends DefaultEntity {
     private String name;  // 商品名称
     private String description;  // 商品描述
-    private String picUrl;  // 商品商标
-    private String bugLink;  // 商品购买链接
-    private Integer goodsPrice;  // 商品价格
+    private String picUrl;  // 商品图片
+    private String buyLink;  // 商品购买链接
+    private String goodsStatus;  // 商品状态
+    private Float goodsPrice;  // 商品价格
     private Integer stockNum;  // 库存数量
 
     private List<GoodsMode> modeList;  // 商品类型
@@ -53,19 +54,27 @@ public class Goods extends DefaultEntity {
         this.picUrl = picUrl;
     }
 
-    public String getBugLink() {
-        return bugLink;
+    public String getBuyLink() {
+        return buyLink;
     }
 
-    public void setBugLink(String bugLink) {
-        this.bugLink = bugLink;
+    public void setBuyLink(String buyLink) {
+        this.buyLink = buyLink;
     }
 
-    public Integer getGoodsPrice() {
+    public String getGoodsStatus() {
+        return goodsStatus;
+    }
+
+    public void setGoodsStatus(String goodsStatus) {
+        this.goodsStatus = goodsStatus;
+    }
+
+    public Float getGoodsPrice() {
         return goodsPrice;
     }
 
-    public void setGoodsPrice(Integer goodsPrice) {
+    public void setGoodsPrice(Float goodsPrice) {
         this.goodsPrice = goodsPrice;
     }
 
@@ -85,5 +94,10 @@ public class Goods extends DefaultEntity {
 
     public void setModeList(List<GoodsMode> modeList) {
         this.modeList = modeList;
+    }
+
+    public interface GoodsStatus {
+        public static final String ON_SALE = "ON_SALE";  // 出售中
+        public static final String OFF_SHELVES = "OFF_SHELVES";  // 已下架
     }
 }
