@@ -20,7 +20,7 @@ import javax.persistence.Table;
 @Table(name = "t_webshop_goods_mode")
 public class GoodsMode extends DefaultEntity {
     private String modeName;  // 型号名称
-    private Integer modePrice;  // 价格
+    private Float modePrice;  // 价格
     private Integer stockNum;  // 库存数量
 
     private Goods goods;  // 对应商品
@@ -33,11 +33,11 @@ public class GoodsMode extends DefaultEntity {
         this.modeName = modeName;
     }
 
-    public Integer getModePrice() {
+    public Float getModePrice() {
         return modePrice;
     }
 
-    public void setModePrice(Integer modePrice) {
+    public void setModePrice(Float modePrice) {
         this.modePrice = modePrice;
     }
 
