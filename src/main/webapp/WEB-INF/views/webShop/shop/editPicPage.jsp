@@ -43,7 +43,7 @@
                 'uploadLimit': 1,  // 上传文件个数的限制
                 'swf': '${ctx }/static/plugins/uploadify/uploadify.swf',
                 'checkExisting' : false,  // 检查文件重名时填写后台检测路径
-                'uploader': '${ctx }/upload/springUploadFile;jsessionid=${pageContext.session.id }'
+                'uploader': '${ctx }/upload/springUploadFile;jsessionid=${pageContext.session.id }?secondPath=${shopId}'
             });
         });
     </script>

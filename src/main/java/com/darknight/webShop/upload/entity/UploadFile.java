@@ -10,6 +10,7 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 import java.io.File;
 import java.util.Date;
+import java.util.Random;
 
 /**
  * 上传文件
@@ -20,10 +21,11 @@ import java.util.Date;
 @DynamicUpdate()
 @Table(name = "t_upload_file")
 public class UploadFile extends DefaultEntity {
-    private String fileName;  // 文件名称
+    private String originalName;  // 文件原始名称
+    private String targetName;  // 文件实际名称
     private String fileType;  // 文件类型
-    private String contentType;  // Content Type
     private String fullfileName;  // 文件名称+文件类型
+    private String contentType;  // Content Type
     private String filePath;  // 文件相对路径
     private String absolutePath;  // 文件绝对路径
     private Long fileSize;  // 文件大小
@@ -33,9 +35,10 @@ public class UploadFile extends DefaultEntity {
     }
 
     public UploadFile(MultipartFile multipartFile, File targetFile, String filePath) {
-        this.fullfileName = multipartFile.getOriginalFilename();
-        this.fileName = getFileNameByeFullFileName(this.fullfileName);
-        this.fileType = getFileTypeByeFullFileName(this.fullfileName);
+        this.originalName = getFileNameByeFullFileName(multipartFile.getOriginalFilename());
+        this.fileType = getFileTypeByeFullFileName(multipartFile.getOriginalFilename());
+        this.targetName = getFileNameByeFullFileName(targetFile.getName());
+        this.fullfileName = targetFile.getName();
         this.contentType = multipartFile.getContentType();
         this.fileSize = multipartFile.getSize();
         this.filePath = filePath + "/" + this.fullfileName;
@@ -44,12 +47,20 @@ public class UploadFile extends DefaultEntity {
         this.setCreateTime(new Date());
     }
 
-    public String getFileName() {
-        return fileName;
+    public String getOriginalName() {
+        return originalName;
     }
 
-    public void setFileName(String fileName) {
-        this.fileName = fileName;
+    public void setOriginalName(String originalName) {
+        this.originalName = originalName;
+    }
+
+    public String getTargetName() {
+        return targetName;
+    }
+
+    public void setTargetName(String targetName) {
+        this.targetName = targetName;
     }
 
     public String getFileType() {
@@ -60,20 +71,20 @@ public class UploadFile extends DefaultEntity {
         this.fileType = fileType;
     }
 
-    public String getContentType() {
-        return contentType;
-    }
-
-    public void setContentType(String contentType) {
-        this.contentType = contentType;
-    }
-
     public String getFullfileName() {
         return fullfileName;
     }
 
     public void setFullfileName(String fullfileName) {
         this.fullfileName = fullfileName;
+    }
+
+    public String getContentType() {
+        return contentType;
+    }
+
+    public void setContentType(String contentType) {
+        this.contentType = contentType;
     }
 
     public String getFilePath() {

@@ -6,6 +6,7 @@ import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.FileUploadException;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -34,7 +35,7 @@ public class UploadController {
     }
 
     @RequestMapping(value={"uploadFile"}, method={RequestMethod.POST})
-    public String uploadFile(HttpServletRequest request) {
+    public String uploadFile(String secondPath, HttpServletRequest request) {
         // 检查是否有文件上传
         if(ServletFileUpload.isMultipartContent(request)) {
             // 获取服务器运行环境
@@ -57,6 +58,9 @@ public class UploadController {
             // 获取生成上传路径
             String realPath = ctx.getRealPath("/");
             String uploadPath = realPath + ctx.getInitParameter("uploadPath");
+            if(StringUtils.isNotBlank(secondPath)) {
+                uploadPath += "/" + secondPath;
+            }
             // 判断目标存放目录是否存在，不存在时则创建该目录
             if (!new File(uploadPath).isDirectory()) {
                 new File(uploadPath).mkdirs();
@@ -86,13 +90,16 @@ public class UploadController {
     }
 
     @RequestMapping(value={"springUploadFile"}, method={RequestMethod.POST})
-    public String springUploadFile(HttpServletRequest request) {
+    public String springUploadFile(String secondPath, HttpServletRequest request) {
         MultipartHttpServletRequest multipartRequest = (MultipartHttpServletRequest) request;
         // 获取服务器运行环境
         ServletContext ctx = request.getSession().getServletContext();
         // 获取生成上传路径
         String realPath = ctx.getRealPath("/");
         String uploadPath = ctx.getInitParameter("uploadPath");
+        if(StringUtils.isNotBlank(secondPath)) {
+            uploadPath += "/" + secondPath;
+        }
 
         List<MultipartFile> fileList = multipartRequest.getFiles("Filedata");
         if(!fileList.isEmpty()) {
@@ -102,13 +109,16 @@ public class UploadController {
     }
 
     @RequestMapping(value={"springUploadFileList"}, method={RequestMethod.POST})
-    public String springUploadFileList(HttpServletRequest request) {
+    public String springUploadFileList(String secondPath, HttpServletRequest request) {
         MultipartHttpServletRequest multipartRequest = (MultipartHttpServletRequest) request;
         // 获取服务器运行环境
         ServletContext ctx = request.getSession().getServletContext();
         // 获取生成上传路径
         String realPath = ctx.getRealPath("/");
         String uploadPath = ctx.getInitParameter("uploadPath");
+        if(StringUtils.isNotBlank(secondPath)) {
+            uploadPath += "/" + secondPath;
+        }
 
         List<MultipartFile> fileList = multipartRequest.getFiles("Filedata");
         List<UploadFile> uploadFileList = uploadService.saveMultipartFile(fileList, realPath, uploadPath);
