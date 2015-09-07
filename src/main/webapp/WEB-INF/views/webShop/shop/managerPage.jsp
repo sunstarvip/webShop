@@ -54,7 +54,6 @@
                 <div class="shop-func-content">
                     <label for="displayMode">商品展示方式：</label>
                     <div class="shop-info-item" id="displayMode">未知</div>
-                    dd
                 </div>
                 <div class="shop-func-content">
                     <label for="displayMode">商品付款方式：</label>
@@ -75,7 +74,7 @@
         function initShopPic(shopId, picUrl) {
             if(!!shopId) {
                 $('#shopPicLink').attr('href', '${ctx }/webShop/shop/editPicPage?shopId=' + shopId);
-                $('#shopPic').attr('src', '${ctx }' + picUrl);
+                $('#shopPic').attr('src', '${ctx }/' + picUrl);
             }
         }
 

@@ -77,4 +77,14 @@ public class ShopPageController {
         model.addAttribute("shopPicUrl", shop.getPicUrl());
         return "webShop/shop/editPicPage";
     }
+
+    @RequestMapping(value={"editPic"}, method={RequestMethod.POST})
+    public String editPic(String shopId, String picUrl) {
+        Shop shop = shopService.find(shopId);
+        shop.setUpdateTime(new Date());
+        shop.setPicUrl(picUrl);
+
+        shopService.save(shop);
+        return "redirect:/webShop/shop/managerPage";
+    }
 }

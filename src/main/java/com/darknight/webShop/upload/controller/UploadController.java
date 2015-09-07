@@ -1,5 +1,7 @@
 package com.darknight.webShop.upload.controller;
 
+import com.alibaba.fastjson.JSON;
+import com.darknight.core.base.entity.ResultEntity;
 import com.darknight.webShop.upload.entity.UploadFile;
 import com.darknight.webShop.upload.service.UploadService;
 import org.apache.commons.fileupload.FileItem;
@@ -91,6 +93,8 @@ public class UploadController {
 
     @RequestMapping(value={"springUploadFile"}, method={RequestMethod.POST})
     public String springUploadFile(String secondPath, HttpServletRequest request) {
+        ResultEntity resultData = new ResultEntity();
+
         MultipartHttpServletRequest multipartRequest = (MultipartHttpServletRequest) request;
         // 获取服务器运行环境
         ServletContext ctx = request.getSession().getServletContext();
@@ -104,12 +108,19 @@ public class UploadController {
         List<MultipartFile> fileList = multipartRequest.getFiles("Filedata");
         if(!fileList.isEmpty()) {
             UploadFile uploadFile = uploadService.saveMultipartFile(fileList.get(0), realPath, uploadPath);
+            String uploadFileInfo = JSON.toJSONString(uploadFile);
+
+            resultData.setDataInfo(uploadFileInfo);
+            resultData.setStatus(ResultEntity.Status.SUCCESS);
         }
-        return "upload success!!";
+
+        return JSON.toJSONString(resultData);
     }
 
     @RequestMapping(value={"springUploadFileList"}, method={RequestMethod.POST})
     public String springUploadFileList(String secondPath, HttpServletRequest request) {
+        ResultEntity resultData = new ResultEntity();
+
         MultipartHttpServletRequest multipartRequest = (MultipartHttpServletRequest) request;
         // 获取服务器运行环境
         ServletContext ctx = request.getSession().getServletContext();
@@ -121,7 +132,14 @@ public class UploadController {
         }
 
         List<MultipartFile> fileList = multipartRequest.getFiles("Filedata");
-        List<UploadFile> uploadFileList = uploadService.saveMultipartFile(fileList, realPath, uploadPath);
-        return "upload success!!";
+        if(fileList != null && !fileList.isEmpty()) {
+            List<UploadFile> uploadFileList = uploadService.saveMultipartFile(fileList, realPath, uploadPath);
+            String uploadFileInfo = JSON.toJSONString(uploadFileList);
+
+            resultData.setDataInfo(uploadFileInfo);
+            resultData.setStatus(ResultEntity.Status.SUCCESS);
+        }
+
+        return JSON.toJSONString(resultData);
     }
 }
