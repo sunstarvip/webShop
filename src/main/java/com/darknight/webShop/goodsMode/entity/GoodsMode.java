@@ -12,6 +12,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 /**
+ * 商品型号
  * Created by DarKnight on 2015/9/2.
  */
 @Entity

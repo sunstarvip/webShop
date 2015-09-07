@@ -24,7 +24,7 @@ public class Shop extends DefaultEntity {
     private String description;  // 店铺描述
     private String picUrl;  // 店铺商标
     private String displayMode;  // 商品展示方式
-    private String payMode;  // 商品支付方式
+    private String buyMode;  // 商品购买方式
 
     private Merchant merchant;  // 店主用户
 
@@ -60,12 +60,12 @@ public class Shop extends DefaultEntity {
         this.displayMode = displayMode;
     }
 
-    public String getPayMode() {
-        return payMode;
+    public String getBuyMode() {
+        return buyMode;
     }
 
-    public void setPayMode(String payMode) {
-        this.payMode = payMode;
+    public void setBuyMode(String buyMode) {
+        this.buyMode = buyMode;
     }
 
     @JSONField(serialize = false)
