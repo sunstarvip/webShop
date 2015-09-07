@@ -3,12 +3,11 @@ package com.darknight.webShop.goods.entity;
 import com.alibaba.fastjson.annotation.JSONField;
 import com.darknight.core.base.entity.DefaultEntity;
 import com.darknight.webShop.goodsMode.entity.GoodsMode;
+import com.darknight.webShop.goodsType.entity.GoodsType;
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
 
-import javax.persistence.Entity;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.List;
 
 /**
@@ -28,7 +27,8 @@ public class Goods extends DefaultEntity {
     private Float goodsPrice;  // 商品价格
     private Integer stockNum;  // 库存数量
 
-    private List<GoodsMode> modeList;  // 商品类型
+    private GoodsType goodsType;  // 商品类型
+    private List<GoodsMode> modeList;  // 商品型号
 
     public String getName() {
         return name;
@@ -84,6 +84,17 @@ public class Goods extends DefaultEntity {
 
     public void setStockNum(Integer stockNum) {
         this.stockNum = stockNum;
+    }
+
+    @JSONField(serialize = false)
+    @ManyToOne
+    @JoinColumn(name = "goods_type_id", referencedColumnName = "id")
+    public GoodsType getGoodsType() {
+        return goodsType;
+    }
+
+    public void setGoodsType(GoodsType goodsType) {
+        this.goodsType = goodsType;
     }
 
     @JSONField(serialize = false)

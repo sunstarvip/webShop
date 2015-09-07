@@ -24,6 +24,17 @@ public class GoodsTypeController {
         this.goodsTypeService = goodsTypeService;
     }
 
+    @RequestMapping(value={"getGoodsTypeList"}, method={RequestMethod.GET})
+    public String getGoodsTypeList(String shopId) {
+        ResultEntity resultData = new ResultEntity();
+
+
+
+        resultData.setStatus(ResultEntity.Status.SUCCESS);
+
+        return JSON.toJSONString(resultData);
+    }
+
     @RequestMapping(value={"saveGoodsType"}, method={RequestMethod.POST})
     public String saveGoodsType(GoodsType goodsType) {
         ResultEntity resultData = new ResultEntity();
