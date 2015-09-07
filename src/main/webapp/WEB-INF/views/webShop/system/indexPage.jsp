@@ -28,6 +28,7 @@
         </div>
         <div class="content">
             <button class="" id="shopBtn" type="button">店铺</button>
+            <button class="" id="goodsTypeBtn" type="button">商品类型</button>
             <button class="" id="goodsBtn" type="button">商品</button>
             <button class="" id="orderBtn" type="button">订单</button>
         </div>
@@ -59,12 +60,19 @@
             $('#logoutBtn').on('click', function() {
                 window.location.href = '${ctx }/logout';
             });
+
             $('#shopBtn').on('click', function() {
                 window.location.href = '${ctx }/webShop/shop/managerPage';
             });
+
+            $('#goodsTypeBtn').on('click', function() {
+                window.location.href = '${ctx }/webShop/goodsType/createPage';
+            });
+
             $('#goodsBtn').on('click', function() {
                 window.location.href = '${ctx }/webShop/goods/createPage';
             });
+
             $('#orderBtn').on('click', function() {
                 window.location.href = '${ctx }/';
             });

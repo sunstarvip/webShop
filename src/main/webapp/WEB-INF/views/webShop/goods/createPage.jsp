@@ -151,7 +151,7 @@
             $(document).on('click', '[name=deleteGoodsModeBtn]', function() {
                 deleteGoodsMode();
             });
-            // 提交编辑
+            // 提交新增
             $('#createBtn').on('click', function() {
                 saveGoods();
             });
