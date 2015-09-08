@@ -22,29 +22,44 @@
             <input class="shop-form-input" id="typeName" name="typeName">
         </div>
         <div class="shop-form-footer">
-            <button class="shop-form-subbmit" id="createBtn" type="submit">提交</button>
+            <button class="shop-form-subbmit" id="saveBtn" type="submit">提交</button>
             <button class="shop-form-subbmit" id="cancelBtn" type="submit">取消</button>
         </div>
     </div>
 
     <script>
         function saveGoodsType() {
-            $.post('${ctx }/webShop/goodsType/saveGoodsType',
+            $.post('${ctx }/webShop/goodsType/updateGoodsType',
                     {
+                        id: '${goodsTypeId }',
                         typeName: $('#typeName').val()
                     },
                     function(resultData) {
                         if(ResultData.getSuccessStatus(resultData)) {
-                            alert("商品类型添加成功");
+                            alert("商品类型修改成功");
                             window.location.href = '${ctx }/webShop/goodsType/listPage';
                         }
                     });
         }
 
+        function initGoodsType() {
+            $.get('${ctx }/webShop/goodsType/getGoodsType',
+                    {
+                        id: '${goodsTypeId }'
+                    },
+                    function(resultData) {
+                        var goodsType = ResultData.getSuccessDataInfo(resultData);
+                        goodsType = eval('(' + goodsType + ')');
+                        $('#typeName').val(goodsType['typeName']);
+                    });
+        }
+
         // 页面初始化
         $(function() {
+            initGoodsType();
+
             // 提交新增
-            $('#createBtn').on('click', function() {
+            $('#saveBtn').on('click', function() {
                 saveGoodsType();
             });
 

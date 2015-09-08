@@ -19,15 +19,15 @@
 <body>
     <div class="shop-list" id="goodsTypeList">
         <div class="shop-list-item">
-            <input class="shop-list-checkbox" name="goodsTypeCkb" type="checkbox" value="1">
+            <input class="shop-list-checkbox" name="goodsTypeChk" type="checkbox" value="1">
             <span>类型1</span>
         </div>
         <div class="shop-list-item">
-            <input class="shop-list-checkbox" name="goodsTypeCkb" type="checkbox" value="2">
+            <input class="shop-list-checkbox" name="goodsTypeChk" type="checkbox" value="2">
             <span>类型2</span>
         </div>
         <div class="shop-list-item">
-            <input class="shop-list-checkbox" name="goodsTypeCkb" type="checkbox" value="3">
+            <input class="shop-list-checkbox" name="goodsTypeChk" type="checkbox" value="3">
             <span>类型3</span>
         </div>
     </div>
@@ -42,7 +42,7 @@
 
             for(var i in typeList) {
                 htmlStr += '<div class="shop-list-item">';
-                htmlStr += '<input class="shop-list-checkbox" name="goodsTypeCkb" type="checkbox" value="' + typeList[i]['id'] + '">';
+                htmlStr += '<input class="shop-list-checkbox" name="goodsTypeChk" type="checkbox" value="' + typeList[i]['id'] + '">';
                 htmlStr += '<span>' + typeList[i]['typeName'] + '</span>';
                 htmlStr += '</div>';
             }
@@ -61,6 +61,28 @@
                     });
         }
 
+        function validateGoodsTypeChk() {
+            var goodsTypeAry = $('input[name="goodsTypeChk"]:checked');
+
+            if(!!goodsTypeAry) {
+                if(goodsTypeAry.length > 1) {
+                    alert("请勿多选");
+                    return;
+                }else {
+                    return goodsTypeAry[0];
+                }
+            }
+            alert("请选择商品类型");
+            return;
+        }
+
+        function updateGoodsType() {
+            var goodsType = validateGoodsTypeChk();
+            if(!!goodsType) {
+                window.location.href = '${ctx }/webShop/goodsType/updatePage?goodsTypeId=' + $(goodsType).val();
+            }
+        }
+
         // 页面初始化
         $(function() {
             // 生成GoodsType列表
@@ -69,6 +91,11 @@
             // 新增商品类型
             $('#createBtn').on('click', function() {
                 window.location.href = '${ctx }/webShop/goodsType/createPage';
+            });
+
+            // 编辑商品类型
+            $('#editBtn').on('click', function() {
+                updateGoodsType();
             });
         });
     </script>
