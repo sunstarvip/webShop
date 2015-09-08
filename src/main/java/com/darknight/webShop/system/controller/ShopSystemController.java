@@ -3,6 +3,8 @@ package com.darknight.webShop.system.controller;
 import com.alibaba.fastjson.JSON;
 import com.darknight.core.base.entity.ResultEntity;
 import com.darknight.webShop.merchant.entity.Merchant;
+import com.darknight.webShop.shop.entity.Shop;
+import com.darknight.webShop.shop.service.ShopService;
 import com.darknight.webShop.system.service.ShopSystemService;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
@@ -46,6 +48,11 @@ public class ShopSystemController {
                 Map loginUser = shopSystemService.getLoginUserMap(merchant);
                 String loginUserInfo = JSON.toJSONString(loginUser);
                 session.setAttribute("loginUserInfo", loginUserInfo);
+
+                // 将该店主的店铺信息保存至Session
+                Map currentShop = shopSystemService.getCurrentShopMap(merchant);
+                String currentShopInfo = JSON.toJSONString(currentShop);
+                session.setAttribute("currentShopInfo", currentShopInfo);
 
                 resultData.setStatus(ResultEntity.Status.SUCCESS);
             }

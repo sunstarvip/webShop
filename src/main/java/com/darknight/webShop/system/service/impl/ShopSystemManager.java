@@ -2,6 +2,8 @@ package com.darknight.webShop.system.service.impl;
 
 import com.darknight.webShop.merchant.entity.Merchant;
 import com.darknight.webShop.merchant.service.MerchantService;
+import com.darknight.webShop.shop.entity.Shop;
+import com.darknight.webShop.shop.service.ShopService;
 import com.darknight.webShop.system.service.ShopSystemService;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Service;
@@ -18,10 +20,16 @@ import java.util.Map;
 @Transactional(readOnly = true)
 public class ShopSystemManager implements ShopSystemService {
     private MerchantService merchantService;
+    private ShopService shopService;
 
     @Resource
     public void setMerchantService(MerchantService merchantService) {
         this.merchantService = merchantService;
+    }
+
+    @Resource
+    public void setShopService(ShopService shopService) {
+        this.shopService = shopService;
     }
 
     /**
@@ -50,6 +58,7 @@ public class ShopSystemManager implements ShopSystemService {
     @Override
     public Map getLoginUserMap(Merchant merchant) {
         Map loginUser = new HashMap();
+
         loginUser.put("merchantAccount", merchant.getAccountName());
         loginUser.put("merchantName", merchant.getName());
         loginUser.put("merchantEmail", merchant.getEmailAddress());
@@ -57,5 +66,15 @@ public class ShopSystemManager implements ShopSystemService {
         loginUser.put("merchantDescription", merchant.getDescription());
 
         return loginUser;
+    }
+
+    @Override
+    public Map getCurrentShopMap(Merchant merchant) {
+        Map currentShop = new HashMap();
+
+        Shop shop = shopService.findShopByMerchantAccountName(merchant.getAccountName());
+        currentShop.put("shopId", shop.getId());
+
+        return currentShop;
     }
 }

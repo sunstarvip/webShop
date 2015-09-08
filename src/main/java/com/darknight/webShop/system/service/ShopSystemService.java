@@ -2,6 +2,7 @@ package com.darknight.webShop.system.service;
 
 
 import com.darknight.webShop.merchant.entity.Merchant;
+import com.darknight.webShop.shop.entity.Shop;
 
 import java.util.Map;
 
@@ -23,4 +24,11 @@ public interface ShopSystemService {
      * @return
      */
     Map getLoginUserMap(Merchant merchant);
+
+    /**
+     * 生成店主对应的店铺信息Map
+     * @param merchant 店主对象实体
+     * @return
+     */
+    Map getCurrentShopMap(Merchant merchant);
 }
