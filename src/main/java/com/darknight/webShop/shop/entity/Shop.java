@@ -2,6 +2,7 @@ package com.darknight.webShop.shop.entity;
 
 import com.alibaba.fastjson.annotation.JSONField;
 import com.darknight.core.base.entity.DefaultEntity;
+import com.darknight.webShop.goods.entity.Goods;
 import com.darknight.webShop.goodsType.entity.GoodsType;
 import com.darknight.webShop.merchant.entity.Merchant;
 import org.hibernate.annotations.DynamicInsert;
@@ -26,7 +27,8 @@ public class Shop extends DefaultEntity {
     private String buyMode;  // 商品购买方式
 
     private Merchant merchant;  // 店主用户
-    private List<GoodsType> typeList;  // 商品类型
+    private List<GoodsType> typeList;  // 商品类型列表
+    private List<Goods> goodsList;  // 商品列表
 
     public String getName() {
         return name;
@@ -87,6 +89,16 @@ public class Shop extends DefaultEntity {
 
     public void setTypeList(List<GoodsType> typeList) {
         this.typeList = typeList;
+    }
+
+    @JSONField(serialize = false)
+    @OneToMany(mappedBy = "shop")
+    public List<Goods> getGoodsList() {
+        return goodsList;
+    }
+
+    public void setGoodsList(List<Goods> goodsList) {
+        this.goodsList = goodsList;
     }
 
     public interface DisplayMode {

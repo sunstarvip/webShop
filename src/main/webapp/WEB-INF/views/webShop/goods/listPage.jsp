@@ -17,7 +17,7 @@
     </style>
 </head>
 <body>
-    <div class="shop-list" id="goodsTypeList">
+    <div class="shop-list" id="goodsList">
         <%--<div class="shop-list-item">--%>
             <%--<input class="shop-list-checkbox" name="goodsTypeChk" type="checkbox" value="1">--%>
             <%--<span>类型1</span>--%>
@@ -37,65 +37,65 @@
     </div>
 
     <script>
-        function makeGoodsTypeList(typeList) {
+        function makeGoodsList(goodsList) {
             var htmlStr = '';
 
-            for(var i in typeList) {
+            for(var i in goodsList) {
                 htmlStr += '<div class="shop-list-item">';
-                htmlStr += '<input class="shop-list-checkbox" name="goodsTypeChk" type="checkbox" value="' + typeList[i]['id'] + '">';
-                htmlStr += '<span>' + typeList[i]['typeName'] + '</span>';
+                htmlStr += '<input class="shop-list-checkbox" name="goodsChk" type="checkbox" value="' + goodsList[i]['id'] + '">';
+                htmlStr += '<span>' + goodsList[i]['name'] + '</span>';
                 htmlStr += '</div>';
             }
 
-            $('#goodsTypeList').html(htmlStr);
+            $('#goodsList').html(htmlStr);
         }
 
-        function getGoodsTypeList() {
-            $.get('${ctx }/webShop/goodsType/getGoodsTypeList',
+        function getGoodsList() {
+            $.get('${ctx }/webShop/goods/getGoodsList',
                     function(resultData) {
-                        var typeList = ResultData.getSuccessDataInfo(resultData);
-                        if(!!typeList) {
-                            typeList = eval('(' + typeList + ')');
-                            makeGoodsTypeList(typeList);
+                        var goodsList = ResultData.getSuccessDataInfo(resultData);
+                        if(!!goodsList) {
+                            goodsList = eval('(' + goodsList + ')');
+                            makeGoodsList(goodsList);
                         }
                     });
         }
 
-        function validateGoodsTypeChk() {
-            var goodsTypeAry = $('input[name="goodsTypeChk"]:checked');
+        function validateGoodsChk() {
+            var goodsAry = $('input[name="goodsChk"]:checked');
 
-            if(!!goodsTypeAry) {
-                if(goodsTypeAry.length > 1) {
+            if(!!goodsAry) {
+                if(goodsAry.length > 1) {
                     alert("请勿多选");
                     return;
                 }else {
-                    return goodsTypeAry[0];
+                    return goodsAry[0];
                 }
             }
-            alert("请选择商品类型");
+            alert("请选择商品");
             return;
         }
 
-        function updateGoodsType() {
-            var goodsType = validateGoodsTypeChk();
-            if(!!goodsType) {
-                window.location.href = '${ctx }/webShop/goodsType/updatePage?goodsTypeId=' + $(goodsType).val();
+        function updateGoods() {
+            var goods = validateGoodsChk();
+            if(!!goods) {
+                window.location.href = '${ctx }/webShop/goods/updatePage?goodsId=' + $(goods).val();
             }
         }
 
         // 页面初始化
         $(function() {
             // 生成GoodsType列表
-            getGoodsTypeList();
+            getGoodsList();
 
             // 新增商品类型
             $('#createBtn').on('click', function() {
-                window.location.href = '${ctx }/webShop/goodsType/createPage';
+                window.location.href = '${ctx }/webShop/goods/createPage';
             });
 
             // 编辑商品类型
             $('#editBtn').on('click', function() {
-                updateGoodsType();
+                updateGoods();
             });
         });
     </script>

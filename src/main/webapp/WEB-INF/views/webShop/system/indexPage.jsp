@@ -70,7 +70,7 @@
             });
 
             $('#goodsBtn').on('click', function() {
-                window.location.href = '${ctx }/webShop/goods/createPage';
+                window.location.href = '${ctx }/webShop/goods/listPage';
             });
 
             $('#orderBtn').on('click', function() {

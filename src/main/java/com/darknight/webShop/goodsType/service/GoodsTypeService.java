@@ -10,5 +10,10 @@ import java.util.List;
  */
 public interface GoodsTypeService extends BaseService<GoodsType, String> {
 
+    /**
+     * 通过商店ID查询该商铺下所有未逻辑删除的商品类型
+     * @param shopId 商店ID
+     * @return
+     */
     List<GoodsType> findVisibleGoodsTypeListByShopId(String shopId);
 }

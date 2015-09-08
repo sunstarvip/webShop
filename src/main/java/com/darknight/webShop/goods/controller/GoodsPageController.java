@@ -25,6 +25,11 @@ public class GoodsPageController {
         this.goodsService = goodsService;
     }
 
+    @RequestMapping(value={"listPage"}, method={RequestMethod.GET})
+    public String listPage() {
+        return "webShop/goods/listPage";
+    }
+
     @RequestMapping(value={"createPage"}, method={RequestMethod.GET})
     public String createPage() {
         return "webShop/goods/createPage";
@@ -39,12 +44,10 @@ public class GoodsPageController {
         return "redirect:/indexPage";
     }
 
-    @RequestMapping(value={"editPage"}, method={RequestMethod.GET})
-    public String editPage(String goodsId, Model model) {
-        Goods goods = goodsService.find(goodsId);
-        String goodsInfo = JSON.toJSONString(goods);
+    @RequestMapping(value={"updatePage"}, method={RequestMethod.GET})
+    public String updatePage(String goodsId, Model model) {
+        model.addAttribute("goodsId", goodsId);
 
-        model.addAttribute("goodsInfo", goodsInfo);
-        return "webShop/goods/editPage";
+        return "webShop/goods/updatePage";
     }
 }

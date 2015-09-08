@@ -28,6 +28,11 @@ public class GoodsTypeManager extends BaseManager<GoodsType, String> implements 
         this.goodsTypeDao = (GoodsTypeDao)baseDao;
     }
 
+    /**
+     * 通过商店ID查询该商铺下所有未逻辑删除的商品类型
+     * @param shopId 商店ID
+     * @return
+     */
     @Override
     public List<GoodsType> findVisibleGoodsTypeListByShopId(String shopId) {
         // 获取自定义查询对象，查询未逻辑删除并默认排序的权限对象

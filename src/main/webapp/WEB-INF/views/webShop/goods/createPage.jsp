@@ -94,14 +94,14 @@
         function makeGoodsTypeSelect(typeList) {
             var htmlStr = '';
 
-            for(var goodsType in typeList) {
-                htmlStr += '<option value="">---请选择---</option>';
+            for(var i in typeList) {
+                htmlStr += '<option value="' + typeList[i]['id'] + '">' + typeList[i]['typeName'] + '</option>';
             }
 
             $('#goodsType').append(htmlStr);
         }
 
-        function getGoodsType() {
+        function getGoodsTypeList() {
             $.get('${ctx }/webShop/goodsType/getGoodsTypeList',
                     function(resultData) {
                         var typeList = ResultData.getSuccessDataInfo(resultData);
@@ -170,14 +170,19 @@
 
         // 页面初始化
         $(function() {
+            // 初始化商品类型列表
+            getGoodsTypeList();
+
             // 增加商品类型
             $('#addGoodsModeBtn').on('click', function() {
                 addGoodsMode();
             });
+
             // 删除商品类型
             $(document).on('click', '[name=deleteGoodsModeBtn]', function() {
                 deleteGoodsMode();
             });
+
             // 提交新增
             $('#createBtn').on('click', function() {
                 saveGoods();
