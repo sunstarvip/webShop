@@ -33,8 +33,8 @@ public class GoodsTypeManager extends BaseManager<GoodsType, String> implements 
         // 获取自定义查询对象，查询未逻辑删除并默认排序的权限对象
         Criteria criteria = getVisibleCriteria();
         criteria.createAlias("shop", "shop").add(Restrictions.eq("shop.id", shopId));
-        criteria.addOrder(Order.desc("createTime"));
         criteria.addOrder(Order.desc("updateTime"));
+        criteria.addOrder(Order.desc("createTime"));
 
         List<GoodsType> typeList = criteria.list();
         return typeList;
