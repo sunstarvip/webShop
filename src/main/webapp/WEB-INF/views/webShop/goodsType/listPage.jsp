@@ -17,6 +17,9 @@
     </style>
 </head>
 <body>
+    <div class="shop-list-header">
+        <button class="shop-list-button" id="backBtn" type="button">返回</button>
+    </div>
     <div class="shop-list" id="goodsTypeList">
         <%--<div class="shop-list-item">--%>
             <%--<input class="shop-list-checkbox" name="goodsTypeChk" type="checkbox" value="1">--%>
@@ -87,6 +90,11 @@
         $(function() {
             // 生成GoodsType列表
             getGoodsTypeList();
+
+            // 返回首页
+            $('#backBtn').on('click', function() {
+                window.location.href = '${ctx }/indexPage';
+            });
 
             // 新增商品类型
             $('#createBtn').on('click', function() {

@@ -158,12 +158,14 @@
                         description: $('#description').val(),
                         buyLink: $('#buyLink').val(),
                         goodsPrice: $('#goodsPrice').val(),
-                        stockNum: $('#stockNum').val()
+                        stockNum: $('#stockNum').val(),
+
+                        goodsTypeId: $('#goodsType').val()
                     },
                     function(resultData) {
                         if(ResultData.getSuccessStatus(resultData)) {
                             alert("商品添加成功");
-                            window.location.href = '${ctx }/indexPage';
+                            window.location.href = '${ctx }/webShop/goods/listPage';
                         }
                     });
         }
