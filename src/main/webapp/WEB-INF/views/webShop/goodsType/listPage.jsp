@@ -40,10 +40,10 @@
         function makeGoodsTypeList(typeList) {
             var htmlStr = '';
 
-            for(var goodsType in typeList) {
+            for(var i in typeList) {
                 htmlStr += '<div class="shop-list-item">';
-                htmlStr += '<input class="shop-list-checkbox" name="goodsTypeCkb" type="checkbox" value="1">';
-                htmlStr += '<span>类型1</span>';
+                htmlStr += '<input class="shop-list-checkbox" name="goodsTypeCkb" type="checkbox" value="' + typeList[i]['id'] + '">';
+                htmlStr += '<span>' + typeList[i]['typeName'] + '</span>';
                 htmlStr += '</div>';
             }
 
