@@ -68,13 +68,17 @@ public class ShopSystemManager implements ShopSystemService {
         return loginUser;
     }
 
+    /**
+     * 生成店主对应的店铺ID
+     * @param merchant 店主对象实体
+     * @return
+     */
     @Override
-    public Map getCurrentShopMap(Merchant merchant) {
-        Map currentShop = new HashMap();
-
+    public String getCurrentShopId(Merchant merchant) {
         Shop shop = shopService.findShopByMerchantAccountName(merchant.getAccountName());
-        currentShop.put("shopId", shop.getId());
-
-        return currentShop;
+        if(shop != null) {
+            return shop.getId();
+        }
+        return null;
     }
 }

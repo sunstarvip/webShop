@@ -21,7 +21,6 @@
     <script>
         function editShopDesc() {
             var shopObj = {};
-            shopObj['shopId'] = '${shopId}';
             shopObj['description'] = $('#description').val();
 
             formSubmit('${ctx }/webShop/shop/editDesc', 'post', '_self', shopObj);

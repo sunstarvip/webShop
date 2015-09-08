@@ -49,10 +49,9 @@ public class ShopSystemController {
                 String loginUserInfo = JSON.toJSONString(loginUser);
                 session.setAttribute("loginUserInfo", loginUserInfo);
 
-                // 将该店主的店铺信息保存至Session
-                Map currentShop = shopSystemService.getCurrentShopMap(merchant);
-                String currentShopInfo = JSON.toJSONString(currentShop);
-                session.setAttribute("currentShopInfo", currentShopInfo);
+                // 将该店主的店铺ID保存至Session
+                String currentShopId = shopSystemService.getCurrentShopId(merchant);
+                session.setAttribute("currentShopId", currentShopId);
 
                 resultData.setStatus(ResultEntity.Status.SUCCESS);
             }

@@ -91,7 +91,7 @@
         modeCount = 0;  // 商品型号总数
         modeNum = 0;  // 商品型号计数
 
-        function makeGoodsType(typeList) {
+        function makeGoodsTypeSelect(typeList) {
             var htmlStr = '';
 
             for(var goodsType in typeList) {
@@ -107,7 +107,7 @@
                         var typeList = ResultData.getSuccessDataInfo(resultData);
                         if(!!typeList) {
                             typeList = eval('(' + typeList + ')');
-                            makeGoodsType(typeList);
+                            makeGoodsTypeSelect(typeList);
                         }
                     });
         }

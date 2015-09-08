@@ -35,7 +35,7 @@
                     function(resultData) {
                         if(ResultData.getSuccessStatus(resultData)) {
                             alert("商品类型添加成功");
-                            window.location.href = '${ctx }/indexPage';
+                            window.location.href = '${ctx }/webShop/goodsType/listPage';
                         }
                     });
         }

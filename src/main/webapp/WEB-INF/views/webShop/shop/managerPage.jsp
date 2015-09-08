@@ -71,11 +71,9 @@
     <script>
         shopInfo = {};
 
-        function initShopPic(shopId, picUrl) {
-            if(!!shopId) {
-                $('#shopPicLink').attr('href', '${ctx }/webShop/shop/editPicPage?shopId=' + shopId);
-                $('#shopPic').attr('src', '${ctx }/' + picUrl);
-            }
+        function initShopPic(picUrl) {
+            $('#shopPicLink').attr('href', '${ctx }/webShop/shop/editPicPage');
+            $('#shopPic').attr('src', '${ctx }/' + picUrl);
         }
 
         function initDisplayMode(displayMode) {
@@ -111,7 +109,7 @@
         }
 
         function initShopInfo() {
-            initShopPic(shopInfo['id'], shopInfo['picUrl']);
+            initShopPic(shopInfo['picUrl']);
             $('#shopName').text(shopInfo['name']);
             $('#shopDesc').text(shopInfo['description']);
             initDisplayMode(shopInfo['displayMode']);
@@ -140,15 +138,15 @@
 
             // 修改店铺图片
             $('#shopNameBtn').on('click', function() {
-                window.location.href = '${ctx }/webShop/shop/editNamePage?shopId=' + shopInfo['id'];
+                window.location.href = '${ctx }/webShop/shop/editNamePage';
             });
             // 修改店铺名称
             $('#shopNameBtn').on('click', function() {
-                window.location.href = '${ctx }/webShop/shop/editNamePage?shopId=' + shopInfo['id'];
+                window.location.href = '${ctx }/webShop/shop/editNamePage';
             });
             // 修改店铺描述
             $('#shopDescBtn').on('click', function() {
-                window.location.href = '${ctx }/webShop/shop/editDescPage?shopId=' + shopInfo['id'];
+                window.location.href = '${ctx }/webShop/shop/editDescPage';
             });
 
             // 返回首页

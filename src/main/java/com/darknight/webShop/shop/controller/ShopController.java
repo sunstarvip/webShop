@@ -30,10 +30,8 @@ public class ShopController {
     public String managerShop(HttpSession session) {
         ResultEntity resultData = new ResultEntity();
 
-        String loginUserInfo = session.getAttribute("loginUserInfo").toString();
-        JSONObject loginUserJson = JSON.parseObject(loginUserInfo);
-        String merchantAccount = loginUserJson.getString("merchantAccount");
-        Shop shop = shopService.findShopByMerchantAccountName(merchantAccount);
+        String currentShopId = session.getAttribute("currentShopId").toString();
+        Shop shop = shopService.find(currentShopId);
         String shopInfo = JSON.toJSONString(shop);
 
         resultData.setDataInfo(shopInfo);

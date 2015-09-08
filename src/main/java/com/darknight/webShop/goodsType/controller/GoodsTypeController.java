@@ -39,11 +39,8 @@ public class GoodsTypeController {
     public String getGoodsTypeList(HttpSession session) {
         ResultEntity resultData = new ResultEntity();
 
-        String loginUserInfo = session.getAttribute("loginUserInfo").toString();
-        JSONObject loginUserJson = JSON.parseObject(loginUserInfo);
-        String merchantAccount = loginUserJson.getString("merchantAccount");
-        Shop shop = shopService.findShopByMerchantAccountName(merchantAccount);
-        List<GoodsType> typeList = goodsTypeService.findVisibleGoodsTypeListByShopId(shop.getId());
+        String currentShopId = session.getAttribute("currentShopId").toString();
+        List<GoodsType> typeList = goodsTypeService.findVisibleGoodsTypeListByShopId(currentShopId);
         String typeListInfo = JSON.toJSONString(typeList);
 
         resultData.setDataInfo(typeListInfo);
@@ -53,10 +50,13 @@ public class GoodsTypeController {
     }
 
     @RequestMapping(value={"saveGoodsType"}, method={RequestMethod.POST})
-    public String saveGoodsType(GoodsType goodsType) {
+    public String saveGoodsType(GoodsType goodsType, HttpSession session) {
         ResultEntity resultData = new ResultEntity();
 
+        String currentShopId = session.getAttribute("currentShopId").toString();
+        Shop shop = shopService.find(currentShopId);
         goodsType.setCreateTime(new Date());
+        goodsType.setShop(shop);
         goodsTypeService.save(goodsType);
 
         resultData.setStatus(ResultEntity.Status.SUCCESS);

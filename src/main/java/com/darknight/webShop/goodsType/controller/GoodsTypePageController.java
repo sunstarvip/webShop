@@ -15,4 +15,9 @@ public class GoodsTypePageController {
     public String createPage() {
         return "webShop/goodsType/createPage";
     }
+
+    @RequestMapping(value={"listPage"}, method={RequestMethod.GET})
+    public String listPage() {
+        return "webShop/goodsType/listPage";
+    }
 }

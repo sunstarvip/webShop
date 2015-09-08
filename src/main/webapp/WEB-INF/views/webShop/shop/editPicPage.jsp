@@ -23,7 +23,6 @@
 <body>
     <div>
         <div>
-            <input id="id" name="id" type="hidden" value="${shopId}">
             <input id="picUrl" name="picUrl" type="hidden" value="${shopPicUrl}">
             <img class="shop-pic" id="shopPicImg" src="${ctx }/${shopPicUrl}">
             <input class="" id="picUrlBtn" name="file" type="file">
@@ -63,7 +62,7 @@
                 'uploadLimit': 1,  // 上传文件个数的限制
                 'swf': '${ctx }/static/plugins/uploadify/uploadify.swf',
                 'checkExisting' : false,  // 检查文件重名时填写后台检测路径
-                'uploader': '${ctx }/upload/springUploadFile;jsessionid=${pageContext.session.id }?secondPath=${shopId}',
+                'uploader': '${ctx }/upload/springUploadFile;jsessionid=${pageContext.session.id }?secondPath=${currentShopId}',
                 'onUploadSuccess': function(file, data, response) {
                     uploadSuccess(data);
                 },
@@ -75,7 +74,6 @@
 
         function editShopPic() {
             var shopObj = {};
-            shopObj['shopId'] = '${shopId}';
             shopObj['picUrl'] = $('#picUrl').val();
 
             formSubmit('${ctx }/webShop/shop/editPic', 'post', '_self', shopObj);

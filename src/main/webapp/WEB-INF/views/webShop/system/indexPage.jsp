@@ -66,7 +66,7 @@
             });
 
             $('#goodsTypeBtn').on('click', function() {
-                window.location.href = '${ctx }/webShop/goodsType/createPage';
+                window.location.href = '${ctx }/webShop/goodsType/listPage';
             });
 
             $('#goodsBtn').on('click', function() {

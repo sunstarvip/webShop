@@ -21,7 +21,6 @@
     <script>
         function editShopName() {
             var shopObj = {};
-            shopObj['shopId'] = '${shopId}';
             shopObj['name'] = $('#name').val();
 
             formSubmit('${ctx }/webShop/shop/editName', 'post', '_self', shopObj);

@@ -1,5 +1,7 @@
 package com.darknight.webShop.shop.controller;
 
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
 import com.darknight.webShop.shop.entity.Shop;
 import com.darknight.webShop.shop.service.ShopService;
 import org.springframework.stereotype.Controller;
@@ -31,17 +33,18 @@ public class ShopPageController {
     }
 
     @RequestMapping(value={"editNamePage"}, method={RequestMethod.GET})
-    public String editNamePage(String shopId, Model model) {
-        Shop shop = shopService.find(shopId);
+    public String editNamePage(Model model, HttpSession session) {
+        String currentShopId = session.getAttribute("currentShopId").toString();
+        Shop shop = shopService.find(currentShopId);
 
-        model.addAttribute("shopId", shop.getId());
         model.addAttribute("shopName", shop.getName());
         return "webShop/shop/editNamePage";
     }
 
     @RequestMapping(value={"editName"}, method={RequestMethod.POST})
-    public String editName(String shopId, String name) {
-        Shop shop = shopService.find(shopId);
+    public String editName(String name, HttpSession session) {
+        String currentShopId = session.getAttribute("currentShopId").toString();
+        Shop shop = shopService.find(currentShopId);
         shop.setUpdateTime(new Date());
         shop.setName(name);
 
@@ -50,17 +53,18 @@ public class ShopPageController {
     }
 
     @RequestMapping(value={"editDescPage"}, method={RequestMethod.GET})
-    public String editDescPage(String shopId, Model model) {
-        Shop shop = shopService.find(shopId);
+    public String editDescPage(Model model, HttpSession session) {
+        String currentShopId = session.getAttribute("currentShopId").toString();
+        Shop shop = shopService.find(currentShopId);
 
-        model.addAttribute("shopId", shop.getId());
         model.addAttribute("shopDesc", shop.getDescription());
         return "webShop/shop/editDescPage";
     }
 
     @RequestMapping(value={"editDesc"}, method={RequestMethod.POST})
-    public String editDesc(String shopId, String description) {
-        Shop shop = shopService.find(shopId);
+    public String editDesc(String description, HttpSession session) {
+        String currentShopId = session.getAttribute("currentShopId").toString();
+        Shop shop = shopService.find(currentShopId);
         shop.setUpdateTime(new Date());
         shop.setDescription(description);
 
@@ -69,18 +73,19 @@ public class ShopPageController {
     }
 
     @RequestMapping(value={"editPicPage"}, method={RequestMethod.GET})
-    public String editPicPage(String shopId, Model model) {
-        Shop shop = shopService.find(shopId);
+    public String editPicPage(Model model, HttpSession session) {
+        String currentShopId = session.getAttribute("currentShopId").toString();
+        Shop shop = shopService.find(currentShopId);
 
-        model.addAttribute("shopId", shop.getId());
         model.addAttribute("shopName", shop.getName());
         model.addAttribute("shopPicUrl", shop.getPicUrl());
         return "webShop/shop/editPicPage";
     }
 
     @RequestMapping(value={"editPic"}, method={RequestMethod.POST})
-    public String editPic(String shopId, String picUrl) {
-        Shop shop = shopService.find(shopId);
+    public String editPic(String picUrl, HttpSession session) {
+        String currentShopId = session.getAttribute("currentShopId").toString();
+        Shop shop = shopService.find(currentShopId);
         shop.setUpdateTime(new Date());
         shop.setPicUrl(picUrl);
 

@@ -26,9 +26,9 @@ public interface ShopSystemService {
     Map getLoginUserMap(Merchant merchant);
 
     /**
-     * 生成店主对应的店铺信息Map
+     * 生成店主对应的店铺ID
      * @param merchant 店主对象实体
      * @return
      */
-    Map getCurrentShopMap(Merchant merchant);
+    String getCurrentShopId(Merchant merchant);
 }
