@@ -94,9 +94,33 @@ public class ShopPageController {
         return "redirect:/webShop/shop/managerPage";
     }
 
+    @RequestMapping(value={"editDisplayModePage"}, method={RequestMethod.GET})
+    public String editDisplayModePage(Model model, @ModelAttribute("currentShopId")String currentShopId) {
+        Shop shop = shopService.find(currentShopId);
+
+        model.addAttribute("shopDisplayMode", shop.getDisplayMode());
+        return "webShop/shop/editDisplayModePage";
+    }
+
+    @RequestMapping(value={"editDisplayMode"}, method={RequestMethod.POST})
+    public String editDisplayMode(String displayMode, @ModelAttribute("currentShopId")String currentShopId) {
+        Shop shop = shopService.find(currentShopId);
+        shop.setUpdateTime(new Date());
+        switch(displayMode) {
+            case Shop.DisplayMode.BY_DATE:
+                shop.setDisplayMode(Shop.DisplayMode.BY_DATE);
+                break;
+            case Shop.DisplayMode.BY_TYPE:
+                shop.setDisplayMode(Shop.DisplayMode.BY_TYPE);
+                break;
+        }
+
+        shopService.save(shop);
+        return "redirect:/webShop/shop/managerPage";
+    }
+
     @RequestMapping(value={"editBuyModePage"}, method={RequestMethod.GET})
     public String editBuyModePage(Model model, @ModelAttribute("currentShopId")String currentShopId) {
-//        String currentShopId = session.getAttribute("currentShopId").toString();
         Shop shop = shopService.find(currentShopId);
 
         model.addAttribute("shopBuyMode", shop.getBuyMode());
@@ -104,11 +128,17 @@ public class ShopPageController {
     }
 
     @RequestMapping(value={"editBuyMode"}, method={RequestMethod.POST})
-    public String editBuyMode(String description, @ModelAttribute("currentShopId")String currentShopId) {
-//        String currentShopId = session.getAttribute("currentShopId").toString();
+    public String editBuyMode(String buyMode, @ModelAttribute("currentShopId")String currentShopId) {
         Shop shop = shopService.find(currentShopId);
         shop.setUpdateTime(new Date());
-        shop.setDescription(description);
+        switch(buyMode) {
+            case Shop.BuyMode.IN_SITE:
+                shop.setBuyMode(Shop.BuyMode.IN_SITE);
+                break;
+            case Shop.BuyMode.OUT_SITE:
+                shop.setBuyMode(Shop.BuyMode.OUT_SITE);
+                break;
+        }
 
         shopService.save(shop);
         return "redirect:/webShop/shop/managerPage";
