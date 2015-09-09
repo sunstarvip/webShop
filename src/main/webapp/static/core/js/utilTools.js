@@ -155,20 +155,8 @@ function isPort(portStr) {
     return true;
 }
 
-//=====================================================================================
-/**
- * 生成节点选择列表
- * @param remoteHostList 节点列表
- *     remoteHostList结构：[{id: 1, host: 1}, {id: 2, host: 2}]
- */
-function makeRemoteHostList(remoteHostList, listId) {
-    var htmlStr = '<option value="">------请选择------</option>';
-    if(!!remoteHostList) {
-        remoteHostList = eval('('+remoteHostList+')');
-        for(var i in remoteHostList) {
-            htmlStr += '<option value="'+remoteHostList[i]['id']+'">'+remoteHostList[i]['host']+'</option>';
-        }
-    }
-
-    $('#' + listId).html(htmlStr);
+function clickPageForwardBtn(btnSelector, url) {
+    $(btnSelector).on('click', function() {
+        window.location.href = url;
+    });
 }

@@ -80,7 +80,7 @@
         </div>
 
         <div class="shop-form-footer">
-            <button class="shop-form-subbmit" id="createBtn" type="button">提交</button>
+            <button class="shop-form-subbmit" id="saveBtn" type="button">提交</button>
             <button class="shop-form-button" id="cancelBtn" type="button">取消</button>
         </div>
     </div>
@@ -204,7 +204,7 @@
             });
 
             // 提交编辑
-            $('#createBtn').on('click', function() {
+            $('#saveBtn').on('click', function() {
                 saveGoods();
             });
 

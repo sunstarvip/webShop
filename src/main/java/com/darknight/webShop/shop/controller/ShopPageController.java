@@ -1,13 +1,13 @@
 package com.darknight.webShop.shop.controller;
 
-import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONObject;
 import com.darknight.webShop.shop.entity.Shop;
 import com.darknight.webShop.shop.service.ShopService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.SessionAttributes;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
@@ -19,6 +19,7 @@ import java.util.Date;
  */
 @Controller
 @RequestMapping(value = "webShop/shop")
+@SessionAttributes("currentShopId")
 public class ShopPageController {
     private ShopService shopService;
 
@@ -88,6 +89,26 @@ public class ShopPageController {
         Shop shop = shopService.find(currentShopId);
         shop.setUpdateTime(new Date());
         shop.setPicUrl(picUrl);
+
+        shopService.save(shop);
+        return "redirect:/webShop/shop/managerPage";
+    }
+
+    @RequestMapping(value={"editBuyModePage"}, method={RequestMethod.GET})
+    public String editBuyModePage(Model model, @ModelAttribute("currentShopId")String currentShopId) {
+//        String currentShopId = session.getAttribute("currentShopId").toString();
+        Shop shop = shopService.find(currentShopId);
+
+        model.addAttribute("shopBuyMode", shop.getBuyMode());
+        return "webShop/shop/editBuyModePage";
+    }
+
+    @RequestMapping(value={"editBuyMode"}, method={RequestMethod.POST})
+    public String editBuyMode(String description, @ModelAttribute("currentShopId")String currentShopId) {
+//        String currentShopId = session.getAttribute("currentShopId").toString();
+        Shop shop = shopService.find(currentShopId);
+        shop.setUpdateTime(new Date());
+        shop.setDescription(description);
 
         shopService.save(shop);
         return "redirect:/webShop/shop/managerPage";

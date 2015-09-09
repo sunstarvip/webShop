@@ -106,8 +106,8 @@ public class Shop extends DefaultEntity {
         static final String BY_TYPE = "by_type";
     }
 
-    public interface PayMode {
-        static final String IN_SITE = "in_site";
-        static final String OUT_SITE = "out_site";
+    public interface BuyMode {
+        static final String IN_SITE = "in_site";  // 站内付款
+        static final String OUT_SITE = "out_site";  // 其他站点购买
     }
 }
