@@ -5,6 +5,8 @@ import com.alibaba.fastjson.JSONObject;
 import com.darknight.core.base.entity.ResultEntity;
 import com.darknight.webShop.goods.entity.Goods;
 import com.darknight.webShop.goods.service.GoodsService;
+import com.darknight.webShop.goodsType.entity.GoodsType;
+import com.darknight.webShop.goodsType.service.GoodsTypeService;
 import com.darknight.webShop.shop.entity.Shop;
 import com.darknight.webShop.shop.service.ShopService;
 import org.apache.commons.lang3.StringUtils;
@@ -24,6 +26,7 @@ import java.util.List;
 public class GoodsController {
     private GoodsService goodsService;
     private ShopService shopService;
+    private GoodsTypeService goodsTypeService;
 
     @Resource
     public void setGoodsService(GoodsService goodsService) {
@@ -33,6 +36,11 @@ public class GoodsController {
     @Resource
     public void setShopService(ShopService shopService) {
         this.shopService = shopService;
+    }
+
+    @Resource
+    public void setGoodsTypeService(GoodsTypeService goodsTypeService) {
+        this.goodsTypeService = goodsTypeService;
     }
 
     @ModelAttribute("goods")
@@ -94,10 +102,18 @@ public class GoodsController {
     }
 
     @RequestMapping(value={"updateGoods"}, method={RequestMethod.POST})
-    public String updateGoods(@ModelAttribute("goods")Goods goods) {
+    public String updateGoods(@ModelAttribute("goods")Goods goods, String goodsTypeId) {
         ResultEntity resultData = new ResultEntity();
 
         goods.setUpdateTime(new Date());
+        if(StringUtils.isNotBlank(goodsTypeId)) {
+            if(goods.getGoodsType() == null || !StringUtils.equals(goods.getGoodsType().getId(), goodsTypeId)) {
+                GoodsType goodsType = goodsTypeService.find(goodsTypeId);
+                goods.setGoodsType(goodsType);
+            }
+        }else {
+            goods.setGoodsType(null);
+        }
         goodsService.save(goods);
 
         resultData.setStatus(ResultEntity.Status.SUCCESS);
