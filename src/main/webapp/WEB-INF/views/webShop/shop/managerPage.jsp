@@ -54,11 +54,12 @@
                 <div class="shop-func-content">
                     <label for="displayMode">商品展示方式：</label>
                     <div class="shop-info-item" id="displayMode">未知</div>
+                    <button class="shop-info-item" id="displayModeBtn">修改</button>
                 </div>
                 <div class="shop-func-content">
-                    <label for="displayMode">商品付款方式：</label>
-                    <div class="shop-info-item" id="payMode">未知</div>
-                    <button class="shop-info-item" id="payModeBtn">修改</button>
+                    <label for="buyMode">商品购买方式：</label>
+                    <div class="shop-info-item" id="buyMode">未知</div>
+                    <button class="shop-info-item" id="buyModeBtn">修改</button>
                 </div>
             </div><hr>
             <div class="shop-pay">
@@ -92,19 +93,19 @@
             }
         }
 
-        function initPayMode(payMode) {
-            if(!!payMode) {
-                var payModeText = '未知';
-                switch (payMode) {
+        function initPayMode(buyMode) {
+            if(!!buyMode) {
+                var buyModeText = '未知';
+                switch (buyMode) {
                     case 'in_site':
-                        payModeText = '站内购买';
+                        buyModeText = '站内购买';
                         break;
                     case 'out_site':
-                        payModeText = '其他站点购买';
+                        buyModeText = '其他站点购买';
                         break;
                 }
 
-                $('#payMode').text(payModeText);
+                $('#buyMode').text(buyModeText);
             }
         }
 
@@ -113,7 +114,7 @@
             $('#shopName').text(shopInfo['name']);
             $('#shopDesc').text(shopInfo['description']);
             initDisplayMode(shopInfo['displayMode']);
-            initPayMode(shopInfo['payMode']);
+            initPayMode(shopInfo['buyMode']);
         }
 
         function getShopInfo() {
@@ -140,13 +141,25 @@
             $('#shopNameBtn').on('click', function() {
                 window.location.href = '${ctx }/webShop/shop/editNamePage';
             });
+
             // 修改店铺名称
             $('#shopNameBtn').on('click', function() {
                 window.location.href = '${ctx }/webShop/shop/editNamePage';
             });
+
             // 修改店铺描述
             $('#shopDescBtn').on('click', function() {
                 window.location.href = '${ctx }/webShop/shop/editDescPage';
+            });
+
+            // 修改商品展示方式
+            $('#displayModeBtn').on('click', function() {
+                window.location.href = '${ctx }/webShop/shop/editDisplayModePage';
+            });
+
+            // 修改商品付款方式
+            $('#buyModeBtn').on('click', function() {
+                window.location.href = '${ctx }/webShop/shop/editBuyModePage';
             });
 
             // 返回首页

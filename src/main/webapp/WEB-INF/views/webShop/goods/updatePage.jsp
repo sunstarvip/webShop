@@ -80,7 +80,7 @@
         </div>
 
         <div class="shop-form-footer">
-            <button class="shop-form-subbmit" id="createBtn" type="submit">提交</button>
+            <button class="shop-form-subbmit" id="saveBtn" type="button">提交</button>
             <button class="shop-form-button" id="cancelBtn" type="button">取消</button>
         </div>
     </div>
@@ -152,14 +152,14 @@
         function saveGoods() {
             $.post('${ctx }/webShop/goods/updateGoods',
                     {
-                        id: '${goodsId }',
-                        name: $('#name').val(),
-                        description: $('#description').val(),
-                        buyLink: $('#buyLink').val(),
-                        goodsPrice: $('#goodsPrice').val(),
-                        stockNum: $('#stockNum').val(),
+                        'id': '${goodsId }',
+                        'name': $('#name').val(),
+                        'description': $('#description').val(),
+                        'buyLink': $('#buyLink').val(),
+                        'goodsPrice': $('#goodsPrice').val(),
+                        'stockNum': $('#stockNum').val(),
 
-                        'goodsType.id': $('#goodsType').val()
+                        'goodsTypeId': $('#goodsType').val()
                     },
                     function(resultData) {
                         if(ResultData.getSuccessStatus(resultData)) {
@@ -203,12 +203,12 @@
                 deleteGoodsMode();
             });
 
-            // 提交新增
-            $('#createBtn').on('click', function() {
+            // 提交编辑
+            $('#saveBtn').on('click', function() {
                 saveGoods();
             });
 
-            // 取消新增
+            // 取消编辑
             $('#cancelBtn').on('click', function() {
                 window.location.href = '${ctx }/webShop/goods/listPage';
             });
