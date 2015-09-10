@@ -81,6 +81,7 @@
 
         <div class="shop-form-footer">
             <button class="shop-form-subbmit" id="createBtn" type="submit">提交</button>
+            <button class="shop-form-button" id="cancelBtn" type="button">取消</button>
         </div>
     </div>
     <script>
@@ -158,7 +159,7 @@
                         goodsPrice: $('#goodsPrice').val(),
                         stockNum: $('#stockNum').val(),
 
-                        goodsTypeId: $('#goodsType').val()
+                        'goodsType.id': $('#goodsType').val()
                     },
                     function(resultData) {
                         if(ResultData.getSuccessStatus(resultData)) {
@@ -205,6 +206,11 @@
             // 提交新增
             $('#createBtn').on('click', function() {
                 saveGoods();
+            });
+
+            // 取消新增
+            $('#cancelBtn').on('click', function() {
+                window.location.href = '${ctx }/webShop/goods/listPage';
             });
         });
     </script>

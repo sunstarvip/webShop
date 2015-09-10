@@ -154,13 +154,13 @@
         function saveGoods() {
             $.post('${ctx }/webShop/goods/saveGoods',
                     {
-                        name: $('#name').val(),
-                        description: $('#description').val(),
-                        buyLink: $('#buyLink').val(),
-                        goodsPrice: $('#goodsPrice').val(),
-                        stockNum: $('#stockNum').val(),
+                        'name': $('#name').val(),
+                        'description': $('#description').val(),
+                        'buyLink': $('#buyLink').val(),
+                        'goodsPrice': $('#goodsPrice').val(),
+                        'stockNum': $('#stockNum').val(),
 
-                        goodsTypeId: $('#goodsType').val()
+                        'goodsType.id': $('#goodsType').val()
                     },
                     function(resultData) {
                         if(ResultData.getSuccessStatus(resultData)) {

@@ -23,7 +23,7 @@
         </div>
         <div class="shop-form-footer">
             <button class="shop-form-subbmit" id="saveBtn" type="submit">提交</button>
-            <button class="shop-form-subbmit" id="cancelBtn" type="submit">取消</button>
+            <button class="shop-form-button" id="cancelBtn" type="button">取消</button>
         </div>
     </div>
 
