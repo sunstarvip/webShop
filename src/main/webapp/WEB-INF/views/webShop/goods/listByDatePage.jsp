@@ -21,18 +21,6 @@
         <button class="shop-list-button" id="backBtn" type="button">返回</button>
     </div>
     <div class="shop-list" id="goodsList">
-        <%--<div class="shop-list-item">--%>
-            <%--<input class="shop-list-checkbox" name="goodsTypeChk" type="checkbox" value="1">--%>
-            <%--<span>类型1</span>--%>
-        <%--</div>--%>
-        <%--<div class="shop-list-item">--%>
-            <%--<input class="shop-list-checkbox" name="goodsTypeChk" type="checkbox" value="2">--%>
-            <%--<span>类型2</span>--%>
-        <%--</div>--%>
-        <%--<div class="shop-list-item">--%>
-            <%--<input class="shop-list-checkbox" name="goodsTypeChk" type="checkbox" value="3">--%>
-            <%--<span>类型3</span>--%>
-        <%--</div>--%>
     </div>
     <div class="shop-list-footer">
         <button class="shop-list-button" id="createBtn" type="button">新增</button>

@@ -16,6 +16,7 @@ import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 /**
  * 商品数据处理
@@ -23,6 +24,7 @@ import java.util.List;
  */
 @RestController
 @RequestMapping(value = "webShop/goods")
+@SessionAttributes("currentShopId")
 public class GoodsController {
     private GoodsService goodsService;
     private ShopService shopService;
@@ -73,12 +75,26 @@ public class GoodsController {
     }
 
     @RequestMapping(value={"getGoodsList"}, method={RequestMethod.GET})
-    public String getGoodsList(HttpSession session) {
+    public String getGoodsList(@ModelAttribute("currentShopId")String currentShopId) {
         ResultEntity resultData = new ResultEntity();
 
-        String currentShopId = session.getAttribute("currentShopId").toString();
-        List<Goods> goodsList = goodsService.findVisibleGoodsListByShopId(currentShopId);
-        String goodsListInfo = JSON.toJSONString(goodsList);
+        Shop shop = shopService.find(currentShopId);
+        String goodsListInfo = null;
+        switch(shop.getDisplayMode()) {
+            case Shop.DisplayMode.BY_DATE:
+                List<Goods> goodsList = goodsService.findVisibleGoodsListByShopId(currentShopId);
+                goodsListInfo = JSON.toJSONString(goodsList);
+                break;
+            case Shop.DisplayMode.BY_TYPE:
+                List<Map> resultList = goodsService.countVisibleGoodsByShopIdGroupByGoodsTypeId(currentShopId);
+                goodsListInfo = JSON.toJSONString(resultList);
+
+//                Object resultList = goodsService.countVisibleGoodsByShopIdGroupByGoodsTypeIdIsNull(currentShopId);
+//                goodsListInfo = JSON.toJSONString(resultList);
+                break;
+        }
+//        List<Goods> goodsList = goodsService.findVisibleGoodsListByShopId(currentShopId);
+//        String goodsListInfo = JSON.toJSONString(goodsList);
 
         resultData.setDataInfo(goodsListInfo);
         resultData.setStatus(ResultEntity.Status.SUCCESS);
@@ -87,10 +103,10 @@ public class GoodsController {
     }
 
     @RequestMapping(value={"saveGoods"}, method={RequestMethod.POST})
-    public String saveGoods(@ModelAttribute("goods")Goods goods, HttpSession session) {
+    public String saveGoods(@ModelAttribute("goods")Goods goods,
+                            @ModelAttribute("currentShopId")String currentShopId) {
         ResultEntity resultData = new ResultEntity();
 
-        String currentShopId = session.getAttribute("currentShopId").toString();
         Shop shop = shopService.find(currentShopId);
         goods.setCreateTime(new Date());
         goods.setShop(shop);

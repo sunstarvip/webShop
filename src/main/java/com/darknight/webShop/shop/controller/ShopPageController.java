@@ -34,8 +34,7 @@ public class ShopPageController {
     }
 
     @RequestMapping(value={"editNamePage"}, method={RequestMethod.GET})
-    public String editNamePage(Model model, HttpSession session) {
-        String currentShopId = session.getAttribute("currentShopId").toString();
+    public String editNamePage(Model model, @ModelAttribute("currentShopId")String currentShopId) {
         Shop shop = shopService.find(currentShopId);
 
         model.addAttribute("shopName", shop.getName());
@@ -43,8 +42,7 @@ public class ShopPageController {
     }
 
     @RequestMapping(value={"editName"}, method={RequestMethod.POST})
-    public String editName(String name, HttpSession session) {
-        String currentShopId = session.getAttribute("currentShopId").toString();
+    public String editName(String name, @ModelAttribute("currentShopId")String currentShopId) {
         Shop shop = shopService.find(currentShopId);
         shop.setUpdateTime(new Date());
         shop.setName(name);
@@ -54,8 +52,7 @@ public class ShopPageController {
     }
 
     @RequestMapping(value={"editDescPage"}, method={RequestMethod.GET})
-    public String editDescPage(Model model, HttpSession session) {
-        String currentShopId = session.getAttribute("currentShopId").toString();
+    public String editDescPage(Model model, @ModelAttribute("currentShopId")String currentShopId) {
         Shop shop = shopService.find(currentShopId);
 
         model.addAttribute("shopDesc", shop.getDescription());
@@ -63,8 +60,7 @@ public class ShopPageController {
     }
 
     @RequestMapping(value={"editDesc"}, method={RequestMethod.POST})
-    public String editDesc(String description, HttpSession session) {
-        String currentShopId = session.getAttribute("currentShopId").toString();
+    public String editDesc(String description, @ModelAttribute("currentShopId")String currentShopId) {
         Shop shop = shopService.find(currentShopId);
         shop.setUpdateTime(new Date());
         shop.setDescription(description);
@@ -74,8 +70,7 @@ public class ShopPageController {
     }
 
     @RequestMapping(value={"editPicPage"}, method={RequestMethod.GET})
-    public String editPicPage(Model model, HttpSession session) {
-        String currentShopId = session.getAttribute("currentShopId").toString();
+    public String editPicPage(Model model, @ModelAttribute("currentShopId")String currentShopId) {
         Shop shop = shopService.find(currentShopId);
 
         model.addAttribute("shopName", shop.getName());
@@ -84,8 +79,7 @@ public class ShopPageController {
     }
 
     @RequestMapping(value={"editPic"}, method={RequestMethod.POST})
-    public String editPic(String picUrl, HttpSession session) {
-        String currentShopId = session.getAttribute("currentShopId").toString();
+    public String editPic(String picUrl, @ModelAttribute("currentShopId")String currentShopId) {
         Shop shop = shopService.find(currentShopId);
         shop.setUpdateTime(new Date());
         shop.setPicUrl(picUrl);
