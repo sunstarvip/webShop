@@ -3,6 +3,7 @@ package com.darknight.webShop.goodsType.controller;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.darknight.core.base.entity.ResultEntity;
+import com.darknight.webShop.goods.service.GoodsService;
 import com.darknight.webShop.goodsType.entity.GoodsType;
 import com.darknight.webShop.goodsType.service.GoodsTypeService;
 import com.darknight.webShop.shop.entity.Shop;
@@ -14,15 +15,18 @@ import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by Administrator on 2015/9/7.
  */
 @RestController
 @RequestMapping(value = "rest/goodsType")
+@SessionAttributes("currentShopId")
 public class GoodsTypeController {
     private GoodsTypeService goodsTypeService;
     private ShopService shopService;
+    private GoodsService goodsService;
 
     @Resource
     public void setGoodsTypeService(GoodsTypeService goodsTypeService) {
@@ -32,6 +36,11 @@ public class GoodsTypeController {
     @Resource
     public void setShopService(ShopService shopService) {
         this.shopService = shopService;
+    }
+
+    @Resource
+    public void setGoodsService(GoodsService goodsService) {
+        this.goodsService = goodsService;
     }
 
     @ModelAttribute("goodsType")
@@ -56,11 +65,12 @@ public class GoodsTypeController {
     }
 
     @RequestMapping(value={"getGoodsTypeList"}, method={RequestMethod.GET})
-    public String getGoodsTypeList(HttpSession session) {
+    public String getGoodsTypeList(@ModelAttribute("currentShopId")String currentShopId) {
         ResultEntity resultData = new ResultEntity();
 
-        String currentShopId = session.getAttribute("currentShopId").toString();
         List<GoodsType> typeList = goodsTypeService.findVisibleGoodsTypeListByShopId(currentShopId);
+        List<Map> resultList = goodsService.countVisibleGoodsByShopIdGroupByGoodsTypeId(currentShopId);
+        String goodsListInfo = JSON.toJSONString(resultList);
         String typeListInfo = JSON.toJSONString(typeList);
 
         resultData.setDataInfo(typeListInfo);
@@ -70,10 +80,9 @@ public class GoodsTypeController {
     }
 
     @RequestMapping(value={"saveGoodsType"}, method={RequestMethod.POST})
-    public String saveGoodsType(@ModelAttribute("goodsType")GoodsType goodsType, HttpSession session) {
+    public String saveGoodsType(@ModelAttribute("goodsType")GoodsType goodsType, @ModelAttribute("currentShopId")String currentShopId) {
         ResultEntity resultData = new ResultEntity();
 
-        String currentShopId = session.getAttribute("currentShopId").toString();
         Shop shop = shopService.find(currentShopId);
         goodsType.setCreateTime(new Date());
         goodsType.setShop(shop);

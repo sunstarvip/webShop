@@ -37,30 +37,27 @@ public class GoodsPageController {
     }
 
     @RequestMapping(value={"listByDatePage"}, method={RequestMethod.GET})
-    public String listByDatePage() {
+    public String listByDatePage(String goodsTypeId, Model model) {
+        model.addAttribute("goodsTypeId", goodsTypeId);
 
         return "webShop/goods/listByDatePage";
     }
 
     @RequestMapping(value={"listPage"}, method={RequestMethod.GET})
-    public String listPage(@ModelAttribute("currentShopId")String currentShopId) {
-        Shop shop = shopService.find(currentShopId);
-        switch(shop.getDisplayMode()) {
-            case Shop.DisplayMode.BY_DATE:
-                return "webShop/goods/listByDatePage";
-            case Shop.DisplayMode.BY_TYPE:
-                return "webShop/goods/listByTypePage";
-        }
+    public String listPage() {
+
         return "webShop/goods/listPage";
     }
 
     @RequestMapping(value={"displayPage"}, method={RequestMethod.GET})
     public String displayPage() {
+
         return "webShop/goods/listPage";
     }
 
     @RequestMapping(value={"createPage"}, method={RequestMethod.GET})
     public String createPage() {
+
         return "webShop/goods/createPage";
     }
 

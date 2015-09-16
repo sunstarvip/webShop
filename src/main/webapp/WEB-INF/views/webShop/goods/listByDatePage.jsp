@@ -41,8 +41,12 @@
             $('#goodsList').html(htmlStr);
         }
 
-        function getGoodsList() {
-            $.get('${ctx }/rest/goods/getGoodsList',
+        function getGoodsList(goodsTypeId) {
+            var targetUrl = '${ctx }/rest/goods/getGoodsList';
+            if(!!goodsTypeId) {
+                targetUrl = '${ctx }/rest/goods/getGoodsListByGoodsType?goodsTypeId=' + goodsTypeId;
+            }
+            $.get(targetUrl,
                     function(resultData) {
                         var goodsList = ResultData.getSuccessDataInfo(resultData);
                         if(!!goodsList) {
@@ -77,7 +81,7 @@
         // 页面初始化
         $(function() {
             // 生成GoodsType列表
-            getGoodsList();
+            getGoodsList('${goodsTypeId}');
 
             // 返回首页
             $('#backBtn').on('click', function() {

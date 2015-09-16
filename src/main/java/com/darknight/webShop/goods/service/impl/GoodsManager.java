@@ -87,7 +87,7 @@ public class GoodsManager extends BaseManager<Goods, String> implements GoodsSer
         Criteria criteria = getVisibleCriteria();
 
         criteria.createAlias("shop", "shop").add(Restrictions.eq("shop.id", shopId));
-        criteria.createAlias("goodsType", "goodsType", JoinType.FULL_JOIN);
+        criteria.createAlias("goodsType", "goodsType", JoinType.LEFT_OUTER_JOIN);
         criteria.setProjection(projectionList);
         criteria.addOrder(Order.desc("goodsType.updateTime"));
         criteria.addOrder(Order.desc("goodsType.createTime"));

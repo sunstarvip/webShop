@@ -23,9 +23,9 @@
     <div class="shop-list-header">
         <button class="shop-list-button" id="backBtn" type="button">返回</button>
     </div>
-    <div class="shop-list" id="goodsList">
+    <div class="shop-list" id="goodsTypeList">
         <div class="shop-list-item">
-            <a class="" href="${ctx }/goods/listByDatePage" target="_blank">
+            <a class="" href="${ctx }/page/goods/listByDatePage" target="_blank">
                 <span class="shop-list-item-label">运动类</span>
                 <span class="shop-list-item-info">商品数量为：10个</span>
             </a>
@@ -45,17 +45,19 @@
     </div>
 
     <script>
-        function makeGoodsList(goodsList) {
+        function makeGoodsTypeList(goodsTypeList) {
             var htmlStr = '';
 
-            for(var i in goodsList) {
+            for(var i in goodsTypeList) {
                 htmlStr += '<div class="shop-list-item">';
-                htmlStr += '<input class="shop-list-checkbox" name="goodsChk" type="checkbox" value="' + goodsList[i]['id'] + '">';
-                htmlStr += '<span>' + goodsList[i]['name'] + '</span>';
+                htmlStr += '<a class="" href="${ctx }/page/goods/listByDatePage?goodsTypeId='+1+'" target="_blank">';
+                htmlStr += '<span class="shop-list-item-label">运动类</span>';
+                htmlStr += '<span class="shop-list-item-info">商品数量为：10个</span>';
+                htmlStr += '</a>';
                 htmlStr += '</div>';
             }
 
-            $('#goodsList').html(htmlStr);
+            $('#goodsTypeList').html(htmlStr);
         }
 
         function getGoodsList() {
@@ -64,31 +66,9 @@
                         var goodsList = ResultData.getSuccessDataInfo(resultData);
                         if(!!goodsList) {
                             goodsList = eval('(' + goodsList + ')');
-                            makeGoodsList(goodsList);
+                            makeGoodsTypeList(goodsList);
                         }
                     });
-        }
-
-        function validateGoodsChk() {
-            var goodsAry = $('input[name="goodsChk"]:checked');
-
-            if(!!goodsAry) {
-                if(goodsAry.length > 1) {
-                    alert("请勿多选");
-                    return;
-                }else {
-                    return goodsAry[0];
-                }
-            }
-            alert("请选择商品");
-            return;
-        }
-
-        function updateGoods() {
-            var goods = validateGoodsChk();
-            if(!!goods) {
-                window.location.href = '${ctx }/page/goods/updatePage?goodsId=' + $(goods).val();
-            }
         }
 
         // 页面初始化
@@ -99,16 +79,6 @@
             // 返回首页
             $('#backBtn').on('click', function() {
                 window.location.href = '${ctx }/indexPage';
-            });
-
-            // 新增商品类型
-            $('#createBtn').on('click', function() {
-                window.location.href = '${ctx }/page/goods/createPage';
-            });
-
-            // 编辑商品类型
-            $('#editBtn').on('click', function() {
-                updateGoods();
             });
         });
     </script>

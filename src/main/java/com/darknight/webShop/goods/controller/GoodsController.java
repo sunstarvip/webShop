@@ -78,23 +78,23 @@ public class GoodsController {
     public String getGoodsList(@ModelAttribute("currentShopId")String currentShopId) {
         ResultEntity resultData = new ResultEntity();
 
-        Shop shop = shopService.find(currentShopId);
-        String goodsListInfo = null;
-        switch(shop.getDisplayMode()) {
-            case Shop.DisplayMode.BY_DATE:
-                List<Goods> goodsList = goodsService.findVisibleGoodsListByShopId(currentShopId);
-                goodsListInfo = JSON.toJSONString(goodsList);
-                break;
-            case Shop.DisplayMode.BY_TYPE:
-                List<Map> resultList = goodsService.countVisibleGoodsByShopIdGroupByGoodsTypeId(currentShopId);
-                goodsListInfo = JSON.toJSONString(resultList);
-
-//                Object resultList = goodsService.countVisibleGoodsByShopIdGroupByGoodsTypeIdIsNull(currentShopId);
+//        Shop shop = shopService.find(currentShopId);
+//        String goodsListInfo = null;
+//        switch(shop.getDisplayMode()) {
+//            case Shop.DisplayMode.BY_DATE:
+//                List<Goods> goodsList = goodsService.findVisibleGoodsListByShopId(currentShopId);
+//                goodsListInfo = JSON.toJSONString(goodsList);
+//                break;
+//            case Shop.DisplayMode.BY_TYPE:
+//                List<Map> resultList = goodsService.countVisibleGoodsByShopIdGroupByGoodsTypeId(currentShopId);
 //                goodsListInfo = JSON.toJSONString(resultList);
-                break;
-        }
-//        List<Goods> goodsList = goodsService.findVisibleGoodsListByShopId(currentShopId);
-//        String goodsListInfo = JSON.toJSONString(goodsList);
+//
+////                Object resultList = goodsService.countVisibleGoodsByShopIdGroupByGoodsTypeIdIsNull(currentShopId);
+////                goodsListInfo = JSON.toJSONString(resultList);
+//                break;
+//        }
+        List<Goods> goodsList = goodsService.findVisibleGoodsListByShopId(currentShopId);
+        String goodsListInfo = JSON.toJSONString(goodsList);
 
         resultData.setDataInfo(goodsListInfo);
         resultData.setStatus(ResultEntity.Status.SUCCESS);
