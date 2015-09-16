@@ -27,7 +27,7 @@ import java.util.List;
  * Created by DarKnight on 2015/9/2.
  */
 @RestController
-@RequestMapping(value = "upload")
+@RequestMapping(value = "rest/upload")
 public class UploadController {
     private UploadService uploadService;
 

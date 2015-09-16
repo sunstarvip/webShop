@@ -20,7 +20,7 @@ import java.util.Date;
  * Created by DarKnight on 2015/9/2.
  */
 @Controller
-@RequestMapping(value = "webShop/goods")
+@RequestMapping(value = "page/goods")
 @SessionAttributes("currentShopId")
 public class GoodsPageController {
     private GoodsService goodsService;
@@ -34,6 +34,12 @@ public class GoodsPageController {
     @Resource
     public void setShopService(ShopService shopService) {
         this.shopService = shopService;
+    }
+
+    @RequestMapping(value={"listByDatePage"}, method={RequestMethod.GET})
+    public String listByDatePage() {
+
+        return "webShop/goods/listByDatePage";
     }
 
     @RequestMapping(value={"listPage"}, method={RequestMethod.GET})

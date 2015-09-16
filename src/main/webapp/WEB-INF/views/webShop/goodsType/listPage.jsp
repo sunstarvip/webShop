@@ -54,7 +54,7 @@
         }
 
         function getGoodsTypeList() {
-            $.get('${ctx }/webShop/goodsType/getGoodsTypeList',
+            $.get('${ctx }/rest/goodsType/getGoodsTypeList',
                     function(resultData) {
                         var typeList = ResultData.getSuccessDataInfo(resultData);
                         if(!!typeList) {
@@ -82,7 +82,7 @@
         function updateGoodsType() {
             var goodsType = validateGoodsTypeChk();
             if(!!goodsType) {
-                window.location.href = '${ctx }/webShop/goodsType/updatePage?goodsTypeId=' + $(goodsType).val();
+                window.location.href = '${ctx }/page/goodsType/updatePage?goodsTypeId=' + $(goodsType).val();
             }
         }
 
@@ -98,7 +98,7 @@
 
             // 新增商品类型
             $('#createBtn').on('click', function() {
-                window.location.href = '${ctx }/webShop/goodsType/createPage';
+                window.location.href = '${ctx }/page/goodsType/createPage';
             });
 
             // 编辑商品类型

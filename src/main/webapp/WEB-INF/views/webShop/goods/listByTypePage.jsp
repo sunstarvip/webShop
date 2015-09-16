@@ -14,6 +14,9 @@
             margin: 5px;
             border: 1px solid #000;
         }
+        .shop-list-item-label {
+            margin-right: 15px;
+        }
     </style>
 </head>
 <body>
@@ -21,18 +24,20 @@
         <button class="shop-list-button" id="backBtn" type="button">返回</button>
     </div>
     <div class="shop-list" id="goodsList">
-        <%--<div class="shop-list-item">--%>
-            <%--<input class="shop-list-checkbox" name="goodsTypeChk" type="checkbox" value="1">--%>
-            <%--<span>类型1</span>--%>
-        <%--</div>--%>
-        <%--<div class="shop-list-item">--%>
-            <%--<input class="shop-list-checkbox" name="goodsTypeChk" type="checkbox" value="2">--%>
-            <%--<span>类型2</span>--%>
-        <%--</div>--%>
-        <%--<div class="shop-list-item">--%>
-            <%--<input class="shop-list-checkbox" name="goodsTypeChk" type="checkbox" value="3">--%>
-            <%--<span>类型3</span>--%>
-        <%--</div>--%>
+        <div class="shop-list-item">
+            <a class="" href="${ctx }/goods/listByDatePage" target="_blank">
+                <span class="shop-list-item-label">运动类</span>
+                <span class="shop-list-item-info">商品数量为：10个</span>
+            </a>
+        </div>
+        <div class="shop-list-item">
+            <span class="shop-list-item-label">运动类</span>
+            <span class="shop-list-item-info">商品数量为：10个</span>
+        </div>
+        <div class="shop-list-item">
+            <span class="shop-list-item-label">运动类</span>
+            <span class="shop-list-item-info">商品数量为：10个</span>
+        </div>
     </div>
     <div class="shop-list-footer">
         <button class="shop-list-button" id="createBtn" type="button">新增</button>
@@ -89,7 +94,7 @@
         // 页面初始化
         $(function() {
             // 生成GoodsType列表
-            getGoodsList();
+//            getGoodsList();
 
             // 返回首页
             $('#backBtn').on('click', function() {

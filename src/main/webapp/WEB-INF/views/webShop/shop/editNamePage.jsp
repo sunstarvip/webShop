@@ -23,7 +23,7 @@
             var shopObj = {};
             shopObj['name'] = $('#name').val();
 
-            formSubmit('${ctx }/webShop/shop/editName', 'post', '_self', shopObj);
+            formSubmit('${ctx }/page/shop/editName', 'post', '_self', shopObj);
         }
 
         // 页面初始化

@@ -23,7 +23,7 @@
             var shopObj = {};
             shopObj['description'] = $('#description').val();
 
-            formSubmit('${ctx }/webShop/shop/editDesc', 'post', '_self', shopObj);
+            formSubmit('${ctx }/page/shop/editDesc', 'post', '_self', shopObj);
         }
 
         // 页面初始化

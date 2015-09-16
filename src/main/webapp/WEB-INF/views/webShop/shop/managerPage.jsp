@@ -73,7 +73,7 @@
         shopInfo = {};
 
         function initShopPic(picUrl) {
-            $('#shopPicLink').attr('href', '${ctx }/webShop/shop/editPicPage');
+            $('#shopPicLink').attr('href', '${ctx }/page/shop/editPicPage');
             $('#shopPic').attr('src', '${ctx }/' + picUrl);
         }
 
@@ -118,7 +118,7 @@
         }
 
         function getShopInfo() {
-            $.get('${ctx }/webShop/shop/managerShop',
+            $.get('${ctx }/rest/shop/managerShop',
                     function(resultData) {
                         if(!!resultData) {
                             resultData = eval('(' + resultData + ')');
@@ -139,27 +139,27 @@
 
             // 修改店铺图片
             $('#shopNameBtn').on('click', function() {
-                window.location.href = '${ctx }/webShop/shop/editNamePage';
+                window.location.href = '${ctx }/page/shop/editNamePage';
             });
 
             // 修改店铺名称
             $('#shopNameBtn').on('click', function() {
-                window.location.href = '${ctx }/webShop/shop/editNamePage';
+                window.location.href = '${ctx }/page/shop/editNamePage';
             });
 
             // 修改店铺描述
             $('#shopDescBtn').on('click', function() {
-                window.location.href = '${ctx }/webShop/shop/editDescPage';
+                window.location.href = '${ctx }/page/shop/editDescPage';
             });
 
             // 修改商品展示方式
             $('#displayModeBtn').on('click', function() {
-                window.location.href = '${ctx }/webShop/shop/editDisplayModePage';
+                window.location.href = '${ctx }/page/shop/editDisplayModePage';
             });
 
             // 修改商品付款方式
             $('#buyModeBtn').on('click', function() {
-                window.location.href = '${ctx }/webShop/shop/editBuyModePage';
+                window.location.href = '${ctx }/page/shop/editBuyModePage';
             });
 
             // 返回首页

@@ -27,6 +27,7 @@
             <img class="shop-pic" id="shopPicImg" src="${ctx }/${shopPicUrl}">
             <input class="" id="picUrlBtn" name="file" type="file">
             <button class="" id="editBtn" type="button">修改</button>
+            <button class="shop-form-button" id="cancelBtn" type="button">取消</button>
         </div>
     </div>
 
@@ -62,7 +63,7 @@
                 'uploadLimit': 1,  // 上传文件个数的限制
                 'swf': '${ctx }/static/plugins/uploadify/uploadify.swf',
                 'checkExisting' : false,  // 检查文件重名时填写后台检测路径
-                'uploader': '${ctx }/upload/springUploadFile;jsessionid=${pageContext.session.id }?secondPath=${currentShopId}',
+                'uploader': '${ctx }/rest/upload/springUploadFile;jsessionid=${pageContext.session.id }?secondPath=${currentShopId}',
                 'onUploadSuccess': function(file, data, response) {
                     uploadSuccess(data);
                 },
@@ -76,7 +77,7 @@
             var shopObj = {};
             shopObj['picUrl'] = $('#picUrl').val();
 
-            formSubmit('${ctx }/webShop/shop/editPic', 'post', '_self', shopObj);
+            formSubmit('${ctx }/page/shop/editPic', 'post', '_self', shopObj);
         }
 
         // 页面初始化
@@ -87,6 +88,11 @@
             // 提交编辑
             $('#editBtn').on('click', function() {
                 editShopPic();
+            });
+
+            // 取消编辑
+            $('#cancelBtn').on('click', function() {
+                window.location.href = '${ctx }/page/shop/managerPage';
             });
         });
     </script>

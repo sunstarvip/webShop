@@ -46,7 +46,7 @@ function formSubmit(action, method, target, formObj) {
     var formCol;
     for(var objName in formObj) {
         // 创建提交参数
-        formCol = $('<input type="text" name="' + objName + '" />');
+        formCol = $('<input type="hidden" name="' + objName + '" />');
         formCol.attr('value', formObj[objName]);
 
         // 添加至表单
