@@ -23,7 +23,7 @@ import java.util.Map;
  * Created by DarKnight on 2015/9/2.
  */
 @RestController
-@RequestMapping(value = "webShop/goods")
+@RequestMapping(value = "rest/goods")
 @SessionAttributes("currentShopId")
 public class GoodsController {
     private GoodsService goodsService;
@@ -95,6 +95,19 @@ public class GoodsController {
         }
 //        List<Goods> goodsList = goodsService.findVisibleGoodsListByShopId(currentShopId);
 //        String goodsListInfo = JSON.toJSONString(goodsList);
+
+        resultData.setDataInfo(goodsListInfo);
+        resultData.setStatus(ResultEntity.Status.SUCCESS);
+
+        return JSON.toJSONString(resultData);
+    }
+
+    @RequestMapping(value={"getGoodsListByGoodsType"}, method={RequestMethod.GET})
+    public String getGoodsListByGoodsType(String goodsTypeId, @ModelAttribute("currentShopId")String currentShopId) {
+        ResultEntity resultData = new ResultEntity();
+
+        List<Goods> goodsList = goodsService.findVisibleGoodsListByShopIdAndGoodsTypeId(currentShopId, goodsTypeId);
+        String goodsListInfo = JSON.toJSONString(goodsList);
 
         resultData.setDataInfo(goodsListInfo);
         resultData.setStatus(ResultEntity.Status.SUCCESS);

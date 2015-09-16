@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
  * Created by Administrator on 2015/9/7.
  */
 @Controller
-@RequestMapping(value = "webShop/goodsType")
+@RequestMapping(value = "page/goodsType")
 public class GoodsTypePageController {
 
     @RequestMapping(value={"listPage"}, method={RequestMethod.GET})

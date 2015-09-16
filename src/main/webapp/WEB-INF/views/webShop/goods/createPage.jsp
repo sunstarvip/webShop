@@ -103,7 +103,7 @@
         }
 
         function getGoodsTypeList() {
-            $.get('${ctx }/webShop/goodsType/getGoodsTypeList',
+            $.get('${ctx }/rest/goodsType/getGoodsTypeList',
                     function(resultData) {
                         var typeList = ResultData.getSuccessDataInfo(resultData);
                         if(!!typeList) {
@@ -153,7 +153,7 @@
         }
 
         function saveGoods() {
-            $.post('${ctx }/webShop/goods/saveGoods',
+            $.post('${ctx }/rest/goods/saveGoods',
                     {
                         'name': $('#name').val(),
                         'description': $('#description').val(),
@@ -166,7 +166,7 @@
                     function(resultData) {
                         if(ResultData.getSuccessStatus(resultData)) {
                             alert("商品添加成功");
-                            window.location.href = '${ctx }/webShop/goods/listPage';
+                            window.location.href = '${ctx }/page/goods/listPage';
                         }
                     });
         }
@@ -193,7 +193,7 @@
 
             // 取消新增
             $('#cancelBtn').on('click', function() {
-                window.location.href = '${ctx }/webShop/goods/listPage';
+                window.location.href = '${ctx }/page/goods/listPage';
             });
         });
     </script>

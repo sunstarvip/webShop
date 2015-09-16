@@ -19,7 +19,7 @@ import java.util.List;
  * Created by Administrator on 2015/9/7.
  */
 @RestController
-@RequestMapping(value = "webShop/goodsType")
+@RequestMapping(value = "rest/goodsType")
 public class GoodsTypeController {
     private GoodsTypeService goodsTypeService;
     private ShopService shopService;

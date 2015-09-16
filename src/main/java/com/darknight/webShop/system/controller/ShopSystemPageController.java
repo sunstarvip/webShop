@@ -23,7 +23,7 @@ public class ShopSystemPageController {
      */
     private final Logger logger = LoggerFactory.getLogger(ShopSystemPageController.class);
 
-    @RequestMapping(value={"indexPage", "webShop/system/indexPage"}, method={RequestMethod.GET})
+    @RequestMapping(value={"indexPage", "page/system/indexPage"}, method={RequestMethod.GET})
     public String indexPage() {
         return "webShop/system/indexPage";
     }

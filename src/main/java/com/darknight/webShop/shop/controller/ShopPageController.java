@@ -18,7 +18,7 @@ import java.util.Date;
  * Created by DarKnight on 2015/9/1.
  */
 @Controller
-@RequestMapping(value = "webShop/shop")
+@RequestMapping(value = "page/shop")
 @SessionAttributes("currentShopId")
 public class ShopPageController {
     private ShopService shopService;
@@ -48,7 +48,7 @@ public class ShopPageController {
         shop.setName(name);
 
         shopService.save(shop);
-        return "redirect:/webShop/shop/managerPage";
+        return "redirect:/page/shop/managerPage";
     }
 
     @RequestMapping(value={"editDescPage"}, method={RequestMethod.GET})
@@ -66,7 +66,7 @@ public class ShopPageController {
         shop.setDescription(description);
 
         shopService.save(shop);
-        return "redirect:/webShop/shop/managerPage";
+        return "redirect:/page/shop/managerPage";
     }
 
     @RequestMapping(value={"editPicPage"}, method={RequestMethod.GET})
@@ -85,7 +85,7 @@ public class ShopPageController {
         shop.setPicUrl(picUrl);
 
         shopService.save(shop);
-        return "redirect:/webShop/shop/managerPage";
+        return "redirect:/page/shop/managerPage";
     }
 
     @RequestMapping(value={"editDisplayModePage"}, method={RequestMethod.GET})
@@ -110,7 +110,7 @@ public class ShopPageController {
         }
 
         shopService.save(shop);
-        return "redirect:/webShop/shop/managerPage";
+        return "redirect:/page/shop/managerPage";
     }
 
     @RequestMapping(value={"editBuyModePage"}, method={RequestMethod.GET})
@@ -135,6 +135,6 @@ public class ShopPageController {
         }
 
         shopService.save(shop);
-        return "redirect:/webShop/shop/managerPage";
+        return "redirect:/page/shop/managerPage";
     }
 }

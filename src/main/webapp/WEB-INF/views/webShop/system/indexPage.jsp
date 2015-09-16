@@ -62,15 +62,15 @@
             });
 
             $('#shopBtn').on('click', function() {
-                window.location.href = '${ctx }/webShop/shop/managerPage';
+                window.location.href = '${ctx }/page/shop/managerPage';
             });
 
             $('#goodsTypeBtn').on('click', function() {
-                window.location.href = '${ctx }/webShop/goodsType/listPage';
+                window.location.href = '${ctx }/page/goodsType/listPage';
             });
 
             $('#goodsBtn').on('click', function() {
-                window.location.href = '${ctx }/webShop/goods/listPage';
+                window.location.href = '${ctx }/page/goods/listPage';
             });
 
             $('#orderBtn').on('click', function() {

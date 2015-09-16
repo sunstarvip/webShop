@@ -81,11 +81,15 @@
     </filter-mapping>
     <filter-mapping>
         <filter-name>loginFilter</filter-name>
-        <url-pattern>/webShop/*</url-pattern>
+        <url-pattern>/page/*</url-pattern>
     </filter-mapping>
     <filter-mapping>
         <filter-name>loginFilter</filter-name>
-        <url-pattern>/upload/*</url-pattern>
+        <url-pattern>/rest/*</url-pattern>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>loginFilter</filter-name>
+        <url-pattern>/rest/upload/*</url-pattern>
     </filter-mapping>
 
     <!-- Spring MVC Servlet -->

@@ -17,7 +17,7 @@ import javax.servlet.http.HttpSession;
  * Created by DarKnight on 2015/9/1.
  */
 @RestController
-@RequestMapping(value = "webShop/shop")
+@RequestMapping(value = "rest/shop")
 public class ShopController {
     private ShopService shopService;
 

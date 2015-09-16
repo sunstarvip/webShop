@@ -29,7 +29,7 @@
 
     <script>
         function saveGoodsType() {
-            $.post('${ctx }/webShop/goodsType/updateGoodsType',
+            $.post('${ctx }/rest/goodsType/updateGoodsType',
                     {
                         id: '${goodsTypeId }',
                         typeName: $('#typeName').val()
@@ -37,13 +37,13 @@
                     function(resultData) {
                         if(ResultData.getSuccessStatus(resultData)) {
                             alert("商品类型修改成功");
-                            window.location.href = '${ctx }/webShop/goodsType/listPage';
+                            window.location.href = '${ctx }/page/goodsType/listPage';
                         }
                     });
         }
 
         function initGoodsType() {
-            $.get('${ctx }/webShop/goodsType/getGoodsType',
+            $.get('${ctx }/rest/goodsType/getGoodsType',
                     {
                         id: '${goodsTypeId }'
                     },
@@ -65,7 +65,7 @@
 
             // 取消新增
             $('#cancelBtn').on('click', function() {
-                window.location.href = '${ctx }/webShop/goodsType/listPage';
+                window.location.href = '${ctx }/page/goodsType/listPage';
             });
         });
     </script>

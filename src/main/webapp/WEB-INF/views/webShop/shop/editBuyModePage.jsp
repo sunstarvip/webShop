@@ -35,7 +35,7 @@
             var shopObj = {};
             shopObj['buyMode'] = $('#buyMode').val();
 
-            formSubmit('${ctx }/webShop/shop/editBuyMode', 'post', '_self', shopObj);
+            formSubmit('${ctx }/page/shop/editBuyMode', 'post', '_self', shopObj);
         }
 
         function initBuyModeSelect() {
@@ -53,7 +53,7 @@
             });
 
             // 取消编辑
-            clickPageForwardBtn('#cancelBtn', '${ctx }/webShop/shop/managerPage');
+            clickPageForwardBtn('#cancelBtn', '${ctx }/page/shop/managerPage');
         });
     </script>
 </body>

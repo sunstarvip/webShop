@@ -35,7 +35,7 @@
             var shopObj = {};
             shopObj['displayMode'] = $('#displayMode').val();
 
-            formSubmit('${ctx }/webShop/shop/editDisplayMode', 'post', '_self', shopObj);
+            formSubmit('${ctx }/page/shop/editDisplayMode', 'post', '_self', shopObj);
         }
 
         function initDisplayModeSelect() {
@@ -53,7 +53,7 @@
             });
 
             // 取消编辑
-            clickPageForwardBtn('#cancelBtn', '${ctx }/webShop/shop/managerPage');
+            clickPageForwardBtn('#cancelBtn', '${ctx }/page/shop/managerPage');
         });
     </script>
 </body>
