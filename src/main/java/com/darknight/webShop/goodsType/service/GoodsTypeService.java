@@ -16,4 +16,11 @@ public interface GoodsTypeService extends BaseService<GoodsType, String> {
      * @return
      */
     List<GoodsType> findVisibleGoodsTypeListByShopId(String shopId);
+
+    /**
+     * 通过商店ID查询该商铺下所有未逻辑删除且含有商品数为0的商品类型
+     * @param shopId 商店ID
+     * @return
+     */
+    List<GoodsType> findGoodsNumNullGoodsTypeListByShopId(String shopId);
 }

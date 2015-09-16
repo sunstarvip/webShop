@@ -15,6 +15,7 @@
         <div>
             <input class="" id="description" value="${shopDesc}">
             <button class="" id="editBtn" type="button">修改</button>
+            <button class="shop-form-button" id="cancelBtn" type="button">取消</button>
         </div>
     </div>
 
@@ -32,6 +33,9 @@
             $('#editBtn').on('click', function() {
                 editShopDesc();
             });
+
+            // 取消编辑
+            clickPageForwardBtn('#cancelBtn', '${ctx }/page/shop/managerPage');
         });
     </script>
 </body>

@@ -44,4 +44,9 @@ public class GoodsTypeManager extends BaseManager<GoodsType, String> implements 
         List<GoodsType> typeList = criteria.list();
         return typeList;
     }
+
+    @Override
+    public List<GoodsType> findGoodsNumNullGoodsTypeListByShopId(String shopId) {
+        return null;
+    }
 }
