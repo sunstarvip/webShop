@@ -48,6 +48,7 @@ public class GoodsManager extends BaseManager<Goods, String> implements GoodsSer
 
         // 获取自定义查询对象，查询未逻辑删除并默认排序的权限对象
         Criteria criteria = getVisibleCriteria();
+
         criteria.createAlias("shop", "shop").add(Restrictions.eq("shop.id", shopId));
 //        switch(shop.getDisplayMode()) {
 //            case Shop.DisplayMode.BY_TYPE:
@@ -65,6 +66,7 @@ public class GoodsManager extends BaseManager<Goods, String> implements GoodsSer
     public Object countVisibleGoodsByShopIdGroupByGoodsTypeIdIsNull(String shopId) {
         // 获取自定义查询对象，查询未逻辑删除并默认排序的权限对象
         Criteria criteria = getVisibleCriteria();
+
         criteria.createAlias("shop", "shop").add(Restrictions.eq("shop.id", shopId));
         criteria.setProjection(Projections.rowCount());
         criteria.add(Restrictions.isNull("goodsType"));
@@ -77,11 +79,13 @@ public class GoodsManager extends BaseManager<Goods, String> implements GoodsSer
     public List<Map> countVisibleGoodsByShopIdGroupByGoodsTypeId(String shopId) {
         // 组装统计查询条件
         ProjectionList projectionList = Projections.projectionList();
+
         projectionList.add(Projections.groupProperty("goodsType"));
         projectionList.add(Projections.rowCount(), "goodsNum");
 
         // 获取自定义查询对象，查询未逻辑删除并默认排序的权限对象
         Criteria criteria = getVisibleCriteria();
+
         criteria.createAlias("shop", "shop").add(Restrictions.eq("shop.id", shopId));
         criteria.createAlias("goodsType", "goodsType", JoinType.FULL_JOIN);
         criteria.setProjection(projectionList);
@@ -91,5 +95,19 @@ public class GoodsManager extends BaseManager<Goods, String> implements GoodsSer
         List<Map> resultMapList = criteria.list();
 
         return resultMapList;
+    }
+
+    @Override
+    public List<Goods> findVisibleGoodsListByShopIdAndGoodsTypeId(String shopId, String goodTypeId) {
+        // 获取自定义查询对象，查询未逻辑删除并默认排序的权限对象
+        Criteria criteria = getVisibleCriteria();
+
+        criteria.createAlias("shop", "shop").add(Restrictions.eq("shop.id", shopId));
+        criteria.createAlias("goodsType", "goodsType").add(Restrictions.eq("goodsType.id", goodTypeId));
+        criteria.addOrder(Order.desc("updateTime"));
+        criteria.addOrder(Order.desc("createTime"));
+
+        List<Goods> goodsList = criteria.list();
+        return goodsList;
     }
 }

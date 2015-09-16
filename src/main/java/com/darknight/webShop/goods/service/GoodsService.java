@@ -33,4 +33,12 @@ public interface GoodsService extends BaseService<Goods, String> {
      * @return
      */
     List<Map> countVisibleGoodsByShopIdGroupByGoodsTypeId(String shopId);
+
+    /**
+     * 通过商店ID查询该店铺中指定商品类型ID下所有未逻辑删除的商品
+     * @param shopId 商店ID
+     * @param goodTypeId 商品类型ID
+     * @return
+     */
+    List<Goods> findVisibleGoodsListByShopIdAndGoodsTypeId(String shopId, String goodTypeId);
 }
